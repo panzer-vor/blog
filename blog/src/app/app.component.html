@@ -1,0 +1,13 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <div class="site">
+    <header>
+      <app-header (toggle)="sidenav.open()"></app-header>
+    </header>
+    <main>
+      <router-outlet ></router-outlet>
+    </main>
+  </div>
+</mat-sidenav-container>

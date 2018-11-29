@@ -1,0 +1,10 @@
+{
+  "type": "mysql",
+  "host": "tanpopo.cc",
+  "port": 3306,
+  "username": "root",
+  "password": "Xyk@0279",
+  "database": "blog_test",
+  "entities": ["src/**/**/**.entity{.ts,.js}"],
+  "synchronize": true
+}
