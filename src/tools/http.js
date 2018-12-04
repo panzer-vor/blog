@@ -3,6 +3,20 @@ import config from '@config'
 import { message } from 'antd'
 axios.defaults.timeout = 30000
 axios.defaults.baseURL = config.baseURL
+
+axios.interceptors.request.use(config => {a
+  const token = localStorage.getItem('admin_token')
+  if (token && location.pathname.indexOf('login') === -1) {  // 判断是否存在token，如果存在的话，则每个http header都加上token
+    config.headers.Authorization = token;
+    console.log('interceptors config=',config)
+  } else {
+    window.location.href('/login')
+  }
+  return config
+}, error => {
+  return Promise.reject(error)
+})
+
 class Http {
   axiosRequest = (method, url, data) => {
     return new Promise((resolve, reject) => {

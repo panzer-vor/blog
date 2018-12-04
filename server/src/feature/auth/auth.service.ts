@@ -4,7 +4,7 @@ import { TUser } from '@user/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { MD5 } from 'crypto-js';
-
+import { ILoginRecord } from './auth.interface';
 @Injectable()
 export class AuthService {
   user: TUser;
@@ -16,7 +16,7 @@ export class AuthService {
 
   async signIn({
     username, password,
-  }): Promise<any> {
+  }): Promise<ILoginRecord> {
     this.user = await this.userRepository.findOne({ username });
     if (this.user !== undefined && this.user.password === MD5(password).toString()) {
       return {
@@ -34,7 +34,10 @@ export class AuthService {
         },
       };
     } else {
-        return 'login failed !';
+      return {
+        success: false,
+        records: '登入失败：账号或密码错误',
+      };
     }
   }
 }

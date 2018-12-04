@@ -1,37 +1,25 @@
 {
   "name": "admin",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "dev": "webpack-dev-server --hot --mode development",
-    "start": ""
-  },
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "antd": "^3.10.7",
-    "axios": "^0.18.0",
-    "cross-env": "^5.2.0",
-    "react": "16.7.0-alpha.0",
-    "react-dom": "16.7.0-alpha.0",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.1",
-    "redux-react-hook": "^2.0.0"
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1"
   },
-  "devDependencies": {
-    "@babel/core": "^7.1.5",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-transform-runtime": "^7.1.0",
-    "@babel/preset-env": "^7.1.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "8",
-    "babel-plugin-import": "^1.11.0",
-    "css-loader": "^1.0.1",
-    "html-webpack-plugin": "^3.2.0",
-    "react-hot-loader": "^4.3.12",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.25.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10",
-    "webpack-merge": "^4.1.4"
-  }
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
