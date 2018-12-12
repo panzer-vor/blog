@@ -1,11 +1,16 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom'
+import { StoreContext } from 'redux-react-hook'
+import makeStore from './store/store'
 import App from './App';
-import './index.css';
-import registerServiceWorker from './registerServiceWorker';
 
+const store = makeStore();
 ReactDOM.render(
-  <App />,
+  <StoreContext.Provider value={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StoreContext.Provider>,
   document.getElementById('root') as HTMLElement
 );
-registerServiceWorker();

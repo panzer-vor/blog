@@ -11,11 +11,14 @@ export class RolesGuard implements CanActivate {
   ) { }
   canActivate(
       context: ExecutionContext,
-  ): boolean | Promise<boolean> | Observable<boolean> {
+  ): boolean {
     const req = context.switchToHttp().getRequest();
     const roles = this.reflector.get<string[]>('roles', context.getHandler());
 
     if (roles) { // roles参数为空代表不需要权限验证
+      if (!req.headers.authorization) {
+        return false;
+      }
       const token = (req.headers.authorization as string).split(' ')[1];
       try {
         const decoded: any = jwt.verify(token, jwtConfig.secretOrKey);

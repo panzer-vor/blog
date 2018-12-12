@@ -17,7 +17,13 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "paths": {
+      "@view/*": ["src/view/*"],
+      "@interface/*": ["src/interface/*"],
+      "@tools/*": ["src/tools/*"],
+      "@config": ["src/config/globalConfig.ts"]
+    }
   },
   "exclude": [
     "node_modules",
@@ -26,6 +32,7 @@
     "acceptance-tests",
     "webpack",
     "jest",
-    "src/setupTests.ts"
+    "src/setupTests.ts",
+    "config"
   ]
 }
