@@ -1,11 +1,7 @@
 import { httpConfig } from '@config'
 import { message } from 'antd'
+import axios from 'axios'
 const { baseUri } = httpConfig
-
-interface IHttpRecord extends Response {
-  success: boolean
-  records: any
-}
 
 class Http {
   public static getInstance(): Http {
@@ -16,52 +12,43 @@ class Http {
   }
   private static reactHistory: any = null
   private static instance: Http | null = null
+  constructor() {
+    axios.defaults.baseURL = baseUri
+    axios.interceptors.request.use(
+      config => {
+        config.headers = {
+          "Authorization": `Bearer ${localStorage.getItem('admin_token')}`,
+          'Content-Type':'application/json',
+        }
+        return config;
+      },
+      error => {
+        return Promise.reject(error);
+      }
+    )
+  }
   public async get(url: string, data?: object) {
-    return this.httpRequest(url, 'GET', data)
+    return this.httpRequest(url, 'get', data)
+  }
+  public async patch(url: string, data: object) {
+    return this.httpRequest(url, 'patch', data)
   }
   public getConfig(reactHistory: any): void {
     Http.reactHistory = reactHistory
   }
   private httpRequest(url: string, method: string, data?: object) {
-    let uri = url
-    const options: any = {
-      mode: 'cors',
-    }
-    switch (method) {
-      case 'GET':
-        const getData = data || {}
-        Object.keys(getData).forEach((v, i) => {
-          const getSlice = `${v}=${getData[v]}`
-          i ? uri += `&${getSlice}` : uri += `?${getSlice}`
-        })
-        break
-      case 'POST':
-      case 'PATCH':
-      case 'PUT':
-      case 'DELETE':
-        options.headers = {
-          'Content-Type': 'application/json',
-        }
-        options.body = data
-        break
-      default: 
-        throw new Error(`暂无该提交方式: ${method}`)
-    }
     return new Promise((resolve, reject) => {
-      fetch(baseUri + url, options)
-        .then((response: IHttpRecord) => {
-          return response.json()
-        })
-        .then((res: IHttpRecord) => {
-          if(res.success === true) {
-            resolve(res.records.data)
+      axios[method](url, data)
+        .then((response: any) => {
+          if(response.data.success === true) {
+            resolve(response.data.records)
           } else {
-            message.error(res.records.data)
-            this.handleHttpCode(res.status, reject)
+            message.error(response.data.records)
+            this.handleHttpCode(response.status, reject)
           }
         })
         .catch((err: Error) => {
-          message.error(err)
+          message.error(`${err}`)
           reject(err)
         })
     })

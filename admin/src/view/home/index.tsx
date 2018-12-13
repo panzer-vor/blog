@@ -18,7 +18,7 @@ function Home(props: any) {
     <div>
       <input />
       <input />
-      {user}
+      {user.username}
       <button onClick={con}>登入</button>
     </div>
   )

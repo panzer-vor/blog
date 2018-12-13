@@ -10,15 +10,13 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse();
     const status = exception.getStatus ? exception.getStatus() : 401;
-
+    console.log(exception.message);
     response
       .status(status)
       .json({
         status,
         success: false,
-        records: {
-          data: CodeMessage.get(`${status}`) || exception.message.error || exception.message,
-        },
+        records:  CodeMessage.get(`${status}`) || exception.message.error || exception.message,
       });
   }
 }
