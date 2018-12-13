@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { withRouter } from 'react-router-dom'
-import { IRouter } from '@interface/common'
+import { RouteComponentProps } from 'react-router'
 
-const AdminHeader = (props: IRouter) => {
+const AdminHeader = (props: RouteComponentProps) => {
   return (
     <div>111</div>
   )

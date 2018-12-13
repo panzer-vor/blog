@@ -1,10 +1,5 @@
-export interface IRouter {
-  history: any
-  location: any
-  match: any
-  staticContext: any
-}
+import { RouteComponentProps } from 'react-router'
 
-export interface IForm extends IRouter {
+export interface IForm extends RouteComponentProps {
   form: any
 }

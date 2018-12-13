@@ -22,7 +22,8 @@
       "@view/*": ["src/view/*"],
       "@interface/*": ["src/interface/*"],
       "@tools/*": ["src/tools/*"],
-      "@config": ["src/config/globalConfig.ts"]
+      "@config": ["src/config/globalConfig.ts"],
+      "@components/*": ["src/components/*"]
     }
   },
   "exclude": [
