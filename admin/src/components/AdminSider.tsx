@@ -2,11 +2,12 @@ import * as React from 'react'
 import { Icon, Layout, Menu } from 'antd'
 import { withRouter } from 'react-router-dom'
 import RouteConfig from '../router/router.config'
+import { RouteComponentProps } from 'react-router'
 
 const { Sider } = Layout
 const MenuItem = Menu.Item
 const SubMenu  = Menu.SubMenu
-const AdminSider = (props: any) => {
+const AdminSider = (props: RouteComponentProps) => {
   const menuLink = (path: string) => {
     return () => {
       props.history.push(path)
@@ -17,7 +18,7 @@ const AdminSider = (props: any) => {
       breakpoint="lg"
       collapsedWidth="0"
     >
-      <div className="logo" />
+      <div className="logo"  />
       <Menu mode="inline">
         {
           RouteConfig.filter(v => v.key !== 'Common').map(v => <SubMenu
