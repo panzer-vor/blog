@@ -1,10 +1,10 @@
 const devConfig = {
   dbConfig: {
-    host: 'tanpopo.cc',
-    port: 3306,
+    host: 'cdb-3xqkbo6d.gz.tencentcdb.com',
+    port: 10052,
     username: 'root',
     password: 'Xyk@0279',
-    database: 'blog_test',
+    database: 'tanpopo',
     entities: ['src/**/**/**.entity{.ts,.js}'],
   },
   jwtConfig: {

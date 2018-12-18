@@ -3,6 +3,7 @@ import { TUser } from './user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { IUserRecord } from './user.interface';
+import { MD5 } from 'crypto-js';
 
 @Injectable()
 export class UserService {
@@ -39,9 +40,9 @@ export class UserService {
     const hasUser = await this.userRepository.findOne({username});
     if (hasUser) throw new  HttpException('用户名已存在', HttpStatus.FORBIDDEN);
     const user = new TUser();
-    if (role === 1) throw new  HttpException('不能创建超级管理员', HttpStatus.FORBIDDEN);
+    // if (role === 1) throw new  HttpException('不能创建超级管理员', HttpStatus.FORBIDDEN);
     user.username = username;
-    user.password = password;
+    user.password = MD5(password).toString();
     user.role = role;
     await this.userRepository.save(user);
     return {

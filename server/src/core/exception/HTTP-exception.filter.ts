@@ -1,9 +1,6 @@
 import { ExceptionFilter, Catch, ArgumentsHost } from '@nestjs/common';
 import { HttpException } from '@nestjs/common';
 
-const CodeMessage = new Map()
-.set('403', '未登入或登入超时，请重新登入');
-
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
   catch(exception: any, host: ArgumentsHost) {
@@ -16,7 +13,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
       .json({
         status,
         success: false,
-        records:  CodeMessage.get(`${status}`) || exception.message.error || exception.message,
+        records:  exception.message.error || exception.message,
       });
   }
 }
