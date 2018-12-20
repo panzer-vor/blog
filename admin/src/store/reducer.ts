@@ -11,6 +11,13 @@ export default function reducer(state: IState, action: any) {
       }
       saveState(newState)
       return newState
+    case types.LOAD_DATA:
+      const newStateLoad = {
+        ...state,
+        globalLoading: action.globalLoading,
+      }
+      saveState(newStateLoad)
+      return newStateLoad
     case types.CLEAR_STATE:
       saveState(initialState)
       return initialState

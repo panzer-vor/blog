@@ -18,7 +18,15 @@ const AdminSider = (props: RouteComponentProps) => {
       breakpoint="lg"
       collapsedWidth="0"
     >
-      <div className="logo"  />
+      <div 
+        style={{
+          backgroundColor: 'rgba(255,255,255,.2)',
+          cursor: 'pointer',
+          height: '32px',
+          margin: '16px',
+        }}
+        onClick={menuLink('/')}
+      />
       <Menu mode="inline">
         {
           RouteConfig.filter(v => v.key !== 'Common').map(v => <SubMenu

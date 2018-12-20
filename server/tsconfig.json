@@ -15,6 +15,7 @@
     "paths": {
       "@auth/*": ["src/feature/auth/*"],
       "@user/*": ["src/feature/user/*"],
+      "@article/*": ["src/feature/article/*"],
       "@pipe/*": ["src/core/pipe/*"],
       "@vail": ["src/core/pipe/vaildation.pipe.ts"],
       "@roles": ["src/core/decorator/roles.decorator.ts"],

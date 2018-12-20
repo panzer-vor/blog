@@ -4,15 +4,17 @@ import AdminSider from '@components/AdminSider'
 import AdminContent from '@components/AdminContent'
 import Routes from './router/routes'
 import http from '@tools/http'
+import { useDispatch } from 'redux-react-hook'
 import { withRouter } from 'react-router-dom'
 import { Layout } from 'antd'
 import { RouteComponentProps } from 'react-router'
-
 import './index.css'
 
 function App(props: RouteComponentProps) {
   const { location } = props
-  http.getConfig(props.history)
+  const dispatch = useDispatch()
+  http.getReduxConfig(dispatch)
+  http.getRouterConfig(props.history)
   return (
     <div>
       {

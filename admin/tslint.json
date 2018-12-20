@@ -9,9 +9,7 @@
   },
   "rules": {
     "no-console": false,
-    "ordered-imports": [true, {
-      "import-sources-order": "any",
-      "named-imports-order": "case-insensitive"
-    }]
+    "ordered-imports": false,
+    "object-literal-shorthand": false
   }
 }

@@ -4,6 +4,7 @@ import { loadState } from '@tools/cacheState'
 import { IState } from '@interface/state'
 
 export const initialState: IState = {
+  globalLoading: false,
   user: null,
 }
 
@@ -12,6 +13,7 @@ const state = cacheState || initialState
 
 export const types = {
   CLEAR_STATE: 'CLEAR_STATE',
+  LOAD_DATA: 'LOAD_DATA',
   SAVE_USER: 'SAVE_USER',
 }
 

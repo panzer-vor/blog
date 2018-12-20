@@ -1,34 +1,20 @@
 import * as React from 'react'
-import { Button, Form, Icon, Input } from 'antd'
-import { useDispatch } from 'redux-react-hook'
-import { IForm } from '@interface/common'
-import { ILoginData, ILoginRecordData } from './index.interface'
+import { Form, Input, Icon, Button, Radio, message  } from 'antd';
+import { IUser } from './index.interface'
 import http from '@tools/http'
 
+const RadioGroup = Radio.Group
 const FormItem = Form.Item
-function Login(props: IForm) {
-  const dispatch = useDispatch()
-  const userLogin = (values: ILoginData) => {
-    http.patch('/auth', values).then((res: ILoginRecordData) => {
-      const { username, role, id, token } = res
-      window.localStorage.setItem('admin_token', token); // 登入成功存储token
-      dispatch({  // 登入成功存储用户数据
-        type: 'SAVE_USER',
-        user: {
-          id,
-          role,
-          username,
-        },
-      })
-    }).then(() => {
-      props.history.push('/')
-    })
+function UserAdd(props: any) {
+  const userAdd = async (values: IUser) => {
+    const res: any = await http.post('/users', values)
+    message.success(res)
   }
   const handleSubmit = (e: any) => {  // 表单验证
     e.preventDefault()
-    props.form.validateFields((err: any, values: ILoginData) => {
+    props.form.validateFields((err: any, values: IUser) => {
       if (!err) {
-        userLogin(values) // 验证通过转给登入
+        userAdd(values) // 验证通过转给登入
       }
     })
   }
@@ -41,7 +27,7 @@ function Login(props: IForm) {
   const { getFieldDecorator } = props.form
   return (
     <Form onSubmit={handleSubmit}>
-      <FormItem label="请输入账号" {...formItemLayout}>
+      <FormItem label="用户账号" {...formItemLayout}>
         {getFieldDecorator('username', {
           rules: [
             { required: true, message: 'Please input username!' },
@@ -51,13 +37,25 @@ function Login(props: IForm) {
           <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} />
         )}
       </FormItem>
-      <FormItem label="请输入密码" {...formItemLayout}>
+      <FormItem label="用户密码" {...formItemLayout}>
         {getFieldDecorator('password', {
           rules: [
             { required: true, message: 'Please input password!' },
           ],
         })(
           <Input type="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} />
+        )}
+      </FormItem>
+      <FormItem label="用户权限" {...formItemLayout}>
+        {getFieldDecorator('role', {
+          rules: [
+            { required: true, message: 'Please choose role!' },
+          ],
+        })(
+          <RadioGroup>
+            <Radio value={1}>超级管理员</Radio>
+            <Radio value={2}>管理员</Radio>
+          </RadioGroup>
         )}
       </FormItem>
       <FormItem>
@@ -67,4 +65,4 @@ function Login(props: IForm) {
   )
 }
 
-export default Form.create()(Login)
+export default Form.create()(UserAdd)

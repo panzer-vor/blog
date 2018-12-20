@@ -3,5 +3,5 @@
 export interface IHttpRecord<T> {
   status?: number;
   success: boolean;
-  records: T | string;
+  records: T | string | object;
 }
