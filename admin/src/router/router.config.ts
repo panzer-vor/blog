@@ -36,7 +36,7 @@ export default [
         key: 'BlogAdd',
         name: '文章添加',
         path: '/blog/add',
-      }
+      },
     ],
     key: 'Blog',
     title: '文章管理',
@@ -57,6 +57,13 @@ export default [
         name: '登陆',
         path: '/login',
       },
+      {
+        component: asyncComponent(() => import('@view/Blog/Edit/index')),
+        exact: true,
+        key: 'BlogEdit',
+        name: '文章编辑',
+        path: '/blog/edit/:id',
+      }
     ],
     key: 'Common',
     title: '通用路由',

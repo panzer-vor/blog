@@ -24,7 +24,7 @@ export class UserService {
     };
   }
   async deleteUsers(id): Promise<IUserRecord> {
-    const user = await this.userRepository.findOne({id});
+    const user = await this.userRepository.findOne({ id });
     if (user.role === 1) throw new  HttpException('不能删除超级管理员', HttpStatus.FORBIDDEN);
     await this.userRepository.remove(user);
     return {

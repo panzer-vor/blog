@@ -1,33 +1,18 @@
 import * as React from 'react'
-import { Form, Input, Button, Radio, message  } from 'antd';
-import { IForm } from '@interface/common'
-import { IArticle } from './index.interface'
-import http from '@tools/http'
+import { Form, Input, Radio } from 'antd';
 
 const RadioGroup = Radio.Group
 const FormItem = Form.Item
-function ArticleAdd(props: IForm) {
+function BlogFormComponent(props: any) {
   const formItemLayout = {
     wrapperCol: {
       sm: { span: 24 },
       xs: { span: 24 },
     },
-  }
-  const articleAdd = async (values: IArticle) => {
-    const res: any = await http.post('/articles', values)
-    message.success(res)
-  }
-  const handleSubmit = (e: any) => {  // 表单验证
-    e.preventDefault()
-    props.form.validateFields((err: any, values: IArticle) => {
-      if (!err) {
-        articleAdd(values)
-      }
-    })
-  }
+  } 
   const { getFieldDecorator } = props.form
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={props.handleSubmit}>
       <FormItem label="标题" {...formItemLayout}>
         {getFieldDecorator('title', {
           rules: [
@@ -65,10 +50,10 @@ function ArticleAdd(props: IForm) {
         )}
       </FormItem>
       <FormItem>
-        <Button type="primary" htmlType="submit">执行</Button>
+        { props.children }
       </FormItem>
     </Form>
   )
 }
 
-export default Form.create()(ArticleAdd)
+export default BlogFormComponent

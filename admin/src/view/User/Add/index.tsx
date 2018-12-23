@@ -2,10 +2,11 @@ import * as React from 'react'
 import { Form, Input, Icon, Button, Radio, message  } from 'antd';
 import { IUser } from './index.interface'
 import http from '@tools/http'
+import { IForm } from '@interface/common'
 
 const RadioGroup = Radio.Group
 const FormItem = Form.Item
-function UserAdd(props: any) {
+function UserAdd(props: IForm) {
   const userAdd = async (values: IUser) => {
     const res: any = await http.post('/users', values)
     message.success(res)
@@ -59,7 +60,7 @@ function UserAdd(props: any) {
         )}
       </FormItem>
       <FormItem>
-        <Button type="primary" htmlType="submit">登入</Button>
+        <Button type="primary" htmlType="submit">添加</Button>
       </FormItem>
     </Form>
   )

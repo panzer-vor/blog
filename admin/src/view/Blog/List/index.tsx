@@ -1,14 +1,15 @@
 import * as React from 'react'
-import { Table, Button, message } from 'antd';
-import { IArticle, IArticleRecords } from './index.interface'
+import { Table, Button, message, Tag } from 'antd';
+import { IArticle, IArticleRecords, IArticleFormat } from './index.interface'
 import http from '@tools/http'
 import { useMappedState } from 'redux-react-hook'
+import { RouteComponentProps } from 'react-router'
 
 const { useEffect, useState } = React
 const mapState = (state: any) => ({
   user: state.user,
 })
-export default function UserList() {
+export default function ArticleList(props: RouteComponentProps) {
   const { user } = useMappedState(mapState)
   const [articleList, setArticleList] = useState<IArticle[]>([])
   const [startPage, setStartPage] = useState<number>(1)
@@ -47,26 +48,38 @@ export default function UserList() {
       title: '访问权限',
     },
     {
+      dataIndex: 'tags',
+      key: 'tags',
+      title: '标签',
+    },
+    {
       dataIndex: 'action',
       key: 'action',
       title: '操作',
     }
   ]
-  const deleteUser = (id: number) => {
+  const deleteArticle = (id: number) => {
     return async () => {
-      const res = await http.delete(`/users/${id}`)
+      const res = await http.delete(`/articles/${id}`)
       message.success(res)
       getArticleList()
     }
   }
+  const linkToEdit = (id: number) => {
+    return () => {
+      console.log(props)
+      props.history.push(`/blog/edit/${id}`)
+    }
+  }
   const action = (id: number) => {
+    const EditButton = <Button type="primary" key="edit" onClick={linkToEdit(id)}>编辑</Button>
     if (user.role === 1) {
       return [
-        <Button type="primary" key="edit">编辑</Button>,
-        <Button type="danger" onClick={deleteUser(id)} key="delete" style={{marginLeft: '10px'}}>删除</Button>,
+        EditButton,
+        <Button type="danger" onClick={deleteArticle(id)} key="delete" style={{marginLeft: '10px'}}>删除</Button>,
       ]
     }
-    return <Button type="primary" key="edit">编辑</Button>
+    return EditButton
   }
   const initDataSource = () => {
     return articleList
@@ -74,10 +87,10 @@ export default function UserList() {
         action: action(a.id),
         ...a,
         key: a.id,
-      })
-    )
+        tags: a.tags.map(tag => tag ? <Tag key={tag.code}>{tag.name}</Tag> : <Tag />)
+      }))
   }
-  const descRender = (record: IArticle) => {
+  const descRender = (record: IArticleFormat) => {
     return <p style={{ margin: 0 }}>简介: {record.desc}</p>
   }
   const pageChange = (page: number) => {

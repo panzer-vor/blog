@@ -14,12 +14,14 @@ export class UserController {
   async getUsers(): Promise<IUserRecord>{
     return this.userService.getUsers();
   }
+
   @Delete(':id')
   @UseGuards(AuthGuard())
   @Roles(1)
   async DeleteUsers(@Param() params): Promise<IUserRecord> {
     return this.userService.deleteUsers(params.id);
   }
+
   @Post()
   @UseGuards(AuthGuard())
   @Roles(1)
