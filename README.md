@@ -1,3 +1,5 @@
 # blog
 
-react-hook nest.js 
+admin: react-hook redux antd 
+server: nestjs
+web: angular
