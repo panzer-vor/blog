@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Tree, Modal, Input, Button } from 'antd'
+import { Tree, Modal, Input, Button, message } from 'antd'
 import http from '@tools/http'
 import { ITag } from './index.interface'
 
@@ -29,10 +29,30 @@ function TagManage() {
     setInputValue('')
     setSelectedKey(0)
   }
-  const ModalOkEvent = () => {
-    console.log(selectedKey)
+  const ModalOkEvent = async () => {
+    if (selectedKey) {
+      const res = await http.patch('/articles/tag', {
+        code: selectedKey,
+        name: inputValue,
+      })
+      message.success(res)
+      getTags()
+    } else {
+      const res = await http.post('/articles/tag', {
+        name: inputValue,
+      })
+      message.success(res)
+      getTags()
+    }
+    ModalCancelEvent()
   }
   const onInputChange = (e: any) => setInputValue(e.target.value)
+  const deleteTagEvent = async () => {
+    const res = await http.delete(`/articles/tag/${selectedKey}`)
+    message.success(res)
+    ModalCancelEvent()
+    getTags()
+  }
   return (
     <div>
       <Button onClick={showModal}>添加标签</Button>
@@ -51,7 +71,12 @@ function TagManage() {
         onOk={ModalOkEvent}
         onCancel={ModalCancelEvent}
       >
-        <Input value={inputValue} onChange={onInputChange} />
+        <Input 
+          style={{width: '60%'}}
+          value={inputValue} 
+          onChange={onInputChange} 
+        />
+        <Button type="danger" style={{marginLeft: '30px'}} onClick={deleteTagEvent}>删除标签</Button>
       </Modal>
     </div>
     

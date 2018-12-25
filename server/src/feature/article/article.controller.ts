@@ -2,7 +2,7 @@ import { Get, Controller, UseGuards, Delete, Param, Post, Body, Patch } from '@n
 import { AuthGuard } from '@nestjs/passport';
 import { ArticleService } from './article.service';
 import { IArticleRecord, ITagRecord } from './article.interface';
-import { AddArticleDto, UpdateArticleDto } from './vail/article.dto';
+import { AddArticleDto, UpdateArticleDto, UpdateTagDto, AddTagDto } from './vail/article.dto';
 import { ValidationPipe } from '@vail';
 import { Roles } from '@roles';
 import { IHttpRecord } from '@interface/record.interface';
@@ -57,5 +57,26 @@ export class ArticleController {
   @Roles(2)
   async UpdateArticle(@Body(new ValidationPipe()) body: UpdateArticleDto): Promise<IArticleRecord> {
     return this.articleService.updateArticle(body);
+  }
+
+  @Patch('tag')
+  @UseGuards(AuthGuard())
+  @Roles(2)
+  async UpdateTag(@Body(new ValidationPipe()) body: UpdateTagDto): Promise<ITagRecord> {
+    return this.articleService.updateTag(body);
+  }
+
+  @Post('tag')
+  @UseGuards(AuthGuard())
+  @Roles(2)
+  async AddTag(@Body(new ValidationPipe()) body: AddTagDto): Promise<ITagRecord> {
+    return this.articleService.addTag(body);
+  }
+
+  @Delete('tag/:code')
+  @UseGuards(AuthGuard())
+  @Roles(2)
+  async DeleteTag(@Param('code') code): Promise<ITagRecord> {
+    return this.articleService.deleteTag(code);
   }
 }

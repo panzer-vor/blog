@@ -31,3 +31,16 @@ export class UpdateArticleDto {
   @IsInt()
   readonly id: number;
 }
+
+export class UpdateTagDto {
+  @IsString()
+  readonly name: string;
+
+  @IsInt()
+  readonly code: number;
+}
+
+export class AddTagDto {
+  @IsString()
+  readonly name: string;
+}

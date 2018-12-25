@@ -16,16 +16,17 @@ class Http {
   private static reactHistory: any = null
   private static instance: Http | null = null
   constructor() {
+    const adminToken = localStorage.getItem('admin_token')
     axios.defaults.baseURL = baseUri
     axios.interceptors.request.use(
       config => {
         config.headers = {
-          "Authorization": `Bearer ${localStorage.getItem('admin_token')}`,
+          "Authorization": adminToken ? `Bearer ${adminToken}` : '',
           'Content-Type':'application/json',
         }
         return config;
       },
-      error => {
+      (error) => {
         return Promise.reject(error);
       }
     )
@@ -61,7 +62,7 @@ class Http {
             resolve(response.data.records)
           } else {
             message.error(response.data.records)
-            this.handleHttpCode(response.status, reject)
+            this.handleHttpCode(response.data.status, reject)
           }
         })
         .catch((err: Error) => {
@@ -79,13 +80,20 @@ class Http {
   private handleHttpCode(code: number, reject: () => void) {
     const { reactHistory } = Http
     switch (code) {
-      case 403:
+      case 1001:
+      case 1002:
         if (reactHistory) {
           reactHistory.push('/login')
         } else {
           window.location.href = '/login'
         }
         break
+      case 1003:
+        if (reactHistory) {
+          reactHistory.goBack()
+        } else {
+          window.history.go(-1)
+        }
       default:
         reject()
     }

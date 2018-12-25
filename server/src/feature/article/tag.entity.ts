@@ -3,14 +3,13 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity('t_tag')
 export class TagEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  code: number;
 
   @Column()
   name: string;
 
-  @Column()
-  code: number;
-
-  @Column()
+  @Column({
+    default: 0
+  })
   pcode: number;
 }

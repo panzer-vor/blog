@@ -23,10 +23,42 @@ export class ArticleService {
       name: v.name,
       code: v.code,
     }));
-
     return {
       success: true,
       records: tagsInfoFormat,
+    };
+  }
+  async updateTag(body): Promise<ITagRecord> {
+    const tagRow = await this.tagRepository.findOne({ code: body.code });
+    const updateData = {
+      name: body.name,
+      code: body.code,
+    };
+    await this.tagRepository.update(tagRow, updateData);
+    return {
+      success: true,
+      records: '修改成功',
+    };
+  }
+  async deleteTag(code): Promise<ITagRecord> {
+    const tag = await this.tagRepository.findOne({ code });
+    await this.tagRepository.remove(tag);
+    const articleTag = await this.articleTagRepository.find({
+      tagCode: code,
+    });
+    await this.articleTagRepository.remove(articleTag);
+    return {
+      success: true,
+      records: '删除成功',
+    };
+  }
+  async addTag(body): Promise<ITagRecord> {
+    const tagRow = new TagEntity();
+    tagRow.name = body.name;
+    await this.tagRepository.save(tagRow);
+    return {
+      success: true,
+      records: '添加成功',
     };
   }
   async getArticle(id): Promise<IHttpRecord<any>> {

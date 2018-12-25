@@ -1,8 +1,9 @@
-import { Injectable, CanActivate, ExecutionContext, Request } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import { Injectable, CanActivate, ExecutionContext, HttpStatus } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import * as jwt from 'jsonwebtoken';
 import { jwtConfig } from '@config';
+import { ApiException } from '../exception/api.exception';
+import { ApiErrorCode } from '../exception/api-error-codes';
 
 @Injectable()
 export class RolesGuard implements CanActivate {
@@ -10,25 +11,21 @@ export class RolesGuard implements CanActivate {
       private readonly reflector: Reflector,
   ) { }
   canActivate(
-      context: ExecutionContext,
+    context: ExecutionContext,
   ): boolean {
     const req = context.switchToHttp().getRequest();
     const roles = this.reflector.get<string[]>('roles', context.getHandler());
-
-    if (roles) { // roles参数为空代表不需要权限验证
-      if (!req.headers.authorization) {
-        return false;
+    if (!req.headers.authorization) {
+      throw new ApiException('用户未登入', ApiErrorCode.USER_NEED_LOGIN, HttpStatus.OK);
+    }
+    const token = (req.headers.authorization as string).split(' ')[1];
+    try {
+      const decoded: any = jwt.verify(token, jwtConfig.secretOrKey);
+      if (roles && roles[0] < decoded.role) {
+        throw new ApiException('用户权限不足', ApiErrorCode.USER_INSUFFICIENT_PERMISSIONS, HttpStatus.BAD_REQUEST);
       }
-      const token = (req.headers.authorization as string).split(' ')[1];
-      try {
-        const decoded: any = jwt.verify(token, jwtConfig.secretOrKey);
-        if (roles[0] < decoded.role) {
-          return false;
-        }
-      } catch (err) {
-        return false;
-      }
-      return true;
+    } catch (err) {
+      throw new ApiException('用户登入超时或登入证书无效', ApiErrorCode.USER_LOGIN_EXPIRE, HttpStatus.BAD_REQUEST);
     }
     return true;
   }
