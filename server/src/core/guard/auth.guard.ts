@@ -2,8 +2,8 @@ import { Injectable, CanActivate, ExecutionContext, HttpStatus } from '@nestjs/c
 import { Reflector } from '@nestjs/core';
 import * as jwt from 'jsonwebtoken';
 import { jwtConfig } from '@config';
-import { ApiException } from '../exception/api.exception';
-import { ApiErrorCode } from '../exception/api-error-codes';
+import { ApiException } from '@exception/api.exception';
+import { ApiErrorCode } from '@exception/api-error-codes';
 
 @Injectable()
 export class RolesGuard implements CanActivate {

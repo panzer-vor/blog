@@ -21,7 +21,8 @@
       "@roles": ["src/core/decorator/roles.decorator.ts"],
       "@guard/*": ["src/core/guard/*"],
       "@config": ["src/config/globalConfig.ts"],
-      "@interface/*": ["src/shared/interface/*"]
+      "@interface/*": ["src/shared/interface/*"],
+      "@exception/*": ["src/core/exception/*"]
     }
   },
   "include": [
