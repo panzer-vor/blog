@@ -11,6 +11,7 @@ export class UserController {
 
   @Get()
   @UseGuards(AuthGuard())
+  @Roles(10)
   async getUsers(): Promise<IUserRecord>{
     return this.userService.getUsers();
   }

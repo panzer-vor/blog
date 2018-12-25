@@ -11,6 +11,7 @@ export class AuthController {
   constructor(private readonly authService: AuthService) { }
   @Patch()
   @HttpCode(HttpStatus.OK)
+  @Roles(10)
   async login(@Body(new ValidationPipe()) loginUserDto: LoginUserDto): Promise<ILoginRecord> {
     return this.authService.signIn(loginUserDto);
   }
