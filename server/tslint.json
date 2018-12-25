@@ -13,6 +13,7 @@
             true,
             "single"
         ],
+        "trailing-comma": false,
         "indent": false,
         "member-access": [
             false

@@ -4,7 +4,8 @@ import { TagEntity } from './tag.entity';
 import { ArticleTagEntity } from './article-tag.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { IPageOptions, IArticleRecord } from './article.interface';
+import { IQueryOptions, IArticleRecord, IArticleUpdate, ITagRecord } from './article.interface';
+import { IHttpRecord } from '@interface/record.interface';
 
 @Injectable()
 export class ArticleService {
@@ -16,23 +17,81 @@ export class ArticleService {
     @InjectRepository(ArticleTagEntity)
     private readonly articleTagRepository: Repository<ArticleTagEntity>,
   ) { }
-  async getArticles(pageOption: IPageOptions): Promise<IArticleRecord> {
-    const { size, start } = pageOption;
-    const pageOffset = start < 1 ? 0 : (start - 1) * size;
-    const articles = await this.articleRepository
-      .createQueryBuilder('article')
+  async getTags(): Promise<ITagRecord> {
+    const tagsInfo = await this.tagRepository.find();
+    const tagsInfoFormat = tagsInfo.map(v => ({
+      name: v.name,
+      code: v.code,
+    }));
+
+    return {
+      success: true,
+      records: tagsInfoFormat,
+    };
+  }
+  async getArticle(id): Promise<IHttpRecord<any>> {
+    const article = await this.articleRepository
+      .createQueryBuilder('a')
       .select(
         [
-          'article.id',
-          'article.accessCount',
-          'article.cover',
-          'article.title',
-          'article.desc',
-          'article.createTime',
-          'article.accessAuthority',
+          'a.cover',
+          'a.title',
+          'a.desc',
+          'a.accessAuthority',
+          'a.article'
         ],
       )
-      .orderBy('article.createTime', 'DESC')
+      .where(`a.id = ${id}`)
+      .getMany();
+    const tags = await this.tagRepository.find();
+    const articleTags = await this.articleTagRepository.find({ articleId: id });
+    const articleTagsFormat = articleTags.map(v => {
+      for (const k of tags) {
+        if (k.code === v.tagCode) {
+          return {
+            ...v,
+            name: k.name,
+          };
+        }
+      }
+    });
+    const articleData = {
+      ...article[0],
+      tags: [],
+    };
+    for (const tag of articleTagsFormat) {
+      articleData.tags.push({
+        code: tag.tagCode,
+        name: tag.name,
+      });
+    }
+    return {
+      success: true,
+      records: articleData,
+    };
+  }
+  async getArticles(option: IQueryOptions): Promise<IArticleRecord> {
+    const { size, start, keyword = '' } = option;
+    const pageOffset = start < 1 ? 0 : (start - 1) * size;
+    const articles = await this.articleRepository
+      .createQueryBuilder('a')
+      .select(
+        [
+          'a.id',
+          'a.accessCount',
+          'a.cover',
+          'a.title',
+          'a.desc',
+          'a.createTime',
+          'a.accessAuthority',
+        ],
+      )
+      .leftJoinAndSelect('t_article_tag', 'at', 'at.articleId = a.id')
+      .leftJoin('t_tag', 't', 't.code = at.tagCode')
+      .where(`a.title LIKE '%${keyword}%'`)
+      .orWhere(`a.desc LIKE '%${keyword}%'`)
+      .orWhere(`t.name LIKE '%${keyword}%'`)
+      .orderBy('a.createTime', 'DESC')
       .limit(size)
       .offset(pageOffset)
       .getManyAndCount();
@@ -83,25 +142,61 @@ export class ArticleService {
     article,
     title,
     accessAuthority,
-    desc,
+    desc = '',
+    tagCodes = [],
   }): Promise<IArticleRecord> {
     const articleRow = new ArticleEntity();
     articleRow.article = article;
     articleRow.title = title;
     articleRow.accessAuthority = accessAuthority;
     articleRow.desc = desc;
-    await this.articleRepository.save(articleRow);
+    const savedArticle = await this.articleRepository.save(articleRow);
+    for (const code of tagCodes) {
+      const articleTagRow = new ArticleTagEntity();
+      articleTagRow.articleId = savedArticle.id;
+      articleTagRow.tagCode = Number(code);
+      await this.articleTagRepository.save(articleTagRow);
+    }
     return {
       success: true,
       records: '添加成功',
     };
   }
-  async deleteArticle(id): Promise<IArticleRecord> {
+  async deleteArticle(id: number): Promise<IArticleRecord> {
     const article = await this.articleRepository.findOne({ id });
     await this.articleRepository.remove(article);
+    const articleTag = await this.articleTagRepository.find({
+      articleId: id,
+    });
+    await this.articleTagRepository.remove(articleTag);
     return {
       success: true,
       records: '删除成功',
+    };
+  }
+  async updateArticle(body: IArticleUpdate): Promise<IArticleRecord> {
+    const articleRow = await this.articleRepository.findOne({ id: body.id });
+    const updateData = {
+      article: body.article,
+      title: body.title,
+      desc: body.desc,
+      accessAuthority: body.accessAuthority,
+    };
+    const { id, tagCodes } = body;
+    await this.articleRepository.update(articleRow, updateData);
+    const articleTag = await this.articleTagRepository.find({
+      articleId: id,
+    });
+    await this.articleTagRepository.remove(articleTag);
+    for (const code of tagCodes) {
+      const articleTagRow = new ArticleTagEntity();
+      articleTagRow.articleId = id;
+      articleTagRow.tagCode = Number(code);
+      await this.articleTagRepository.save(articleTagRow);
+    }
+    return {
+      success: true,
+      records: '修改成功',
     };
   }
 }

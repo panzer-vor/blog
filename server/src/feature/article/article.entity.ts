@@ -11,7 +11,9 @@ export class ArticleEntity {
   @Column()
   article: string;
 
-  @Column()
+  @Column({
+    default: 0,
+  })
   accessCount: number;
 
   @Column()
@@ -21,8 +23,10 @@ export class ArticleEntity {
   desc: string;
 
   @Column('int')
-  accessAuthority: string;
+  accessAuthority: number;
 
-  @Column()
+  @Column({
+    default: '',
+  })
   cover: string;
 }

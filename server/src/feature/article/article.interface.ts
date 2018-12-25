@@ -9,9 +9,10 @@ export interface IArticleRecord extends IHttpRecord<ArticleEntity[]> {
   };
 }
 
-export interface IPageOptions {
+export interface IQueryOptions {
   size: number;
   start: number;
+  keyword?: string;
 }
 
 export interface IArticleRecordWithTag {
@@ -25,7 +26,20 @@ export interface IArticleRecordWithTag {
   tags: ITagInfo[] | never[];
 }
 
+export interface IArticleUpdate {
+  id: number;
+  article: string;
+  title: string;
+  desc?: string;
+  accessAuthority: number;
+  tagCodes?: string[];
+}
+
 interface ITagInfo {
   code: number;
   name: string;
+}
+
+export interface ITagRecord extends IHttpRecord<ArticleEntity[]> {
+  records: string | ITagInfo[];
 }

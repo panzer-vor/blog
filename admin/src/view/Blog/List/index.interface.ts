@@ -16,7 +16,7 @@ export interface IArticleRecords {
   startPage: number
 }
 
-interface ITags {
+export interface ITags {
   code: number
   name: string
 }
@@ -30,4 +30,3 @@ export interface IArticleFormat {
   tags: JSX.Element[] | null[]
   key: number
 }
-

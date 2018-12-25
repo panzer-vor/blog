@@ -37,6 +37,13 @@ export default [
         name: '文章添加',
         path: '/blog/add',
       },
+      {
+        component: asyncComponent(() => import('@view/Blog/Tag/index')),
+        exact: true,
+        key: 'BlogTag',
+        name: '标签管理',
+        path: '/blog/tag'
+      }
     ],
     key: 'Blog',
     title: '文章管理',
