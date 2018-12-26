@@ -9,5 +9,5 @@ async function bootstrap() {
   app.useGlobalGuards(new RolesGuard(new Reflector()));
   app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen(7001);
-}
+}  
 bootstrap();
