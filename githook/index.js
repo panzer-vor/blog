@@ -41,7 +41,4 @@ function init() {
   // rumCommand('sh', ['../client/autoClient.sh'], '../client' ,function( result ) { // server端更新
   //   console.log(result)
   // })
- 
 }
-
-init()
