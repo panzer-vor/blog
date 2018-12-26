@@ -4,7 +4,6 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FeatureModule } from './feature/feature.module';
 import { dbConfig } from '@config';
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
