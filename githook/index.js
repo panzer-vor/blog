@@ -30,10 +30,9 @@ function rumCommand( cmd, args, cwd, callback ) {
 }
 
 function init() {
-  console.log(111111)
-  // rumCommand('sh', ['../clean.sh'], './' ,function( result ) { // 清理缓存
-  //   console.log(result)
-  // })
+  rumCommand('sh', ['./deloy.sh'], './' ,function( result ) { // 清理缓存
+    console.log(result)
+  })
 
   // rumCommand('sh', ['../server/autoServer.sh'], '../server' ,function( result ) { // cLient端更新
   //   console.log(result)
