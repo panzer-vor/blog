@@ -22,7 +22,7 @@ handler.on('push', function (event) {
     event.payload.ref)
     init() // 每次拉取都重新监听
 }
-) 
+)  
 function rumCommand( cmd, args, cwd, callback ) {
   var child = spawn( cmd, args, {cwd: cwd} )
   var response = ''
