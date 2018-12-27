@@ -35,6 +35,7 @@
     "jest",
     "src/setupTests.ts",
     "config",
-    "test"
+    "test",
+    "admin"
   ]
 }
