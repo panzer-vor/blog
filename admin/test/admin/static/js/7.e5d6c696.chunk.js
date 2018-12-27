@@ -1,2 +1,0 @@
-webpackJsonp([7],{349:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var u=t(0);t.n(u);n.default=function(){return u.createElement("div",null,"Tanpopo\u535a\u5ba2")}}});
-//# sourceMappingURL=7.e5d6c696.chunk.js.map

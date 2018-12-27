@@ -55,6 +55,7 @@
     "build:dev": "node scripts/build.dev.js",
     "test": "node scripts/test.js --env=jsdom"
   },
+  "homepage": "/test/admin",
   "devDependencies": {
     "@types/jest": "^23.3.10",
     "@types/node": "^10.12.12",
