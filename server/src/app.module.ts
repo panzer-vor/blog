@@ -20,5 +20,6 @@ import { dbConfig } from '@config';
   ],
   controllers: [AppController],
   providers: [AppService],
+  
 })
 export class AppModule {}
