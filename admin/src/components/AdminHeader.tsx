@@ -39,7 +39,7 @@ const AdminHeader = (props: RouteComponentProps) => {
           position: 'absolute',
           right: 0,
         }}
-      >欢迎 <b> { user.username }</b></span>
+      >欢迎 <b> { user.username || '' }</b></span>
     </Row>
   )
 }

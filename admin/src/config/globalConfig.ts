@@ -8,7 +8,6 @@ let globalConfig = {
     baseUri: "",
   }
 }
-console.log('ENV', ENV)
 switch (ENV) {
   case 'test':
     globalConfig = testConfig
