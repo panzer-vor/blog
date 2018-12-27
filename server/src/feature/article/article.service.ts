@@ -5,7 +5,7 @@ import { ArticleTagEntity } from './article-tag.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { IQueryOptions, IArticleRecord, IArticleUpdate, ITagRecord } from './article.interface';
-import { IHttpRecord } from '@interface/record.interface';
+import { IHttpRecord } from '../../shared/interface/record.interface';
 
 @Injectable()
 export class ArticleService {

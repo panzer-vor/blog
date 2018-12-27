@@ -1,13 +1,17 @@
-const devConfig = {
+const proConfig = {
   dbConfig: {
-    type: 'mysql',
-    port: 3306,
-    host: 'tanpopo.cc',
+    host: 'cdb-3xqkbo6d.gz.tencentcdb.com',
+    port: 10052,
     username: 'root',
     password: 'Xyk@0279',
-    database: 'bolg_test',
-    entities: ['src/**/**/**.entity{.ts,.js}'],
-    synchronize: true,
+    database: 'tanpopo',
+    entities: ['dist/**/**/**.entity{.js}'],
+  },
+  jwtConfig: {
+    secretOrKey: 'secretKey',
+    signOptions: {
+      expiresIn: 360000,
+    },
   },
 };
-export default devConfig;
+export default proConfig;

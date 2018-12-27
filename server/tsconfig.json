@@ -12,19 +12,6 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "paths": {
-      "@auth/*": ["src/feature/auth/*"],
-      "@user/*": ["src/feature/user/*"],
-      "@article/*": ["src/feature/article/*"],
-      "@pipe/*": ["src/core/pipe/*"],
-      "@vail": ["src/core/pipe/vaildation.pipe.ts"],
-      "@roles": ["src/core/decorator/roles.decorator.ts"],
-      "@guard/*": ["src/core/guard/*"],
-      "@config": ["src/config/globalConfig.ts"],
-      "@interface/*": ["src/shared/interface/*"],
-      "@exception/*": ["src/core/exception/*"],
-      "@config": ["src/config/globalConfig.ts"]
-    }
   },
   "include": [
     "src/**/*"

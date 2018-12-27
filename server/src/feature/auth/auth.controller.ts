@@ -1,9 +1,9 @@
 import { Controller, Get, UseGuards, HttpStatus, HttpCode, Patch, Body, UseInterceptors, Req } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthGuard } from '@nestjs/passport';
-import { ValidationPipe } from '@vail';
-import { LoginUserDto } from '@user/vail/user.dto';
-import { Roles } from '@roles';
+import { ValidationPipe } from '../../core/pipe/vaildation.pipe';
+import { LoginUserDto } from '../user/vail/user.dto';
+import { Roles } from '../../core/decorator/roles.decorator';
 import { ILoginRecord } from './auth.interface';
 @UseInterceptors()
 @Controller('auth')

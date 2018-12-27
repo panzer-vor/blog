@@ -3,25 +3,28 @@ import { AuthGuard } from '@nestjs/passport';
 import { ArticleService } from './article.service';
 import { IArticleRecord, ITagRecord } from './article.interface';
 import { AddArticleDto, UpdateArticleDto, UpdateTagDto, AddTagDto } from './vail/article.dto';
-import { ValidationPipe } from '@vail';
-import { Roles } from '@roles';
-import { IHttpRecord } from '@interface/record.interface';
+import { ValidationPipe } from '../../core/pipe/vaildation.pipe';
+import { Roles } from '../../core/decorator/roles.decorator';
+import { IHttpRecord } from '../../shared/interface/record.interface';
 
 @Controller('articles')
 export class ArticleController {
   constructor(private readonly articleService: ArticleService) {}
 
   @Get('tags')
+  @Roles(10)
   async getTags(): Promise<ITagRecord> {
     return this.articleService.getTags();
   }
 
   @Get('/:id')
+  @Roles(10)
   async getArticle(@Param('id') id): Promise<IHttpRecord<any>> {
     return this.articleService.getArticle(id);
   }
 
   @Get('/:size/:start')
+  @Roles(10)
   async getArticles(@Param('size') size, @Param('start') start): Promise<IArticleRecord>{
     return this.articleService.getArticles({
       size: Number(size),
@@ -30,6 +33,7 @@ export class ArticleController {
   }
 
   @Get('/:size/:start/:keyword')
+  @Roles(10)
   async getArticlesByKeyword(@Param('size') size, @Param('start') start, @Param('keyword') keyword): Promise<IArticleRecord>{
     return this.articleService.getArticles({
       size: Number(size),

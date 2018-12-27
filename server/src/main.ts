@@ -1,6 +1,6 @@
 import { NestFactory, Reflector  } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { RolesGuard } from '@guard/auth.guard';
+import { RolesGuard } from './core/guard/auth.guard';
 import { HttpExceptionFilter } from './core/exception/HTTP-exception.filter';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
