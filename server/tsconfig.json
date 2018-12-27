@@ -22,7 +22,8 @@
       "@guard/*": ["src/core/guard/*"],
       "@config": ["src/config/globalConfig.ts"],
       "@interface/*": ["src/shared/interface/*"],
-      "@exception/*": ["src/core/exception/*"]
+      "@exception/*": ["src/core/exception/*"],
+      "@config": ["src/config/globalConfig.ts"]
     }
   },
   "include": [
