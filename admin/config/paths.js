@@ -37,11 +37,10 @@ function getServedPath(appPackageJson) {
     (publicUrl ? url.parse(publicUrl).pathname : '/');
   return ensureSlash(servedUrl, true);
 }
-
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
-  appBuild: resolveApp('admin'),
+  appBuild: resolveApp(process.env.NODE_ENV === 'test' ? 'test/admin' : 'admin'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
   appIndexJs: resolveApp('src/index.tsx'),
