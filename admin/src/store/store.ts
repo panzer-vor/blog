@@ -5,7 +5,10 @@ import { IState } from '@interface/state'
 
 export const initialState: IState = {
   globalLoading: false,
-  user: null,
+  user: {
+    role: 10,
+    username: '',
+  },
 }
 
 const cacheState = loadState()
