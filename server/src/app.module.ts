@@ -17,6 +17,7 @@ import { dbConfig } from '@config';
       synchronize: true,
     }),
     FeatureModule,
+    
   ],
   controllers: [AppController],
   providers: [AppService],
