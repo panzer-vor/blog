@@ -1,6 +1,6 @@
 const testConfig = {
   httpConfig: {
-    baseUri: 'http://129.204.58.4:443/test/api',
+    baseUri: 'http://www.tanpopo.cc/test/api',
   },
   options: {
     env: 'test',
