@@ -6,6 +6,7 @@ interface IRouterConfig {
   component: any
   exact: boolean
   key: string
+  marryPath: string
   name: string
   path: string
 }
@@ -21,7 +22,7 @@ export default () => <Switch>
     routes.map((v: IRouterConfig) => <Route 
       key={v.key}
       exact={v.exact ? true : false}
-      path={v.path}
+      path={v.marryPath || v.path}
       component={v.component}
     />)
   }
