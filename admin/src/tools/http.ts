@@ -24,7 +24,9 @@ class Http {
           "Authorization": adminToken ? `Bearer ${adminToken}` : '',
           'Content-Type':'application/json',
         }
-        config.withCredentials = true 
+        if (options.env !== 'development') {
+          config.withCredentials = true 
+        }
         return config;
       },
       (error) => {
@@ -68,6 +70,8 @@ class Http {
         })
         .catch((err: Error) => {
           message.error(`${err}`)
+          // const { reactHistory } = Http
+          // reactHistory.push(`${options.routerUri}404`)
           reject(err)
         })
         .finally(() => {
@@ -86,7 +90,7 @@ class Http {
         if (reactHistory) {
           reactHistory.push(`${options.routerUri}/login`)
         } else {
-          window.location.href = '/login'
+          window.location.href = `${options.routerUri}/login`
         }
         break
       case 1003:

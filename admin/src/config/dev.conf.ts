@@ -3,7 +3,8 @@ const devConfig = {
     baseUri: 'http://localhost:7001/api',
   },
   options: {
-    routerUri: '/'
+    env: 'development',
+    routerUri: '/',
   }
 }
 export default devConfig

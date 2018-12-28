@@ -8,7 +8,8 @@ let globalConfig = {
     baseUri: '',
   },
   options: {
-    routerUri: ''
+    env: '',
+    routerUri: '',
   }
 }
 switch (ENV) {

@@ -3,7 +3,8 @@ const proConfig = {
     baseUri: 'http://localhost:7001/api',
   },
   options: {
-    routerUri: '/admin'
+    env: 'production',
+    routerUri: '/admin/',
   }
 }
 

@@ -3,7 +3,8 @@ const testConfig = {
     baseUri: 'http://129.204.58.4:443/test/api',
   },
   options: {
-    routerUri: '/test/admin'
+    env: 'test',
+    routerUri: '/test/admin/',
   }
 }
 
