@@ -1,4 +1,4 @@
-import { httpConfig } from '@config'
+import { httpConfig, options } from '@config'
 import { message } from 'antd'
 import axios from 'axios'
 
@@ -83,7 +83,7 @@ class Http {
       case 1001:
       case 1002:
         if (reactHistory) {
-          reactHistory.push('/login')
+          reactHistory.push(`${options.routerUri}/login`)
         } else {
           window.location.href = '/login'
         }

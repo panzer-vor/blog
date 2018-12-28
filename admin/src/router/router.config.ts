@@ -1,5 +1,7 @@
 import asyncComponent from '@components/AsyncComponents'
+import { options } from '@config'
 
+const { routerUri } = options
 export default [
   {
     children: [
@@ -8,14 +10,14 @@ export default [
         exact: true,
         key: 'UserList',
         name: '用户列表',
-        path: '/user/list',
+        path: `${routerUri}/user/list`,
       },
       {
         component: asyncComponent(() => import('@view/User/Add/index')),
         exact: true,
         key: 'UserAdd',
         name: '用户添加',
-        path: '/user/add',
+        path: `${routerUri}/user/add`,
       }
     ],
     key: 'User',
@@ -28,21 +30,21 @@ export default [
         exact: true,
         key: 'BlogList',
         name: '文章列表',
-        path: '/blog/list',
+        path: `${routerUri}/blog/list`,
       },
       {
         component: asyncComponent(() => import('@view/Blog/Add/index')),
         exact: true,
         key: 'BlogAdd',
         name: '文章添加',
-        path: '/blog/add',
+        path: `${routerUri}/blog/add`,
       },
       {
         component: asyncComponent(() => import('@view/Blog/Tag/index')),
         exact: true,
         key: 'BlogTag',
         name: '标签管理',
-        path: '/blog/tag'
+        path: `${routerUri}/blog/tag`,
       }
     ],
     key: 'Blog',
@@ -55,21 +57,21 @@ export default [
         exact: true,
         key: 'Home',
         name: '首页',
-        path: '/',
+        path: routerUri,
       },
       {
         component: asyncComponent(() => import('@view/Login/LoginWrapper')),
         exact: true,
         key: 'Login',
         name: '登陆',
-        path: '/login',
+        path: `${routerUri}/login`,
       },
       {
         component: asyncComponent(() => import('@view/Blog/Edit/index')),
         exact: true,
         key: 'BlogEdit',
         name: '文章编辑',
-        path: '/blog/edit/:id',
+        path: `${routerUri}/blog/edit/:id`,
       }
     ],
     key: 'Common',

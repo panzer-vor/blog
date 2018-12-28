@@ -5,7 +5,10 @@ const ENV = process.env.NODE_ENV
 
 let globalConfig = {
   httpConfig: {
-    baseUri: "",
+    baseUri: '',
+  },
+  options: {
+    routerUri: ''
   }
 }
 switch (ENV) {
@@ -21,4 +24,4 @@ switch (ENV) {
   default:
     
 }
-export const { httpConfig } = globalConfig
+export const { httpConfig, options } = globalConfig
