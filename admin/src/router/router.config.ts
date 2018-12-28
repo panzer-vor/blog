@@ -57,7 +57,7 @@ export default [
         exact: true,
         key: 'Home',
         name: '首页',
-        path: routerUri,
+        path: '/',
       },
       {
         component: asyncComponent(() => import('@view/Login/LoginWrapper')),
