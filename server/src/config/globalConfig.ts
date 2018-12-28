@@ -1,15 +1,22 @@
 import devConfig from './dev';
 import proConfig from './pro';
+import testConfig from './test';
 let config;
-if (process.env.NODE_ENV === 'dev') {
-  config = devConfig;
-} else {
-  config = proConfig;
-
-}
-if (process.env.NODE_ENV === 'prod') {
-  config = proConfig;
+const ENV = process.env.NODE_ENV;
+console.log(ENV);
+switch (ENV) {
+  case 'dev':
+    config = devConfig;
+    break;
+  case 'prod':
+    config = proConfig;
+    break;
+  case 'test':
+    config = testConfig;
+    break;
+  default:
 }
 
 export const { dbConfig } = config;
 export const { jwtConfig } = config;
+export const { options } = config;

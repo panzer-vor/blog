@@ -1,4 +1,4 @@
-const proConfig = {
+const testConfig = {
   dbConfig: {
     host: 'cdb-3xqkbo6d.gz.tencentcdb.com',
     port: 10052,
@@ -14,7 +14,7 @@ const proConfig = {
     },
   },
   options: {
-    uri: 'api'
+    uri: 'test/api'
   }
 };
-export default proConfig;
+export default testConfig;

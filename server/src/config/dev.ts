@@ -13,5 +13,8 @@ const devConfig = {
       expiresIn: 360000,
     },
   },
+  options: {
+    uri: 'api'
+  }
 };
 export default devConfig;
