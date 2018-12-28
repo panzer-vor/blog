@@ -3,7 +3,6 @@ import proConfig from './pro';
 import testConfig from './test';
 let config;
 const ENV = process.env.NODE_ENV;
-console.log(ENV);
 switch (ENV) {
   case 'dev':
     config = devConfig;

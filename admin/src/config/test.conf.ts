@@ -1,6 +1,6 @@
 const testConfig = {
   httpConfig: {
-    baseUri: 'http://localhost:7001/api',
+    baseUri: 'http://127.0.0.1:443/test/api',
   },
 }
 
