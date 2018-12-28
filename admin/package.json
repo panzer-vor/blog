@@ -66,6 +66,7 @@
     "ts-import-plugin": "^1.5.5",
     "typescript": "^3.2.2"
   },
+  "homepage": "test/admin",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
