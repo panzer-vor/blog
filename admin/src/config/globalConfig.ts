@@ -13,7 +13,6 @@ let globalConfig = {
 }
 switch (ENV) {
   case 'test':
-    console.log(testConfig.options.routerUri)
     globalConfig = testConfig
     break
   case 'production':
