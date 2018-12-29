@@ -41,7 +41,13 @@ const AdminHeader = (props: RouteComponentProps) => {
             right: 0,
           }}
         >欢迎 <b> { user.username }</b></span> :
-        <Link to={`${options.routerUri}login`}>登入账号</Link>
+        <Link 
+          to={`${options.routerUri}login`} 
+          style={{
+            position: 'absolute',
+            right: 0,
+          }}
+        >登入账号</Link>
       }
       
     </Row>

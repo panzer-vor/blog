@@ -1,6 +1,6 @@
 const proConfig = {
   httpConfig: {
-    baseUri: 'http://localhost:7001/api',
+    baseUri: 'https://localhost:7001/api',
   },
   options: {
     env: 'production',
