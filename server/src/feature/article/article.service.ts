@@ -104,7 +104,8 @@ export class ArticleService {
   }
   async getArticles(option: IQueryOptions): Promise<IArticleRecord> {
     const { size, start, keyword = '' } = option;
-    const pageOffset = start < 1 ? 0 : (start - 1) * size;
+    const pageOffset = (start - 1) * size;
+    const limitSize = size;
     const articles = await this.articleRepository
       .createQueryBuilder('a')
       .select(
@@ -118,13 +119,14 @@ export class ArticleService {
           'a.accessAuthority',
         ],
       )
-      .leftJoinAndSelect('t_article_tag', 'at', 'at.articleId = a.id')
+      .leftJoin('t_article_tag', 'at', 'at.articleId = a.id')
       .leftJoin('t_tag', 't', 't.code = at.tagCode')
       .where(`a.title LIKE '%${keyword}%'`)
       .orWhere(`a.desc LIKE '%${keyword}%'`)
       .orWhere(`t.name LIKE '%${keyword}%'`)
       .orderBy('a.createTime', 'DESC')
-      .limit(size)
+      .groupBy('a.id')
+      .limit(limitSize)
       .offset(pageOffset)
       .getManyAndCount();
     const [articleList, total] = articles;
