@@ -4,7 +4,7 @@ import { IArticle, IArticleRecords, IArticleFormat } from './index.interface'
 import http from '@tools/http'
 import { useMappedState } from 'redux-react-hook'
 import { RouteComponentProps } from 'react-router'
-import { options } from '@config'
+// import { options } from '@config'
 
 const { useEffect, useState } = React
 const mapState = (state: any) => ({
@@ -68,8 +68,7 @@ export default function ArticleList(props: RouteComponentProps) {
   }
   const linkToEdit = (id: number) => {
     return () => {
-      console.log(props)
-      props.history.push(`${options.routerUri}/blog/edit/${id}`)
+      props.history.push(`./edit/${id}`)
     }
   }
   const action = (id: number) => {

@@ -5,7 +5,7 @@ export class ToolFunc {
 
   constructor() { }
 
-  HrefTo() {
+  goto() {
     return (url) => {
       window.location.href = url
     }

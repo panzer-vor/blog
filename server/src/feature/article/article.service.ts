@@ -209,15 +209,15 @@ export class ArticleService {
     };
   }
   async updateArticle(body: IArticleUpdate): Promise<IArticleRecord> {
-    const articleRow = await this.articleRepository.findOne({ id: body.id });
+    const { id, tagCodes } = body;
     const updateData = {
+      id,
       article: body.article,
       title: body.title,
       desc: body.desc,
       accessAuthority: body.accessAuthority,
     };
-    const { id, tagCodes } = body;
-    await this.articleRepository.update(articleRow, updateData);
+    await this.articleRepository.save(updateData);
     const articleTag = await this.articleTagRepository.find({
       articleId: id,
     });

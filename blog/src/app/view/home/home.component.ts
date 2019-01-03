@@ -1,5 +1,11 @@
-import { Component, OnInit, Inject } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { HttpRequestService } from '../../utils/httpRequest.service'
+import { Router } from '@angular/router'
+
+interface IHttpRecords {
+  success: boolean
+  records: any
+}
 
 @Component({
   selector: 'app-home',
@@ -7,14 +13,30 @@ import { HttpRequestService } from '../../utils/httpRequest.service'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  public articleList = []
+  public totalSize = 0
+  public pageSize = 0
+  public startPage = 0
   constructor(
-    @Inject('BASE_HTTP_URI') private baseUri,
     private httpRequestService: HttpRequestService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
-    this.httpRequestService.httpGet(`${this.baseUri}/articles/5/1`);
+    this.getArticleList()
   }
-
+  private getArticleList() {
+    this.httpRequestService.httpGet('/articles/10/1')
+      .subscribe(
+        (val: IHttpRecords) => {
+          this.articleList = val.records.data
+          this.totalSize = val.records.total
+          this.startPage = val.records.startPage
+          this.pageSize = val.records.pageSize
+        }
+      )
+  }
+  private goto(id) {
+    this.router.navigateByUrl(`article/${id}`)
+  }
 }

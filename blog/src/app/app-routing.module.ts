@@ -16,7 +16,7 @@ const routes: Routes = [
     redirectTo: ''
   },
   {
-    path: 'article',
+    path: 'article/:id',
     component: ArticleComponent
   }
 ]

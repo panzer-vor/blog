@@ -8,19 +8,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ToolFunc } from './utils/helper'
 import { HttpRequestService } from './utils/httpRequest.service'
 import { ViewModule } from './view/view.module'
+import { MarkdownModule } from 'ngx-markdown'
+
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule.withServerTransition({
       appId: 'my-blog'
     }),
-    AppRoutingModule,
+    BrowserAnimationsModule,
     CoreModule,
     MatSidenavModule,
     MatGridListModule,
-    BrowserAnimationsModule,
+    MarkdownModule.forRoot(),
     ViewModule,
   ],
   providers: [ToolFunc, HttpRequestService],

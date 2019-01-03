@@ -1,4 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HttpRequestService } from '../../utils/httpRequest.service'
+interface IHttpRecords {
+  success: boolean
+  records: any
+}
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -7,12 +13,23 @@ import { Component, OnInit, Inject } from '@angular/core';
   ]
 })
 export class ArticleComponent implements OnInit {
-  constructor(@Inject('BASE_CONFIG') config) {
-    console.log(config)
-  }
+  public article: any = {}
+  constructor(
+    // @Inject('BASE_HTTP_URI') private baseUri,
+    private httpRequestService: HttpRequestService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    this.getArticle()
   }
-  onClick() {
+  public getArticle() {
+    const id = this.activatedRoute.snapshot.params['id']
+    this.httpRequestService.httpGet(`/articles/${id}`)
+      .subscribe(
+        (val: IHttpRecords) => {
+          this.article = val.records
+        }
+      )
   }
 }
