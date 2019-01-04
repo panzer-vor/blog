@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   httpConfig: {
-    baseUri: 'http://localhost:7001/api',
+    baseUri: 'http://localhost:7002/api',
   },
   options: {
     env: 'development',
