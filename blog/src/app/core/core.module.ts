@@ -27,7 +27,7 @@ import { AppRoutingModule } from '../app-routing.module'
   providers: [
     {
       provide: 'BASE_HTTP_URI',
-      useValue: 'http://localhost:7001/api',
+      useValue: 'http://localhost:7002/api',
     },
   ]
 })
