@@ -7,12 +7,11 @@ import { loadSvgResources } from '../utils/svg-init'
 import { DomSanitizer } from '@angular/platform-browser'
 import { MatIconRegistry } from '@angular/material'
 import { HttpClientModule } from '@angular/common/http'
-import { BannerComponent } from './banner/banner.component'
 import { SpinnerComponent } from './spinner/spinner.component'
 import { AppRoutingModule } from '../app-routing.module'
 
 @NgModule({
-  declarations: [ HeaderComponent, SidebarComponent, BannerComponent, SpinnerComponent ],
+  declarations: [ HeaderComponent, SidebarComponent, SpinnerComponent ],
   imports: [
     AppRoutingModule,
     CommonModule,
@@ -22,7 +21,7 @@ import { AppRoutingModule } from '../app-routing.module'
     MatProgressSpinnerModule,
   ],
   exports: [
-    HeaderComponent,  SidebarComponent, BannerComponent, SpinnerComponent
+    HeaderComponent,  SidebarComponent, SpinnerComponent
   ],
   providers: [
     {

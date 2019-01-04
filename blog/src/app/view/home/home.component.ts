@@ -37,6 +37,6 @@ export class HomeComponent implements OnInit {
       )
   }
   private goto(id) {
-    this.router.navigateByUrl(`article/${id}`)
+    this.router.navigateByUrl(`./article/${id}`)
   }
 }
