@@ -1,6 +1,6 @@
 const proConfig = {
   httpConfig: {
-    baseUri: 'https://localhost:7001/api',
+    baseUri: 'https://www.tanpopo.cc/api',
   },
   options: {
     env: 'production',

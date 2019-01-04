@@ -9,6 +9,6 @@ async function bootstrap() {
   app.setGlobalPrefix(options.uri);
   app.useGlobalGuards(new RolesGuard(new Reflector()));
   app.useGlobalFilters(new HttpExceptionFilter());
-  await app.listen(7001);
+  await app.listen(options.port || 7001);
 }
 bootstrap();

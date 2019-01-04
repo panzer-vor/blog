@@ -14,7 +14,8 @@ const proConfig = {
     },
   },
   options: {
-    uri: 'api'
+    uri: 'api',
+    port: 7002,
   }
 };
 export default proConfig;
