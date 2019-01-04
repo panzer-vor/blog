@@ -45,7 +45,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "deployUrl": "https://tanpopo.cc/public/",
+              "deployUrl": "https://www.tanpopo.cc/public/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
