@@ -6,5 +6,6 @@ export const environment = {
   options: {
     env: 'development',
     routerUri: 'blog',
+    assetsUri: 'https://www.tanpopo.cc/public/assets/',
   }
 }

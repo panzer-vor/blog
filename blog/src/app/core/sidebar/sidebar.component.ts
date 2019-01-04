@@ -9,6 +9,7 @@ import { environment } from '../../../environments/environment'
 })
 export class SidebarComponent implements OnInit {
   public routerUri = environment.options.routerUri
+  public assetsUri = environment.options.assetsUri
   constructor(
     private router: Router,
   ) { }

@@ -871,7 +871,7 @@ exports.RenderType_SidebarComponent = RenderType_SidebarComponent;
 function View_SidebarComponent_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 3, "div", [["class", "blog-sidebar"]], null, null, null, null, null)), (_l()(), i1.ɵeld(1, 0, null, null, 2, "a", [], [[1, "target", 0], [8, "href", 4]], [[null, "click"]], function (_v, en, $event) { var ad = true; if (("click" === en)) {
         var pd_0 = (i1.ɵnov(_v, 2).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
         ad = (pd_0 && ad);
-    } return ad; }, null, null)), i1.ɵdid(2, 671744, null, 0, i2.RouterLinkWithHref, [i2.Router, i2.ActivatedRoute, i3.LocationStrategy], { routerLink: [0, "routerLink"] }, null), (_l()(), i1.ɵeld(3, 0, null, null, 0, "img", [["alt", "logo"], ["src", "assets/images/logo.jpg"]], null, null, null, null, null))], function (_ck, _v) { var _co = _v.component; var currVal_2 = _co.routerUri; _ck(_v, 2, 0, currVal_2); }, function (_ck, _v) { var currVal_0 = i1.ɵnov(_v, 2).target; var currVal_1 = i1.ɵnov(_v, 2).href; _ck(_v, 1, 0, currVal_0, currVal_1); }); }
+    } return ad; }, null, null)), i1.ɵdid(2, 671744, null, 0, i2.RouterLinkWithHref, [i2.Router, i2.ActivatedRoute, i3.LocationStrategy], { routerLink: [0, "routerLink"] }, null), (_l()(), i1.ɵeld(3, 0, null, null, 0, "img", [["alt", "logo"]], [[8, "src", 4]], null, null, null, null))], function (_ck, _v) { var _co = _v.component; var currVal_2 = _co.routerUri; _ck(_v, 2, 0, currVal_2); }, function (_ck, _v) { var _co = _v.component; var currVal_0 = i1.ɵnov(_v, 2).target; var currVal_1 = i1.ɵnov(_v, 2).href; _ck(_v, 1, 0, currVal_0, currVal_1); var currVal_3 = (_co.assetsUri ? (_co.assetsUri + "images/logo.jpg") : "../../../assets/images/logo.jpg"); _ck(_v, 3, 0, currVal_3); }); }
 exports.View_SidebarComponent_0 = View_SidebarComponent_0;
 function View_SidebarComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-sidebar", [], null, null, null, View_SidebarComponent_0, RenderType_SidebarComponent)), i1.ɵdid(1, 114688, null, 0, i4.SidebarComponent, [i2.Router], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
 exports.View_SidebarComponent_Host_0 = View_SidebarComponent_Host_0;
@@ -920,6 +920,7 @@ var SidebarComponent = /** @class */ (function () {
     function SidebarComponent(router) {
         this.router = router;
         this.routerUri = environment_1.environment.options.routerUri;
+        this.assetsUri = environment_1.environment.options.assetsUri;
     }
     SidebarComponent.prototype.ngOnInit = function () {
     };
@@ -998,8 +999,10 @@ exports.HttpRequestService = HttpRequestService;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+var environment_1 = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+var assetsUri = environment_1.environment.options.assetsUri;
 exports.loadSvgResources = function (ir, ds) {
-    ir.addSvgIcon('github', ds.bypassSecurityTrustResourceUrl('/assets/images/icons/github.svg'));
+    ir.addSvgIcon('github', ds.bypassSecurityTrustResourceUrl((assetsUri || '../../assets/') + "images/icons/github.svg"));
 };
 
 
@@ -1319,6 +1322,7 @@ exports.environment = {
     options: {
         env: 'development',
         routerUri: 'blog',
+        assetsUri: 'https://www.tanpopo.cc/public/assets/',
     }
 };
 // export const environment = {
@@ -1328,6 +1332,7 @@ exports.environment = {
 //   options: {
 //     env: 'development',
 //     routerUri: '',
+//     assetsUri: '',
 //   }
 // };
 /*

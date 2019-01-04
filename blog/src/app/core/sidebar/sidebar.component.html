@@ -1,5 +1,5 @@
 <div class="blog-sidebar">
   <a [routerLink]="routerUri">
-    <img src="assets/images/logo.jpg" alt="logo">
+    <img [src]="assetsUri ? assetsUri + 'images/logo.jpg' : '../../../assets/images/logo.jpg'" alt="logo">
   </a>
 </div>
