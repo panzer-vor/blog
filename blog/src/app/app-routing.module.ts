@@ -9,15 +9,15 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: `${environment.httpConfig.baseUri}home`,
+    path: `${environment.httpConfig.baseUri}/home`,
     redirectTo: ''
   },
   {
-    path: `${environment.httpConfig.baseUri}index`,
+    path: `${environment.httpConfig.baseUri}/index`,
     redirectTo: ''
   },
   {
-    path: `${environment.httpConfig.baseUri}article/:id`,
+    path: `${environment.httpConfig.baseUri}/article/:id`,
     component: ArticleComponent
   }
 ]
