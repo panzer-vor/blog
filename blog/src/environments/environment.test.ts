@@ -4,6 +4,6 @@ export const environment = {
   },
   options: {
     env: 'development',
-    routerUri: '/',
+    routerUri: 'test/blog/',
   }
 };
