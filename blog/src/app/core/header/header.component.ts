@@ -13,4 +13,7 @@ export class HeaderComponent implements OnInit {
   openSidebar() {
     this.toggle.emit()
   }
+  goto() {
+    window.location.href = 'https://github.com/panzer-vor'
+  }
 }

@@ -32,4 +32,7 @@ export class ArticleComponent implements OnInit {
         }
       )
   }
+  public getTime(t) {
+    return t.split('T')[0].replace(/-/g, '/')
+  }
 }

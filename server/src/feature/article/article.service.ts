@@ -1,4 +1,4 @@
-import { Injectable, HttpException, HttpStatus, Query } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { ArticleEntity } from './article.entity';
 import { TagEntity } from './tag.entity';
 import { ArticleTagEntity } from './article-tag.entity';
@@ -61,7 +61,7 @@ export class ArticleService {
       records: '添加成功',
     };
   }
-  async getArticle(id): Promise<IHttpRecord<any>> {
+  async getArticle(id): Promise<IHttpRecord<ArticleEntity>> {
     const article = await this.articleRepository
       .createQueryBuilder('a')
       .select(
@@ -70,7 +70,8 @@ export class ArticleService {
           'a.title',
           'a.desc',
           'a.accessAuthority',
-          'a.article'
+          'a.article',
+          'a.createTime',
         ],
       )
       .where(`a.id = ${id}`)

@@ -1,5 +1,10 @@
-.ag-anim {
-  width: 100px;
-  height: 100px;
-  background-color: red;
+.blog-article {
+  padding: 20px;
+  .blog-article-title {
+    font-size: 40px;
+    span {
+      font-size: 20px;
+      color: rgb(199, 194, 194);
+    }
+  }
 }
