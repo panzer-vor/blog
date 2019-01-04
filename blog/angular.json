@@ -45,6 +45,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "deployUrl": "/blog",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,

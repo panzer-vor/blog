@@ -1,22 +1,15 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ArticleComponent } from './view/article/article.component';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
+import { ArticleComponent } from './view/article/article.component'
 import { HomeComponent } from './view/home/home.component'
+import { environment } from '../environments/environment'
 const routes: Routes = [
   {
-    path: 'blog',
+    path: `${environment.options.routerUri}`,
     component: HomeComponent,
   },
   {
-    path: 'blog/home',
-    redirectTo: '',
-  },
-  {
-    path: 'blog/index',
-    redirectTo: '',
-  },
-  {
-    path: 'blog/article/:id',
+    path: `${environment.options.routerUri}/article/:id`,
     component: ArticleComponent,
   }
 ]

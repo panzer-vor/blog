@@ -9,7 +9,7 @@ export const environment = {
   },
   options: {
     env: 'development',
-    routerUri: 'blog/',
+    routerUri: 'blog',
   }
 };
 // export const environment = {
