@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { HttpRequestService } from '../../utils/httpRequest.service'
 import { Router } from '@angular/router'
+import { environment } from '../../../environments/environment'
 
 interface IHttpRecords {
   success: boolean
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   public totalSize = 0
   public pageSize = 0
   public startPage = 0
+  public routerUri = environment.options.routerUri
   constructor(
     private httpRequestService: HttpRequestService,
     private router: Router,
@@ -37,6 +39,6 @@ export class HomeComponent implements OnInit {
       )
   }
   private goto(id) {
-    this.router.navigateByUrl(`./article/${id}`)
+    this.router.navigateByUrl(`${this.routerUri}/article/${id}`)
   }
 }

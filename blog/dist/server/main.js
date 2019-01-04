@@ -868,10 +868,10 @@ var i4 = __webpack_require__(/*! ./sidebar.component */ "./src/app/core/sidebar/
 var styles_SidebarComponent = [i0.styles];
 var RenderType_SidebarComponent = i1.ɵcrt({ encapsulation: 0, styles: styles_SidebarComponent, data: {} });
 exports.RenderType_SidebarComponent = RenderType_SidebarComponent;
-function View_SidebarComponent_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 3, "div", [["class", "blog-sidebar"]], null, null, null, null, null)), (_l()(), i1.ɵeld(1, 0, null, null, 2, "a", [["routerLink", "./home"]], [[1, "target", 0], [8, "href", 4]], [[null, "click"]], function (_v, en, $event) { var ad = true; if (("click" === en)) {
+function View_SidebarComponent_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 3, "div", [["class", "blog-sidebar"]], null, null, null, null, null)), (_l()(), i1.ɵeld(1, 0, null, null, 2, "a", [], [[1, "target", 0], [8, "href", 4]], [[null, "click"]], function (_v, en, $event) { var ad = true; if (("click" === en)) {
         var pd_0 = (i1.ɵnov(_v, 2).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
         ad = (pd_0 && ad);
-    } return ad; }, null, null)), i1.ɵdid(2, 671744, null, 0, i2.RouterLinkWithHref, [i2.Router, i2.ActivatedRoute, i3.LocationStrategy], { routerLink: [0, "routerLink"] }, null), (_l()(), i1.ɵeld(3, 0, null, null, 0, "img", [["alt", "logo"], ["src", "../../../assets/images/logo.jpg"]], null, null, null, null, null))], function (_ck, _v) { var currVal_2 = "./home"; _ck(_v, 2, 0, currVal_2); }, function (_ck, _v) { var currVal_0 = i1.ɵnov(_v, 2).target; var currVal_1 = i1.ɵnov(_v, 2).href; _ck(_v, 1, 0, currVal_0, currVal_1); }); }
+    } return ad; }, null, null)), i1.ɵdid(2, 671744, null, 0, i2.RouterLinkWithHref, [i2.Router, i2.ActivatedRoute, i3.LocationStrategy], { routerLink: [0, "routerLink"] }, null), (_l()(), i1.ɵeld(3, 0, null, null, 0, "img", [["alt", "logo"], ["src", "../../../assets/images/logo.jpg"]], null, null, null, null, null))], function (_ck, _v) { var _co = _v.component; var currVal_2 = _co.routerUri; _ck(_v, 2, 0, currVal_2); }, function (_ck, _v) { var currVal_0 = i1.ɵnov(_v, 2).target; var currVal_1 = i1.ɵnov(_v, 2).href; _ck(_v, 1, 0, currVal_0, currVal_1); }); }
 exports.View_SidebarComponent_0 = View_SidebarComponent_0;
 function View_SidebarComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-sidebar", [], null, null, null, View_SidebarComponent_0, RenderType_SidebarComponent)), i1.ɵdid(1, 114688, null, 0, i4.SidebarComponent, [i2.Router], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
 exports.View_SidebarComponent_Host_0 = View_SidebarComponent_Host_0;
@@ -915,9 +915,11 @@ exports.styles = styles;
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @angular/core */ "@angular/core");
 var router_1 = __webpack_require__(/*! @angular/router */ "@angular/router");
+var environment_1 = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
 var SidebarComponent = /** @class */ (function () {
     function SidebarComponent(router) {
         this.router = router;
+        this.routerUri = environment_1.environment.options.routerUri;
     }
     SidebarComponent.prototype.ngOnInit = function () {
     };
@@ -1242,6 +1244,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @angular/core */ "@angular/core");
 var httpRequest_service_1 = __webpack_require__(/*! ../../utils/httpRequest.service */ "./src/app/utils/httpRequest.service.ts");
 var router_1 = __webpack_require__(/*! @angular/router */ "@angular/router");
+var environment_1 = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
 var HomeComponent = /** @class */ (function () {
     function HomeComponent(httpRequestService, router) {
         this.httpRequestService = httpRequestService;
@@ -1250,6 +1253,7 @@ var HomeComponent = /** @class */ (function () {
         this.totalSize = 0;
         this.pageSize = 0;
         this.startPage = 0;
+        this.routerUri = environment_1.environment.options.routerUri;
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.getArticleList();
@@ -1265,7 +1269,7 @@ var HomeComponent = /** @class */ (function () {
         });
     };
     HomeComponent.prototype.goto = function (id) {
-        this.router.navigateByUrl("./article/" + id);
+        this.router.navigateByUrl(this.routerUri + "/article/" + id);
     };
     return HomeComponent;
 }());
