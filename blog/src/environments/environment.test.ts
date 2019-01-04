@@ -1,6 +1,6 @@
 export const environment = {
   httpConfig: {
-    baseUri: 'http://localhost:7001/api',
+    baseUri: 'https://www.tanpopo.cc/test/api',
   },
   options: {
     env: 'test',

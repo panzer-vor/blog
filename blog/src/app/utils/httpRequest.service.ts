@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment'
 
-const options: any = environment
 @Injectable()
 export class HttpRequestService {
   httpOptions = {
@@ -12,6 +11,6 @@ export class HttpRequestService {
   }
   constructor(private httpClient: HttpClient) {}
   httpGet(reqUrl) {
-    return this.httpClient.get(`${options.httpConfig.baseUri}${reqUrl}`, this.httpOptions)
+    return this.httpClient.get(`${environment.httpConfig.baseUri}${reqUrl}`, this.httpOptions)
   }
 }
