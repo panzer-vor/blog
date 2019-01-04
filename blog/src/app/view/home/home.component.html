@@ -1,3 +1,31 @@
-<p>
-  home works!
-</p>
+<div>
+  <!-- <app-banner></app-banner> -->
+  <div
+    class="blog-card-wrapper"
+  >
+    <mat-card 
+      class="blog-card"
+      *ngFor="let article of articleList"
+      (click)="goto(article.id)"
+    >
+      <mat-card-header>
+        <mat-card-title>{{article.title}}</mat-card-title>
+      </mat-card-header>
+      <mat-chip-list>
+        <mat-chip
+          class="blog-chip"
+          color="accent"
+          *ngFor="let tag of article.tags"
+        >{{tag.name}}</mat-chip>
+      </mat-chip-list>
+      <mat-card-content>
+        <p>
+          {{article.desc}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>>查看</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

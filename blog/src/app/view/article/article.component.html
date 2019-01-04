@@ -1,2 +1,13 @@
-<div  (click)="onClick()"
-></div>
+<div class="blog-article">
+  <h1 class="blog-article-title">{{article.title}} <span>—— {{getTime(article.createTime)}}</span></h1>
+  <mat-chip-list>
+    <mat-chip
+      class="blog-chip"
+      color="accent"
+      *ngFor="let tag of article.tags"
+    >{{tag.name}}</mat-chip>
+  </mat-chip-list>
+  <markdown [data]="article.article">
+  </markdown>
+
+</div>

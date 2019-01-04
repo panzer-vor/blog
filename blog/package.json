@@ -7,8 +7,10 @@
     "test": "ng test",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "e2e": "ng e2e",
+    "build:test:ssr": "npm run build:client-and-server-bundles-in-test && npm run webpack:server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
     "serve:ssr": "node dist/server.js",
+    "build:client-and-server-bundles-in-test": "ng build -c test && ng run product:server",
     "build:client-and-server-bundles": "ng build --prod && ng run product:server",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
   },
@@ -29,6 +31,8 @@
     "@nguniversal/express-engine": "^7.0.2",
     "@nguniversal/module-map-ngfactory-loader": "^7.0.2",
     "core-js": "^2.5.4",
+    "ngx-markdown": "^7.0.3",
+    "prismjs": "^1.15.0",
     "rxjs": "~6.3.3",
     "ts-loader": "^5.3.0",
     "zone.js": "~0.8.26"

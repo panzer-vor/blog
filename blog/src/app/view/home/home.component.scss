@@ -1,0 +1,13 @@
+.blog-card {
+  background: #fff;
+  margin: 30px;
+  color: #000;
+  text-align: left;
+  cursor: pointer;
+}
+.blog-card-wrapper {
+  text-align: center;
+  .blog-chip {
+    transform: scale(.8);
+  }
+}

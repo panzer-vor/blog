@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router'
 import { Breadcrumb, Row } from 'antd'
 import RouterConfig from '../router/router.config'
 import { useMappedState } from 'redux-react-hook'
-
+import { options} from '@config' 
 const mapState = (state: any) => ({
   user: state.user,
 })
@@ -34,12 +34,22 @@ const AdminHeader = (props: RouteComponentProps) => {
   return (
     <Row style={{position: 'relative'}} align="middle" type="flex">
       <Breadcrumb style={{ margin: '16px 0' }} itemRender={itemRender} routes={routeArr} />
-      <span 
-        style={{
-          position: 'absolute',
-          right: 0,
-        }}
-      >欢迎 <b> { user.username }</b></span>
+      {
+        user.username ? <span 
+          style={{
+            position: 'absolute',
+            right: 0,
+          }}
+        >欢迎 <b> { user.username }</b></span> :
+        <Link 
+          to={`${options.routerUri}login`} 
+          style={{
+            position: 'absolute',
+            right: 0,
+          }}
+        >登入账号</Link>
+      }
+      
     </Row>
   )
 }

@@ -8,6 +8,7 @@ import { useDispatch } from 'redux-react-hook'
 import { withRouter } from 'react-router-dom'
 import { Layout } from 'antd'
 import { RouteComponentProps } from 'react-router'
+import { options } from '@config'
 import './index.css'
 
 function App(props: RouteComponentProps) {
@@ -18,7 +19,7 @@ function App(props: RouteComponentProps) {
   return (
     <div>
       {
-        location.pathname === '/login' ? <Routes /> :
+        location.pathname === `${options.routerUri}login` ? <Routes /> :
         <Layout className="wrapper">
           <AdminSider />
           <Layout style={{ padding: '0 24px 24px' }}>

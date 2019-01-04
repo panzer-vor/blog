@@ -52,7 +52,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "build:test": "node scripts/build.dev.js",
+    "test": "node scripts/test.js --env=jsdom",
+    "analyze": "source-map-explorer test/admin/static/js/main.aa3d4259.js"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
@@ -62,8 +64,10 @@
     "@types/react-redux": "^6.0.10",
     "@types/react-router-dom": "^4.3.1",
     "lazyload-loader": "^1.2.0",
+    "source-map-explorer": "^1.6.0",
     "ts-import-plugin": "^1.5.5",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "webpack-bundle-analyzer": "^3.0.3"
   },
   "jest": {
     "collectCoverageFrom": [

@@ -1,7 +1,7 @@
 import { DeepPartial } from 'redux'
 
 interface IInitialState {
-  user: null | {
+  user: {
     username: string
     role: number
   }

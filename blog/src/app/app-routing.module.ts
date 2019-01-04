@@ -9,15 +9,15 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    redirectTo: ''
+    redirectTo: '',
   },
   {
     path: 'index',
-    redirectTo: ''
+    redirectTo: '',
   },
   {
-    path: 'article',
-    component: ArticleComponent
+    path: 'article/:id',
+    component: ArticleComponent,
   }
 ]
 

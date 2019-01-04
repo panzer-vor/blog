@@ -1,4 +1,4 @@
-import { httpConfig } from '@config'
+import { httpConfig, options } from '@config'
 import { message } from 'antd'
 import axios from 'axios'
 
@@ -23,6 +23,9 @@ class Http {
         config.headers = {
           "Authorization": adminToken ? `Bearer ${adminToken}` : '',
           'Content-Type':'application/json',
+        }
+        if (options.env !== 'development') {
+          config.withCredentials = true 
         }
         return config;
       },
@@ -67,6 +70,8 @@ class Http {
         })
         .catch((err: Error) => {
           message.error(`${err}`)
+          // const { reactHistory } = Http
+          // reactHistory.push(`${options.routerUri}404`)
           reject(err)
         })
         .finally(() => {
@@ -83,9 +88,9 @@ class Http {
       case 1001:
       case 1002:
         if (reactHistory) {
-          reactHistory.push('/login')
+          reactHistory.push(`${options.routerUri}/login`)
         } else {
-          window.location.href = '/login'
+          window.location.href = `${options.routerUri}/login`
         }
         break
       case 1003:

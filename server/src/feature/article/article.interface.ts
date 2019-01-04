@@ -1,5 +1,5 @@
 import { ArticleEntity } from './article.entity';
-import { IHttpRecord } from '@interface/record.interface';
+import { IHttpRecord } from '../../shared/interface/record.interface';
 export interface IArticleRecord extends IHttpRecord<ArticleEntity[]> {
   records: string | {
     total: number;

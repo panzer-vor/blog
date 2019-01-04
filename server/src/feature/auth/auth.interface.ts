@@ -1,4 +1,4 @@
-import { IHttpRecord } from '@interface/record.interface';
+import { IHttpRecord } from '../../shared/interface/record.interface';
 
 interface ILoginData {
   username: string;

@@ -1,0 +1,15 @@
+.blog-sidebar {
+  width: 200px;
+  padding: 20px;
+  text-align: center;
+  img {
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+  }
+  a, img {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);    
+    -webkit-user-modify: read-write-plaintext-only;
+  }
+}

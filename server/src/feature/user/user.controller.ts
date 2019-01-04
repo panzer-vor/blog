@@ -2,15 +2,16 @@ import { Get, Controller, UseGuards, Delete, Param, Post, Body } from '@nestjs/c
 import { AuthGuard } from '@nestjs/passport';
 import { UserService } from './user.service';
 import { IUserRecord } from './user.interface';
-import { ValidationPipe } from '@vail';
+import { ValidationPipe } from '../../core/pipe/vaildation.pipe';
 import { AddUserDto } from './vail/user.dto';
-import { Roles } from '@roles';
+import { Roles } from '../../core/decorator/roles.decorator';
 @Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get()
   @UseGuards(AuthGuard())
+  @Roles(10)
   async getUsers(): Promise<IUserRecord>{
     return this.userService.getUsers();
   }

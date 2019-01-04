@@ -1,3 +1,9 @@
 export const environment = {
-  production: true
+  httpConfig: {
+    baseUri: 'https://www.tanpopo.cc/api',
+  },
+  options: {
+    env: 'prod',
+    routerUri: '',
+  }
 };

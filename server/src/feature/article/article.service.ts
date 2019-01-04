@@ -1,11 +1,11 @@
-import { Injectable, HttpException, HttpStatus, Query } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { ArticleEntity } from './article.entity';
 import { TagEntity } from './tag.entity';
 import { ArticleTagEntity } from './article-tag.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { IQueryOptions, IArticleRecord, IArticleUpdate, ITagRecord } from './article.interface';
-import { IHttpRecord } from '@interface/record.interface';
+import { IHttpRecord } from '../../shared/interface/record.interface';
 
 @Injectable()
 export class ArticleService {
@@ -61,7 +61,7 @@ export class ArticleService {
       records: '添加成功',
     };
   }
-  async getArticle(id): Promise<IHttpRecord<any>> {
+  async getArticle(id): Promise<IHttpRecord<ArticleEntity>> {
     const article = await this.articleRepository
       .createQueryBuilder('a')
       .select(
@@ -70,7 +70,8 @@ export class ArticleService {
           'a.title',
           'a.desc',
           'a.accessAuthority',
-          'a.article'
+          'a.article',
+          'a.createTime',
         ],
       )
       .where(`a.id = ${id}`)
@@ -104,7 +105,8 @@ export class ArticleService {
   }
   async getArticles(option: IQueryOptions): Promise<IArticleRecord> {
     const { size, start, keyword = '' } = option;
-    const pageOffset = start < 1 ? 0 : (start - 1) * size;
+    const pageOffset = (start - 1) * size;
+    const limitSize = size;
     const articles = await this.articleRepository
       .createQueryBuilder('a')
       .select(
@@ -118,13 +120,14 @@ export class ArticleService {
           'a.accessAuthority',
         ],
       )
-      .leftJoinAndSelect('t_article_tag', 'at', 'at.articleId = a.id')
+      .leftJoin('t_article_tag', 'at', 'at.articleId = a.id')
       .leftJoin('t_tag', 't', 't.code = at.tagCode')
       .where(`a.title LIKE '%${keyword}%'`)
       .orWhere(`a.desc LIKE '%${keyword}%'`)
       .orWhere(`t.name LIKE '%${keyword}%'`)
       .orderBy('a.createTime', 'DESC')
-      .limit(size)
+      .groupBy('a.id')
+      .limit(limitSize)
       .offset(pageOffset)
       .getManyAndCount();
     const [articleList, total] = articles;
@@ -207,15 +210,15 @@ export class ArticleService {
     };
   }
   async updateArticle(body: IArticleUpdate): Promise<IArticleRecord> {
-    const articleRow = await this.articleRepository.findOne({ id: body.id });
+    const { id, tagCodes } = body;
     const updateData = {
+      id,
       article: body.article,
       title: body.title,
       desc: body.desc,
       accessAuthority: body.accessAuthority,
     };
-    const { id, tagCodes } = body;
-    await this.articleRepository.update(articleRow, updateData);
+    await this.articleRepository.save(updateData);
     const articleTag = await this.articleTagRepository.find({
       articleId: id,
     });

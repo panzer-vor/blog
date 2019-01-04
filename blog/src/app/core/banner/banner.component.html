@@ -1,0 +1,9 @@
+<div class="header-contain" #header> 
+  <div class="pic-wrapper">
+      <div 
+        *ngFor="let pic of picList;let i = index"
+        class="pic-container"
+        [style.backgroundImage]="'url('+pic+')'"
+      ></div>
+    </div>
+</div>

@@ -4,7 +4,7 @@ import { useDispatch } from 'redux-react-hook'
 import { IForm } from '@interface/common'
 import { ILoginData, ILoginRecordData } from './index.interface'
 import http from '@tools/http'
-
+import { options } from '@config'
 const FormItem = Form.Item
 function Login(props: IForm) {
   const dispatch = useDispatch()
@@ -21,7 +21,7 @@ function Login(props: IForm) {
         },
       })
     }).then(() => {
-      props.history.push('/')
+      props.history.push(options.routerUri)
     })
   }
   const handleSubmit = (e: any) => {  // 表单验证

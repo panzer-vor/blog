@@ -1,16 +1,16 @@
 import { JwtService } from '@nestjs/jwt';
 import { Injectable } from '@nestjs/common';
-import { TUser } from '@user/user.entity';
+import { UserEntity } from '../user/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { MD5 } from 'crypto-js';
 import { ILoginRecord } from './auth.interface';
 @Injectable()
 export class AuthService {
-  user: TUser;
+  user: UserEntity;
   constructor(
-    @InjectRepository(TUser)
-    private readonly userRepository: Repository<TUser>,
+    @InjectRepository(UserEntity)
+    private readonly userRepository: Repository<UserEntity>,
     private readonly jwtService: JwtService,
   ) {}
 

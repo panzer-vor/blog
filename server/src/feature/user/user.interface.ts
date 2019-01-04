@@ -1,3 +1,3 @@
-import { TUser } from './user.entity';
-import { IHttpRecord } from '@interface/record.interface';
-export interface IUserRecord extends IHttpRecord<TUser[]> {}
+import { UserEntity } from './user.entity';
+import { IHttpRecord } from '../../shared/interface/record.interface';
+export interface IUserRecord extends IHttpRecord<UserEntity[]> {}
