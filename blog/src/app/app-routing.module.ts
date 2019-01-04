@@ -4,19 +4,19 @@ import { ArticleComponent } from './view/article/article.component';
 import { HomeComponent } from './view/home/home.component'
 const routes: Routes = [
   {
-    path: '',
+    path: 'blog',
     component: HomeComponent,
   },
   {
-    path: 'home',
+    path: 'blog/home',
     redirectTo: '',
   },
   {
-    path: 'index',
+    path: 'blog/index',
     redirectTo: '',
   },
   {
-    path: 'article/:id',
+    path: 'blog/article/:id',
     component: ArticleComponent,
   }
 ]

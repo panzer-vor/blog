@@ -5,13 +5,22 @@
 export const environment = {
   production: false,
   httpConfig: {
-    baseUri: 'http://localhost:7002/api',
+    baseUri: 'https://www.tanpopo.cc/api',
   },
   options: {
     env: 'development',
-    routerUri: '/',
+    routerUri: 'blog/',
   }
 };
+// export const environment = {
+//   httpConfig: {
+//     baseUri: 'http://localhost:7001/api',
+//   },
+//   options: {
+//     env: 'development',
+//     routerUri: '',
+//   }
+// };
 
 /*
  * For easier debugging in development mode, you can import the following file
