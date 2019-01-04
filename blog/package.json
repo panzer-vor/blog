@@ -10,7 +10,7 @@
     "build:test:ssr": "npm run build:client-and-server-bundles-in-test && npm run webpack:server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
     "serve:ssr": "node dist/server.js",
-    "build:client-and-server-bundles-in-test": "ng build --prod --configuration=test && ng run product:server",
+    "build:client-and-server-bundles-in-test": "ng build -c test && ng run product:server",
     "build:client-and-server-bundles": "ng build --prod && ng run product:server",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
   },

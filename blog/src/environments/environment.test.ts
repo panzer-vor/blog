@@ -3,7 +3,7 @@ export const environment = {
     baseUri: 'http://localhost:7001/api',
   },
   options: {
-    env: 'development',
+    env: 'test',
     routerUri: 'test/blog/',
   }
 };
