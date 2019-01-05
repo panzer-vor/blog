@@ -63,7 +63,7 @@ export default function ArticleList(props: RouteComponentProps) {
     return async () => {
       const res = await http.delete(`/articles/${id}`)
       message.success(res)
-      getArticleList()
+      getArticleList(startPage)
     }
   }
   const linkToEdit = (id: number) => {
