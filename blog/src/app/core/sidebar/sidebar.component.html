@@ -1,5 +1,3 @@
 <div class="blog-sidebar">
-  <a [routerLink]="routerUri">
-    <img [src]="assetsUri ? assetsUri + 'images/logo.jpg' : '../../../assets/images/logo.jpg'" alt="logo">
-  </a>
+    <img [src]="assetsUri ? assetsUri + 'images/logo.jpg' : '../../../assets/images/logo.jpg'" alt="logo" (click)="goto()">
 </div>

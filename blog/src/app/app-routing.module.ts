@@ -5,15 +5,15 @@ import { HomeComponent } from './view/home/home.component'
 import { environment } from '../environments/environment'
 const routes: Routes = [
   {
-    path: `${environment.options.routerUri}`,
+    path: `${environment.options.routerUri.split('/')[0]}`,
     component: HomeComponent,
   },
   {
-    path: `${environment.options.routerUri}/home`,
+    path: `${environment.options.routerUri}home`,
     redirectTo: `${environment.options.routerUri}`,
   },
   {
-    path: `${environment.options.routerUri}/article/:id`,
+    path: `${environment.options.routerUri}article/:id`,
     component: ArticleComponent,
   }
 ]
