@@ -8,7 +8,9 @@ export class ArticleEntity {
   @CreateDateColumn()
   createTime: Date;
 
-  @Column('varchar(10000)')
+  @Column({
+    length: 10000
+  })
   article: string;
 
   @Column({
