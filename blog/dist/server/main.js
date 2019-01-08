@@ -1138,7 +1138,7 @@ var ArticleComponent = /** @class */ (function () {
         });
     };
     ArticleComponent.prototype.getTime = function (t) {
-        return t.split('T')[0].replace(/-/g, '/');
+        return t ? t.split('T')[0].replace(/-/g, '/') : '';
     };
     return ArticleComponent;
 }());
