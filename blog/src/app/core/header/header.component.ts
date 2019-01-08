@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
+import { Router } from '@angular/router'
+import { environment } from '../../../environments/environment'
 
 @Component({
   selector: 'app-header',
@@ -8,10 +10,16 @@ import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
   @Output() toggle = new EventEmitter<void>()
-  constructor() { }
+  public routerUri = environment.options.routerUri
+  constructor(
+    private router: Router,
+  ) { }
   ngOnInit() {}
   openSidebar() {
     this.toggle.emit()
+  }
+  goHome() {
+    this.router.navigateByUrl(`${this.routerUri}home`)
   }
   goto() {
     window.location.href = 'https://github.com/panzer-vor'

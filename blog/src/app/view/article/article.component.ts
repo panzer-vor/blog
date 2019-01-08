@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpRequestService } from '../../utils/httpRequest.service'
 interface IHttpRecords {
@@ -15,7 +15,6 @@ interface IHttpRecords {
 export class ArticleComponent implements OnInit {
   public article: any = {}
   constructor(
-    // @Inject('BASE_HTTP_URI') private baseUri,
     private httpRequestService: HttpRequestService,
     private activatedRoute: ActivatedRoute
   ) {}
@@ -33,6 +32,6 @@ export class ArticleComponent implements OnInit {
       )
   }
   public getTime(t) {
-    return t ? t.split('T')[0].replace(/-/g, '/') : ''
+    return typeof(t) === 'string' ? t.split('T')[0].replace(/-/g, '/') : ''
   }
 }
