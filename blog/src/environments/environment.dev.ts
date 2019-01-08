@@ -5,5 +5,7 @@ export const environment = {
   options: {
     env: 'development',
     routerUri: '',
+    routerHomeUri: '',
   }
 };
+

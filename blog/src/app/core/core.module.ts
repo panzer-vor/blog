@@ -2,26 +2,24 @@ import { NgModule, SkipSelf, Optional } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { HeaderComponent } from './header/header.component'
 import { SidebarComponent } from './sidebar/sidebar.component'
-import { MatToolbarModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material'
+import { MatToolbarModule, MatIconModule } from '@angular/material'
 import { loadSvgResources } from '../utils/svg-init'
 import { DomSanitizer } from '@angular/platform-browser'
 import { MatIconRegistry } from '@angular/material'
 import { HttpClientModule } from '@angular/common/http'
-import { SpinnerComponent } from './spinner/spinner.component'
 import { AppRoutingModule } from '../app-routing.module'
 
 @NgModule({
-  declarations: [ HeaderComponent, SidebarComponent, SpinnerComponent ],
+  declarations: [ HeaderComponent, SidebarComponent ],
   imports: [
     AppRoutingModule,
     CommonModule,
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
-    MatProgressSpinnerModule,
   ],
   exports: [
-    HeaderComponent,  SidebarComponent, SpinnerComponent
+    HeaderComponent,  SidebarComponent,
   ],
   providers: [
     {
