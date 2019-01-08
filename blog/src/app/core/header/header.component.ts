@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     this.toggle.emit()
   }
   goHome() {
-    this.router.navigateByUrl(`${this.routerUri}home`)
+    this.router.navigateByUrl(`${this.routerUri}/home`)
   }
   goto() {
     window.location.href = 'https://github.com/panzer-vor'

@@ -737,7 +737,7 @@ var material_1 = __webpack_require__(/*! @angular/material */ "@angular/material
 var CoreModule = /** @class */ (function () {
     function CoreModule(ds, ir, parent) {
         if (parent) {
-            throw new Error('模块已经存在，无法再次加载');
+            throw new Error('模块已经存在');
         }
         svg_init_1.loadSvgResources(ir, ds);
     }
@@ -842,7 +842,7 @@ var HeaderComponent = /** @class */ (function () {
         this.toggle.emit();
     };
     HeaderComponent.prototype.goHome = function () {
-        this.router.navigateByUrl(this.routerUri + "home");
+        this.router.navigateByUrl(this.routerUri + "/home");
     };
     HeaderComponent.prototype.goto = function () {
         window.location.href = 'https://github.com/panzer-vor';
@@ -934,7 +934,7 @@ var SidebarComponent = /** @class */ (function () {
     SidebarComponent.prototype.ngOnInit = function () {
     };
     SidebarComponent.prototype.goto = function () {
-        this.router.navigateByUrl(this.routerUri + "home");
+        this.router.navigateByUrl(this.routerUri + "/home");
     };
     return SidebarComponent;
 }());
