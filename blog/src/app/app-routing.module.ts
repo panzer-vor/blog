@@ -5,7 +5,7 @@ import { HomeComponent } from './view/home/home.component'
 import { environment } from '../environments/environment'
 const routes: Routes = [
   {
-    path: `${environment.options.routerUri.split('/')[0]}`,
+    path: `${environment.options.routerUri ? environment.options.routerUri.split('/')[0] : environment.options.routerUri}`,
     component: HomeComponent,
   },
   {

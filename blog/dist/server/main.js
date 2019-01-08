@@ -503,7 +503,7 @@ var home_component_1 = __webpack_require__(/*! ./view/home/home.component */ "./
 var environment_1 = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 var routes = [
     {
-        path: "" + environment_1.environment.options.routerUri.split('/')[0],
+        path: "" + (environment_1.environment.options.routerUri ? environment_1.environment.options.routerUri.split('/')[0] : environment_1.environment.options.routerUri),
         component: home_component_1.HomeComponent,
     },
     {
