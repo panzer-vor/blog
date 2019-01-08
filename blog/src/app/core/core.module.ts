@@ -21,12 +21,6 @@ import { AppRoutingModule } from '../app-routing.module'
   exports: [
     HeaderComponent,  SidebarComponent,
   ],
-  providers: [
-    {
-      provide: 'BASE_HTTP_URI',
-      useValue: 'http://localhost:7002/api',
-    },
-  ]
 })
 export class CoreModule {
   constructor(
