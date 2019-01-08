@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router'
 import { ArticleComponent } from './view/article/article.component'
 import { HomeComponent } from './view/home/home.component'
 import { environment } from '../environments/environment'
+console.log(environment)
 const routes: Routes = [
   {
-    path: `${environment.options.routerUri ? environment.options.routerUri.split('/')[0] : environment.options.routerUri}`,
+    path: `${environment.options.routerHomeUri}`,
     component: HomeComponent,
   },
   {

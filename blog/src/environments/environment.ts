@@ -10,6 +10,7 @@ export const environment = {
   options: {
     env: 'development',
     routerUri: 'blog/',
+    routerHomeUri: 'blog',
     assetsUri: 'https://www.tanpopo.cc/public/assets/',
   }
 };
@@ -20,6 +21,7 @@ export const environment = {
 //   options: {
 //     env: 'development',
 //     routerUri: '',
+//     routerHomeUri: '',
 //     assetsUri: '',
 //   }
 // };
