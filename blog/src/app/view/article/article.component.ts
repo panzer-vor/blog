@@ -32,6 +32,6 @@ export class ArticleComponent implements OnInit {
       )
   }
   public getTime(t) {
-    return typeof(t) === 'string' ? t.split('T')[0].replace(/-/g, '/') : ''
+    return t.split('T')[0].replace(/-/g, '/')
   }
 }

@@ -1139,7 +1139,7 @@ var ArticleComponent = /** @class */ (function () {
         });
     };
     ArticleComponent.prototype.getTime = function (t) {
-        return typeof (t) === 'string' ? t.split('T')[0].replace(/-/g, '/') : '';
+        return t.split('T')[0].replace(/-/g, '/');
     };
     return ArticleComponent;
 }());
