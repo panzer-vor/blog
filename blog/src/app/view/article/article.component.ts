@@ -18,7 +18,6 @@ export class ArticleComponent implements OnInit {
     private httpRequestService: HttpRequestService,
     private activatedRoute: ActivatedRoute
   ) {}
-
   ngOnInit() {
     this.getArticle()
   }
@@ -31,7 +30,7 @@ export class ArticleComponent implements OnInit {
         }
       )
   }
-  public getTime(t) {
-    return t.split('T')[0].replace(/-/g, '/')
-  }
+  // public getTime(t) {
+  //   return t.split('T')[0].replace(/-/g, '/')
+  // }
 }
