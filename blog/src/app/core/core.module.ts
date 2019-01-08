@@ -28,7 +28,7 @@ export class CoreModule {
     ir: MatIconRegistry,
     @Optional() @SkipSelf() parent: CoreModule) {
     if (parent) {
-      throw new Error('模块已经存在，无法再次加载')
+      throw new Error('模块已经存在')
     }
     loadSvgResources(ir, ds)
   }
