@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router'
 import { ArticleComponent } from './view/article/article.component'
 import { HomeComponent } from './view/home/home.component'
 import { environment } from '../environments/environment'
-console.log(environment)
 const routes: Routes = [
   {
     path: `${environment.options.routerHomeUri}`,
@@ -11,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: `${environment.options.routerUri}home`,
-    redirectTo: `${environment.options.routerUri}`,
+    redirectTo: `${environment.options.routerHomeUri}`,
   },
   {
     path: `${environment.options.routerUri}article/:id`,

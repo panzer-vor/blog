@@ -9,8 +9,6 @@ interface IHttpRecords {
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss'],
-  animations: [
-  ]
 })
 export class ArticleComponent implements OnInit {
   public article: any = {}
@@ -30,7 +28,7 @@ export class ArticleComponent implements OnInit {
         }
       )
   }
-  // public getTime(t) {
-  //   return t.split('T')[0].replace(/-/g, '/')
-  // }
+  public getTime(t) {
+    return t.split('T')[0].replace(/-/g, '/')
+  }
 }
