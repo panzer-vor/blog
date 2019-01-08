@@ -503,15 +503,15 @@ var home_component_1 = __webpack_require__(/*! ./view/home/home.component */ "./
 var environment_1 = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 var routes = [
     {
-        path: "" + environment_1.environment.options.routerHomeUri,
+        path: "" + environment_1.environment.options.routerUri,
         component: home_component_1.HomeComponent,
     },
     {
-        path: environment_1.environment.options.routerUri + "home",
-        redirectTo: "" + environment_1.environment.options.routerHomeUri,
+        path: environment_1.environment.options.routerUri + "/home",
+        redirectTo: "" + environment_1.environment.options.routerUri,
     },
     {
-        path: environment_1.environment.options.routerUri + "article/:id",
+        path: environment_1.environment.options.routerUri + "/article/:id",
         component: article_component_1.ArticleComponent,
     }
 ];
@@ -1326,8 +1326,7 @@ exports.environment = {
     },
     options: {
         env: 'development',
-        routerUri: 'blog/',
-        routerHomeUri: 'blog',
+        routerUri: 'blog',
         assetsUri: 'https://www.tanpopo.cc/public/assets/',
     }
 };
