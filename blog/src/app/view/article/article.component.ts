@@ -28,7 +28,7 @@ export class ArticleComponent implements OnInit {
         }
       )
   }
-  public getTime(t) {
-    return t ? t.split('T')[0].replace(/-/g, '/') : ''
-  }
+  // public getTime(t) {
+  //   return t ? t.split('T')[0].replace(/-/g, '/') : ''
+  // }
 }
