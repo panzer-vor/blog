@@ -32,7 +32,7 @@ interface ITagInfo {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public articleList = []
+  public articleList: IArticleRecordWithTag[] = []
   public totalSize = 0
   public pageSize = 0
   public startPage = 0

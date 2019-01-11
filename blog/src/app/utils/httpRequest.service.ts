@@ -10,7 +10,7 @@ export class HttpRequestService {
     })
   }
   constructor(private httpClient: HttpClient) {}
-  httpGet(reqUrl) {
+  httpGet(reqUrl: string) {
     return this.httpClient.get(`${environment.httpConfig.baseUri}${reqUrl}`, this.httpOptions)
   }
 }

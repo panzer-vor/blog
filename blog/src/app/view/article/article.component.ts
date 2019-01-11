@@ -3,7 +3,16 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpRequestService } from '../../utils/httpRequest.service'
 interface IHttpRecords {
   success: boolean
-  records: any
+  records: IArticle
+}
+interface IArticle {
+  accessAuthority: number
+  article: string
+  cover: string
+  createTime: string
+  desc: string
+  tags: string
+  title: string
 }
 @Component({
   selector: 'app-article',
@@ -11,7 +20,7 @@ interface IHttpRecords {
   styleUrls: ['./article.component.scss'],
 })
 export class ArticleComponent implements OnInit {
-  public article: any = {}
+  public article: IArticle | {} = {}
   constructor(
     private httpRequestService: HttpRequestService,
     private activatedRoute: ActivatedRoute
