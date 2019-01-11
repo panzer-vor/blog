@@ -2,20 +2,10 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-// export const environment = {
-//   production: false,
-//   httpConfig: {
-//     baseUri: 'https://www.tanpopo.cc/api',
-//   },
-//   options: {
-//     env: 'development',
-//     routerUri: 'blog',
-//     assetsUri: 'https://www.tanpopo.cc/public/assets/',
-//   }
-// }
 export const environment = {
+  production: false,
   httpConfig: {
-    baseUri: 'http://localhost:7001/api',
+    baseUri: 'https://www.tanpopo.cc/api',
   },
   options: {
     env: 'development',
@@ -23,6 +13,16 @@ export const environment = {
     assetsUri: 'https://www.tanpopo.cc/public/assets/',
   }
 }
+// export const environment = {
+//   httpConfig: {
+//     baseUri: 'http://localhost:7001/api',
+//   },
+//   options: {
+//     env: 'development',
+//     routerUri: 'blog',
+//     assetsUri: 'https://www.tanpopo.cc/public/assets/',
+//   }
+// }
 
 /*
  * For easier debugging in development mode, you can import the following file
