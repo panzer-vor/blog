@@ -28,15 +28,17 @@ export class HomeComponent implements OnInit {
     this.getArticleList()
   }
   private getArticleList() {
-    this.httpRequestService.httpGet('/articles/10/1')
-      .subscribe(
-        (val: IHttpRecords) => {
-          this.articleList = val.records.data
-          this.totalSize = val.records.total
-          this.startPage = val.records.startPage
-          this.pageSize = val.records.pageSize
-        }
-      )
+    if (!window) {
+      this.httpRequestService.httpGet('/articles/10/1')
+        .subscribe(
+          (val: IHttpRecords) => {
+            this.articleList = val.records.data
+            this.totalSize = val.records.total
+            this.startPage = val.records.startPage
+            this.pageSize = val.records.pageSize
+          }
+        )
+    }
   }
   private goto(id) {
     this.router.navigateByUrl(`${this.routerUri}/article/${id}`)

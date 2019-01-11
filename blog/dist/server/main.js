@@ -1268,13 +1268,15 @@ var HomeComponent = /** @class */ (function () {
     };
     HomeComponent.prototype.getArticleList = function () {
         var _this = this;
-        this.httpRequestService.httpGet('/articles/10/1')
-            .subscribe(function (val) {
-            _this.articleList = val.records.data;
-            _this.totalSize = val.records.total;
-            _this.startPage = val.records.startPage;
-            _this.pageSize = val.records.pageSize;
-        });
+        if (!window) {
+            this.httpRequestService.httpGet('/articles/10/1')
+                .subscribe(function (val) {
+                _this.articleList = val.records.data;
+                _this.totalSize = val.records.total;
+                _this.startPage = val.records.startPage;
+                _this.pageSize = val.records.pageSize;
+            });
+        }
     };
     HomeComponent.prototype.goto = function (id) {
         this.router.navigateByUrl(this.routerUri + "/article/" + id);
