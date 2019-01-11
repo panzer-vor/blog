@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core'
 import { CoreModule } from './core/core.module'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { MatSidenavModule, MatGridListModule } from '@angular/material'
+import { MaterialModule } from './utils/material.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ToolFunc } from './utils/helper'
 import { HttpRequestService } from './utils/httpRequest.service'
@@ -17,12 +17,11 @@ import { MarkdownModule } from 'ngx-markdown'
   imports: [
     AppRoutingModule,
     BrowserModule.withServerTransition({
-      appId: 'my-blog'
+      appId: 'tanpopo'
     }),
     BrowserAnimationsModule,
+    MaterialModule,
     CoreModule,
-    MatSidenavModule,
-    MatGridListModule,
     MarkdownModule.forRoot(),
     ViewModule,
   ],

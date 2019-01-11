@@ -2,7 +2,7 @@ import { NgModule, SkipSelf, Optional } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { HeaderComponent } from './header/header.component'
 import { SidebarComponent } from './sidebar/sidebar.component'
-import { MatToolbarModule, MatIconModule } from '@angular/material'
+import { MatToolbarModule, MatIconModule, MatChipsModule } from '@angular/material'
 import { loadSvgResources } from '../utils/svg-init'
 import { DomSanitizer } from '@angular/platform-browser'
 import { MatIconRegistry } from '@angular/material'
@@ -16,6 +16,7 @@ import { AppRoutingModule } from '../app-routing.module'
     CommonModule,
     MatToolbarModule,
     MatIconModule,
+    MatChipsModule,
     HttpClientModule,
   ],
   exports: [

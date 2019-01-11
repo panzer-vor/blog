@@ -11,8 +11,12 @@ interface IArticle {
   cover: string
   createTime: string
   desc: string
-  tags: string
+  tags: ITagInfo[]
   title: string
+}
+interface ITagInfo {
+  code: number;
+  name: string;
 }
 @Component({
   selector: 'app-article',
@@ -20,7 +24,15 @@ interface IArticle {
   styleUrls: ['./article.component.scss'],
 })
 export class ArticleComponent implements OnInit {
-  public article: IArticle | {} = {}
+  public article = {
+    accessAuthority: 10,
+    article: '',
+    cover: '',
+    createTime: '',
+    desc: '',
+    tags: [],
+    title: '',
+  }
   constructor(
     private httpRequestService: HttpRequestService,
     private activatedRoute: ActivatedRoute

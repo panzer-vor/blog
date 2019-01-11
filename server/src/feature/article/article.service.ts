@@ -19,10 +19,18 @@ export class ArticleService {
   ) { }
   async getTags(): Promise<ITagRecord> {
     const tagsInfo = await this.tagRepository.find();
-    const tagsInfoFormat = tagsInfo.map(v => ({
-      name: v.name,
-      code: v.code,
-    }));
+    const articleTags = await this.articleTagRepository.find();
+    const tagsInfoFormat = tagsInfo.map(tag => ({
+      name: tag.name,
+      code: tag.code,
+      count: 0,
+    })).map(tag => {
+      const newTag = tag;
+      for (const v of articleTags) {
+        if (v.tagCode === tag.code) newTag.count++;
+      }
+      return newTag;
+    });
     return {
       success: true,
       records: tagsInfoFormat,

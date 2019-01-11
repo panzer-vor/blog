@@ -1,5 +1,4 @@
 <div>
-  <!-- <app-banner></app-banner> -->
   <div
     class="blog-card-wrapper"
   >
@@ -8,13 +7,12 @@
       *ngFor="let article of articleList"
       (click)="goto(article.id)"
     >
-      <mat-card-header>
+      <mat-card-header style="margin-left: -10px">
         <mat-card-title>{{article.title}}</mat-card-title>
       </mat-card-header>
       <mat-chip-list>
         <mat-chip
           class="blog-chip"
-          color="accent"
           *ngFor="let tag of article.tags"
         >{{tag.name}}</mat-chip>
       </mat-chip-list>
@@ -24,7 +22,7 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>>查看</button>
+        <button mat-button color="primary">查看</button>
       </mat-card-actions>
     </mat-card>
   </div>
