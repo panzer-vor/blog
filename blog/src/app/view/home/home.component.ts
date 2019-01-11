@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.getArticleList()
   }
   private getArticleList() {
-    if (!window) {
+    if (!window.document) {
       this.httpRequestService.httpGet('/articles/10/1')
         .subscribe(
           (val: IHttpRecords) => {

@@ -1268,7 +1268,7 @@ var HomeComponent = /** @class */ (function () {
     };
     HomeComponent.prototype.getArticleList = function () {
         var _this = this;
-        if (!window) {
+        if (!window.document) {
             this.httpRequestService.httpGet('/articles/10/1')
                 .subscribe(function (val) {
                 _this.articleList = val.records.data;
