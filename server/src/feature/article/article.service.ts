@@ -112,33 +112,45 @@ export class ArticleService {
     };
   }
   async getArticles(option: IQueryOptions): Promise<IArticleRecord> {
-    const { size, start, keyword = '' } = option;
+    const { size, start, keyword } = option;
     const pageOffset = (start - 1) * size;
     const limitSize = size;
-    const articles = await this.articleRepository
+    let articles: [ArticleEntity[], number];
+    if (keyword) {
+       articles = await this.articleRepository
       .createQueryBuilder('a')
       .select(
-        [
-          'a.id',
-          'a.accessCount',
-          'a.cover',
-          'a.title',
-          'a.desc',
-          'a.createTime',
-          'a.accessAuthority',
-        ],
+        ['a.id', 'a.accessCount', 'a.title', 'a.desc', 'a.createTime', 'a.accessAuthority']
       )
       .leftJoin('t_article_tag', 'at', 'at.articleId = a.id')
       .leftJoin('t_tag', 't', 't.code = at.tagCode')
-      .where(`a.title LIKE '%${keyword}%'`)
-      .orWhere(`a.desc LIKE '%${keyword}%'`)
-      .orWhere(`t.name LIKE '%${keyword}%'`)
+      .where(`at.tagCode = ${keyword}`)
       .orderBy('a.createTime', 'DESC')
       .groupBy('a.id')
       .limit(limitSize)
       .offset(pageOffset)
       .getManyAndCount();
+    } else {
+      articles = await this.articleRepository
+      .createQueryBuilder('a')
+      .select(
+        ['a.id', 'a.accessCount', 'a.title', 'a.desc', 'a.createTime', 'a.accessAuthority']
+      )
+      .leftJoin('t_article_tag', 'at', 'at.articleId = a.id')
+      .leftJoin('t_tag', 't', 't.code = at.tagCode')
+      .orderBy('a.createTime', 'DESC')
+      .groupBy('a.id')
+      .limit(limitSize)
+      .offset(pageOffset)
+      .getManyAndCount();
+    }
     const [articleList, total] = articles;
+    if (!total) {
+      return {
+        success: false,
+        records: '查询为空'
+      };
+    }
     const articleIds = articleList.map(v => v.id);
     const articleTags = await this.articleTagRepository
       .createQueryBuilder('at')

@@ -38,6 +38,7 @@ export interface IArticleUpdate {
 interface ITagInfo {
   code: number;
   name: string;
+  count?: number;
 }
 
 export interface ITagRecord extends IHttpRecord<ArticleEntity[]> {
