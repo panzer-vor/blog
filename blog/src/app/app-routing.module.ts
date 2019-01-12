@@ -13,6 +13,10 @@ const routes: Routes = [
     redirectTo: `${environment.options.routerUri}`,
   },
   {
+    path: `${environment.options.routerUri}/home`,
+    redirectTo: `${environment.options.routerUri}`,
+  },
+  {
     path: `${environment.options.routerUri}/article/:id`,
     component: ArticleComponent,
   }

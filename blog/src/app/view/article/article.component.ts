@@ -15,8 +15,8 @@ interface IArticle {
   title: string
 }
 interface ITagInfo {
-  code: number;
-  name: string;
+  code: number
+  name: string
 }
 @Component({
   selector: 'app-article',

@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Component, OnInit } from '@angular/core'
 import { environment } from '../../../environments/environment'
 import { HttpRequestService } from '../../utils/httpRequest.service'
+import { ToolFunc } from '../../utils/helper'
 
 interface IHttpRecords {
   success: boolean
   records: ITagInfo[]
 }
 interface ITagInfo {
-  code: number;
-  name: string;
+  code: number
+  name: string
+  count: number
 }
 @Component({
   selector: 'app-sidebar',
@@ -21,8 +22,8 @@ export class SidebarComponent implements OnInit {
   public assetsUri = environment.options.assetsUri
   public tags: ITagInfo[] = []
   constructor(
-    private router: Router,
     private httpRequestService: HttpRequestService,
+    private tools: ToolFunc,
   ) { }
   ngOnInit() {
     this.getTags()
@@ -35,11 +36,11 @@ export class SidebarComponent implements OnInit {
         }
       )
   }
-  goto(code: number) {
+  goto(code?: number) {
     if (code) {
-      console.log(code)
+      this.tools.goto(`?code=${code}`)
     } else {
-      this.router.navigateByUrl(`${this.routerUri}/home`)
+      this.tools.goto('/home')
     }
   }
 }

@@ -17,11 +17,8 @@
   }
   .blog-tags {
     margin-top: 20px;
-    .blog-chip {
-      margin: 0;
-      cursor: pointer;
-      color: #fff;
-      background: rgba(#000, .3)
+    button {
+      margin: 5px 10px; 
     }
   }
 }

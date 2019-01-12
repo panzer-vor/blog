@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
-import { Router } from '@angular/router'
 import { environment } from '../../../environments/environment'
-
+import { ToolFunc } from '../../utils/helper'
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,14 +11,14 @@ export class HeaderComponent implements OnInit {
   @Output() toggle = new EventEmitter<void>()
   public routerUri = environment.options.routerUri
   constructor(
-    private router: Router,
+    private tools: ToolFunc,
   ) { }
   ngOnInit() {}
   openSidebar() {
     this.toggle.emit()
   }
   goHome() {
-    this.router.navigateByUrl(`${this.routerUri}/home`)
+    this.tools.goto('/home')
   }
   goto() {
     window.location.href = 'https://github.com/panzer-vor'

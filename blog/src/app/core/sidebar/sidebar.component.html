@@ -3,19 +3,25 @@
     <img 
       [src]="assetsUri ? assetsUri + 'images/logo.jpg' : '../../../assets/images/logo.jpg'" 
       alt="logo" 
-      (click)="goto(0)"
+      (click)="goto()"
     >
     <p>変化を恐れるな</p>
   </div>
   <div class="tit">力士</div>
   <div class="sub-tit">IT, ACG</div>
   <div class="blog-tags">
-    <mat-chip-list>
-      <mat-chip
-        class="blog-chip"
-        *ngFor="let tag of tags"
+    <ng-container 
+      *ngFor="let tag of tags"
+    >
+      <button 
+        *ngIf="tag.count"
         (click)="goto(tag.code)"
-      >{{tag.name}}</mat-chip>
-    </mat-chip-list>
+        mat-raised-button  
+        [matBadge]="tag.count" 
+        matBadgeColor="accent"
+      >{{tag.name}}
+      </button> 
+    </ng-container>
   </div>
 </div>
+ 
