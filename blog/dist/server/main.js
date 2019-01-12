@@ -511,6 +511,10 @@ var routes = [
         redirectTo: "" + environment_1.environment.options.routerUri,
     },
     {
+        path: environment_1.environment.options.routerUri + "/home",
+        redirectTo: "" + environment_1.environment.options.routerUri,
+    },
+    {
         path: environment_1.environment.options.routerUri + "/article/:id",
         component: article_component_1.ArticleComponent,
     }
@@ -552,11 +556,12 @@ var i7 = __webpack_require__(/*! @angular/cdk/platform */ "@angular/cdk/platform
 var i8 = __webpack_require__(/*! @angular/common */ "@angular/common");
 var i9 = __webpack_require__(/*! ./core/sidebar/sidebar.component.ngfactory */ "./src/app/core/sidebar/sidebar.component.ngfactory.js");
 var i10 = __webpack_require__(/*! ./core/sidebar/sidebar.component */ "./src/app/core/sidebar/sidebar.component.ts");
-var i11 = __webpack_require__(/*! @angular/router */ "@angular/router");
-var i12 = __webpack_require__(/*! ./utils/httpRequest.service */ "./src/app/utils/httpRequest.service.ts");
+var i11 = __webpack_require__(/*! ./utils/httpRequest.service */ "./src/app/utils/httpRequest.service.ts");
+var i12 = __webpack_require__(/*! ./utils/helper */ "./src/app/utils/helper.ts");
 var i13 = __webpack_require__(/*! ./core/header/header.component.ngfactory */ "./src/app/core/header/header.component.ngfactory.js");
 var i14 = __webpack_require__(/*! ./core/header/header.component */ "./src/app/core/header/header.component.ts");
-var i15 = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+var i15 = __webpack_require__(/*! @angular/router */ "@angular/router");
+var i16 = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 var styles_AppComponent = [i0.styles];
 var RenderType_AppComponent = i1.ɵcrt({ encapsulation: 0, styles: styles_AppComponent, data: {} });
 exports.RenderType_AppComponent = RenderType_AppComponent;
@@ -566,14 +571,14 @@ function View_AppComponent_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, n
     } if (("component:@transform.done" === en)) {
         var pd_1 = (i1.ɵnov(_v, 5)._animationEnd.next($event) !== false);
         ad = (pd_1 && ad);
-    } return ad; }, i2.View_MatSidenav_0, i2.RenderType_MatSidenav)), i1.ɵdid(5, 3325952, [[1, 4], ["sidenav", 4]], 0, i3.MatSidenav, [i1.ElementRef, i6.FocusTrapFactory, i6.FocusMonitor, i7.Platform, i1.NgZone, [2, i8.DOCUMENT]], null, null), (_l()(), i1.ɵeld(6, 0, null, 0, 1, "app-sidebar", [], null, null, null, i9.View_SidebarComponent_0, i9.RenderType_SidebarComponent)), i1.ɵdid(7, 114688, null, 0, i10.SidebarComponent, [i11.Router, i12.HttpRequestService], null, null), (_l()(), i1.ɵeld(8, 0, null, 2, 6, "div", [["class", "site"]], null, null, null, null, null)), (_l()(), i1.ɵeld(9, 0, null, null, 2, "header", [], null, null, null, null, null)), (_l()(), i1.ɵeld(10, 0, null, null, 1, "app-header", [], null, [[null, "toggle"]], function (_v, en, $event) { var ad = true; if (("toggle" === en)) {
+    } return ad; }, i2.View_MatSidenav_0, i2.RenderType_MatSidenav)), i1.ɵdid(5, 3325952, [[1, 4], ["sidenav", 4]], 0, i3.MatSidenav, [i1.ElementRef, i6.FocusTrapFactory, i6.FocusMonitor, i7.Platform, i1.NgZone, [2, i8.DOCUMENT]], null, null), (_l()(), i1.ɵeld(6, 0, null, 0, 1, "app-sidebar", [], null, null, null, i9.View_SidebarComponent_0, i9.RenderType_SidebarComponent)), i1.ɵdid(7, 114688, null, 0, i10.SidebarComponent, [i11.HttpRequestService, i12.ToolFunc], null, null), (_l()(), i1.ɵeld(8, 0, null, 2, 6, "div", [["class", "site"]], null, null, null, null, null)), (_l()(), i1.ɵeld(9, 0, null, null, 2, "header", [], null, null, null, null, null)), (_l()(), i1.ɵeld(10, 0, null, null, 1, "app-header", [], null, [[null, "toggle"]], function (_v, en, $event) { var ad = true; if (("toggle" === en)) {
         var pd_0 = (i1.ɵnov(_v, 5).open() !== false);
         ad = (pd_0 && ad);
-    } return ad; }, i13.View_HeaderComponent_0, i13.RenderType_HeaderComponent)), i1.ɵdid(11, 114688, null, 0, i14.HeaderComponent, [i11.Router], null, { toggle: "toggle" }), (_l()(), i1.ɵeld(12, 0, null, null, 2, "main", [], null, null, null, null, null)), (_l()(), i1.ɵeld(13, 16777216, null, null, 1, "router-outlet", [], null, null, null, null, null)), i1.ɵdid(14, 212992, null, 0, i11.RouterOutlet, [i11.ChildrenOutletContexts, i1.ViewContainerRef, i1.ComponentFactoryResolver, [8, null], i1.ChangeDetectorRef], null, null)], function (_ck, _v) { _ck(_v, 1, 0); _ck(_v, 7, 0); _ck(_v, 11, 0); _ck(_v, 14, 0); }, function (_ck, _v) { var currVal_0 = i1.ɵnov(_v, 1)._backdropOverride; _ck(_v, 0, 0, currVal_0); var currVal_1 = i1.ɵnov(_v, 5)._animationState; var currVal_2 = null; var currVal_3 = (i1.ɵnov(_v, 5).position === "end"); var currVal_4 = (i1.ɵnov(_v, 5).mode === "over"); var currVal_5 = (i1.ɵnov(_v, 5).mode === "push"); var currVal_6 = (i1.ɵnov(_v, 5).mode === "side"); var currVal_7 = i1.ɵnov(_v, 5).fixedInViewport; var currVal_8 = (i1.ɵnov(_v, 5).fixedInViewport ? i1.ɵnov(_v, 5).fixedTopGap : null); var currVal_9 = (i1.ɵnov(_v, 5).fixedInViewport ? i1.ɵnov(_v, 5).fixedBottomGap : null); _ck(_v, 4, 0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7, currVal_8, currVal_9); }); }
+    } return ad; }, i13.View_HeaderComponent_0, i13.RenderType_HeaderComponent)), i1.ɵdid(11, 114688, null, 0, i14.HeaderComponent, [i12.ToolFunc], null, { toggle: "toggle" }), (_l()(), i1.ɵeld(12, 0, null, null, 2, "main", [], null, null, null, null, null)), (_l()(), i1.ɵeld(13, 16777216, null, null, 1, "router-outlet", [], null, null, null, null, null)), i1.ɵdid(14, 212992, null, 0, i15.RouterOutlet, [i15.ChildrenOutletContexts, i1.ViewContainerRef, i1.ComponentFactoryResolver, [8, null], i1.ChangeDetectorRef], null, null)], function (_ck, _v) { _ck(_v, 1, 0); _ck(_v, 7, 0); _ck(_v, 11, 0); _ck(_v, 14, 0); }, function (_ck, _v) { var currVal_0 = i1.ɵnov(_v, 1)._backdropOverride; _ck(_v, 0, 0, currVal_0); var currVal_1 = i1.ɵnov(_v, 5)._animationState; var currVal_2 = null; var currVal_3 = (i1.ɵnov(_v, 5).position === "end"); var currVal_4 = (i1.ɵnov(_v, 5).mode === "over"); var currVal_5 = (i1.ɵnov(_v, 5).mode === "push"); var currVal_6 = (i1.ɵnov(_v, 5).mode === "side"); var currVal_7 = i1.ɵnov(_v, 5).fixedInViewport; var currVal_8 = (i1.ɵnov(_v, 5).fixedInViewport ? i1.ɵnov(_v, 5).fixedTopGap : null); var currVal_9 = (i1.ɵnov(_v, 5).fixedInViewport ? i1.ɵnov(_v, 5).fixedBottomGap : null); _ck(_v, 4, 0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7, currVal_8, currVal_9); }); }
 exports.View_AppComponent_0 = View_AppComponent_0;
-function View_AppComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-root", [], null, null, null, View_AppComponent_0, RenderType_AppComponent)), i1.ɵdid(1, 49152, null, 0, i15.AppComponent, [], null, null)], null, null); }
+function View_AppComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-root", [], null, null, null, View_AppComponent_0, RenderType_AppComponent)), i1.ɵdid(1, 49152, null, 0, i16.AppComponent, [], null, null)], null, null); }
 exports.View_AppComponent_Host_0 = View_AppComponent_Host_0;
-var AppComponentNgFactory = i1.ɵccf("app-root", i15.AppComponent, View_AppComponent_Host_0, {}, {}, []);
+var AppComponentNgFactory = i1.ɵccf("app-root", i16.AppComponent, View_AppComponent_Host_0, {}, {}, []);
 exports.AppComponentNgFactory = AppComponentNgFactory;
 
 
@@ -673,31 +678,34 @@ var i11 = __webpack_require__(/*! @angular/animations/browser */ "@angular/anima
 var i12 = __webpack_require__(/*! @angular/platform-browser/animations */ "@angular/platform-browser/animations");
 var i13 = __webpack_require__(/*! @angular/animations */ "@angular/animations");
 var i14 = __webpack_require__(/*! @angular/material/core */ "@angular/material/core");
-var i15 = __webpack_require__(/*! @angular/common/http */ "@angular/common/http");
-var i16 = __webpack_require__(/*! ngx-markdown */ "ngx-markdown");
-var i17 = __webpack_require__(/*! ./utils/helper */ "./src/app/utils/helper.ts");
-var i18 = __webpack_require__(/*! ./utils/httpRequest.service */ "./src/app/utils/httpRequest.service.ts");
-var i19 = __webpack_require__(/*! @angular/http */ "@angular/http");
-var i20 = __webpack_require__(/*! @nguniversal/module-map-ngfactory-loader */ "@nguniversal/module-map-ngfactory-loader");
-var i21 = __webpack_require__(/*! ./view/home/home.component */ "./src/app/view/home/home.component.ts");
-var i22 = __webpack_require__(/*! ./view/article/article.component */ "./src/app/view/article/article.component.ts");
-var i23 = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-var i24 = __webpack_require__(/*! @angular/cdk/bidi */ "@angular/cdk/bidi");
-var i25 = __webpack_require__(/*! @angular/material/icon */ "@angular/material/icon");
-var i26 = __webpack_require__(/*! @angular/material/toolbar */ "@angular/material/toolbar");
-var i27 = __webpack_require__(/*! @angular/material/chips */ "@angular/material/chips");
-var i28 = __webpack_require__(/*! @angular/material/grid-list */ "@angular/material/grid-list");
-var i29 = __webpack_require__(/*! @angular/cdk/platform */ "@angular/cdk/platform");
-var i30 = __webpack_require__(/*! @angular/cdk/scrolling */ "@angular/cdk/scrolling");
-var i31 = __webpack_require__(/*! @angular/material/sidenav */ "@angular/material/sidenav");
-var i32 = __webpack_require__(/*! @angular/material/card */ "@angular/material/card");
-var i33 = __webpack_require__(/*! @angular/material/button */ "@angular/material/button");
-var i34 = __webpack_require__(/*! ./utils/material.module */ "./src/app/utils/material.module.ts");
-var i35 = __webpack_require__(/*! ./core/core.module */ "./src/app/core/core.module.ts");
-var i36 = __webpack_require__(/*! ./view/view.module */ "./src/app/view/view.module.ts");
-var i37 = __webpack_require__(/*! ./app.module */ "./src/app/app.module.ts");
-var i38 = __webpack_require__(/*! @angular/cdk/keycodes */ "@angular/cdk/keycodes");
-var AppServerModuleNgFactory = i0.ɵcmf(i1.AppServerModule, [i2.AppComponent], function (_l) { return i0.ɵmod([i0.ɵmpd(512, i0.ComponentFactoryResolver, i0.ɵCodegenComponentFactoryResolver, [[8, [i3.ɵEmptyOutletComponentNgFactory, i4.HomeComponentNgFactory, i5.ArticleComponentNgFactory, i6.AppComponentNgFactory]], [3, i0.ComponentFactoryResolver], i0.NgModuleRef]), i0.ɵmpd(5120, i7.ActivatedRoute, i7.ɵangular_packages_router_router_g, [i7.Router]), i0.ɵmpd(4608, i7.NoPreloading, i7.NoPreloading, []), i0.ɵmpd(6144, i7.PreloadingStrategy, null, [i7.NoPreloading]), i0.ɵmpd(135680, i7.RouterPreloader, i7.RouterPreloader, [i7.Router, i0.NgModuleFactoryLoader, i0.Compiler, i0.Injector, i7.PreloadingStrategy]), i0.ɵmpd(4608, i7.PreloadAllModules, i7.PreloadAllModules, []), i0.ɵmpd(4608, i8.ViewportScroller, i8.ɵNullViewportScroller, []), i0.ɵmpd(5120, i7.ɵangular_packages_router_router_n, i7.ɵangular_packages_router_router_c, [i7.Router, i8.ViewportScroller, i7.ROUTER_CONFIGURATION]), i0.ɵmpd(5120, i7.ROUTER_INITIALIZER, i7.ɵangular_packages_router_router_j, [i7.ɵangular_packages_router_router_h]), i0.ɵmpd(5120, i0.APP_BOOTSTRAP_LISTENER, function (p0_0) { return [p0_0]; }, [i7.ROUTER_INITIALIZER]), i0.ɵmpd(5120, i0.LOCALE_ID, i0.ɵangular_packages_core_core_k, [[3, i0.LOCALE_ID]]), i0.ɵmpd(4608, i8.NgLocalization, i8.NgLocaleLocalization, [i0.LOCALE_ID, [2, i8.ɵangular_packages_common_common_a]]), i0.ɵmpd(5120, i0.IterableDiffers, i0.ɵangular_packages_core_core_i, []), i0.ɵmpd(5120, i0.KeyValueDiffers, i0.ɵangular_packages_core_core_j, []), i0.ɵmpd(6144, i0.Sanitizer, null, [i9.DomSanitizer]), i0.ɵmpd(4608, i9.HAMMER_GESTURE_CONFIG, i9.HammerGestureConfig, []), i0.ɵmpd(5120, i9.EVENT_MANAGER_PLUGINS, function (p0_0, p0_1, p0_2, p1_0, p2_0, p2_1, p2_2, p2_3, p3_0) { return [new i9.ɵDomEventsPlugin(p0_0, p0_1, p0_2), new i9.ɵKeyEventsPlugin(p1_0), new i9.ɵHammerGesturesPlugin(p2_0, p2_1, p2_2, p2_3), new i10.ɵangular_packages_platform_server_platform_server_d(p3_0)]; }, [i8.DOCUMENT, i0.NgZone, i0.PLATFORM_ID, i8.DOCUMENT, i8.DOCUMENT, i9.HAMMER_GESTURE_CONFIG, i0.ɵConsole, [2, i9.HAMMER_LOADER], i9.DOCUMENT]), i0.ɵmpd(4608, i9.EventManager, i9.EventManager, [i9.EVENT_MANAGER_PLUGINS, i0.NgZone]), i0.ɵmpd(135680, i9.ɵDomSharedStylesHost, i9.ɵDomSharedStylesHost, [i8.DOCUMENT]), i0.ɵmpd(4608, i9.ɵDomRendererFactory2, i9.ɵDomRendererFactory2, [i9.EventManager, i9.ɵDomSharedStylesHost]), i0.ɵmpd(4608, i10.ɵangular_packages_platform_server_platform_server_c, i10.ɵangular_packages_platform_server_platform_server_c, [i9.DOCUMENT, [2, i9.ɵTRANSITION_ID]]), i0.ɵmpd(6144, i9.ɵSharedStylesHost, null, [i10.ɵangular_packages_platform_server_platform_server_c]), i0.ɵmpd(4608, i10.ɵServerRendererFactory2, i10.ɵServerRendererFactory2, [i9.EventManager, i0.NgZone, i9.DOCUMENT, i9.ɵSharedStylesHost]), i0.ɵmpd(4608, i11.AnimationDriver, i11.ɵNoopAnimationDriver, []), i0.ɵmpd(5120, i11.ɵAnimationStyleNormalizer, i12.ɵangular_packages_platform_browser_animations_animations_c, []), i0.ɵmpd(4608, i11.ɵAnimationEngine, i12.ɵangular_packages_platform_browser_animations_animations_a, [i8.DOCUMENT, i11.AnimationDriver, i11.ɵAnimationStyleNormalizer]), i0.ɵmpd(5120, i0.RendererFactory2, i10.ɵangular_packages_platform_server_platform_server_a, [i10.ɵServerRendererFactory2, i11.ɵAnimationEngine, i0.NgZone]), i0.ɵmpd(4352, i0.Testability, null, []), i0.ɵmpd(4608, i13.AnimationBuilder, i12.ɵBrowserAnimationBuilder, [i0.RendererFactory2, i9.DOCUMENT]), i0.ɵmpd(4608, i14.ErrorStateMatcher, i14.ErrorStateMatcher, []), i0.ɵmpd(4608, i15.HttpXsrfTokenExtractor, i15.ɵangular_packages_common_http_http_g, [i8.DOCUMENT, i0.PLATFORM_ID, i15.ɵangular_packages_common_http_http_e]), i0.ɵmpd(4608, i15.ɵangular_packages_common_http_http_h, i15.ɵangular_packages_common_http_http_h, [i15.HttpXsrfTokenExtractor, i15.ɵangular_packages_common_http_http_f]), i0.ɵmpd(5120, i15.HTTP_INTERCEPTORS, function (p0_0) { return [p0_0]; }, [i15.ɵangular_packages_common_http_http_h]), i0.ɵmpd(4608, i15.XhrFactory, i10.ɵangular_packages_platform_server_platform_server_e, []), i0.ɵmpd(4608, i15.HttpXhrBackend, i15.HttpXhrBackend, [i15.XhrFactory]), i0.ɵmpd(6144, i15.HttpBackend, null, [i15.HttpXhrBackend]), i0.ɵmpd(5120, i15.HttpHandler, i10.ɵangular_packages_platform_server_platform_server_h, [i15.HttpBackend, i0.Injector]), i0.ɵmpd(4608, i15.HttpClient, i15.HttpClient, [i15.HttpHandler]), i0.ɵmpd(4608, i15.ɵangular_packages_common_http_http_d, i15.ɵangular_packages_common_http_http_d, []), i0.ɵmpd(4608, i16.MarkdownService, i16.MarkdownService, [i0.PLATFORM_ID, [2, i15.HttpClient], i9.DomSanitizer, i16.MarkedOptions]), i0.ɵmpd(4608, i17.ToolFunc, i17.ToolFunc, []), i0.ɵmpd(4608, i18.HttpRequestService, i18.HttpRequestService, [i15.HttpClient]), i0.ɵmpd(4608, i19.BrowserXhr, i10.ɵangular_packages_platform_server_platform_server_e, []), i0.ɵmpd(4608, i19.ResponseOptions, i19.BaseResponseOptions, []), i0.ɵmpd(4608, i19.XSRFStrategy, i10.ɵangular_packages_platform_server_platform_server_f, []), i0.ɵmpd(4608, i19.XHRBackend, i19.XHRBackend, [i19.BrowserXhr, i19.ResponseOptions, i19.XSRFStrategy]), i0.ɵmpd(4608, i19.RequestOptions, i19.BaseRequestOptions, []), i0.ɵmpd(5120, i19.Http, i10.ɵangular_packages_platform_server_platform_server_g, [i19.XHRBackend, i19.RequestOptions]), i0.ɵmpd(1024, i7.ɵangular_packages_router_router_a, i7.ɵangular_packages_router_router_e, [[3, i7.Router]]), i0.ɵmpd(1024, i0.ErrorHandler, i9.ɵangular_packages_platform_browser_platform_browser_a, []), i0.ɵmpd(512, i7.ɵangular_packages_router_router_h, i7.ɵangular_packages_router_router_h, [i0.Injector]), i0.ɵmpd(1024, i0.NgProbeToken, function () { return [i7.ɵangular_packages_router_router_b()]; }, []), i0.ɵmpd(256, i0.APP_ID, "tanpopo", []), i0.ɵmpd(2048, i9.ɵTRANSITION_ID, null, [i0.APP_ID]), i0.ɵmpd(1024, i0.APP_INITIALIZER, function (p0_0, p1_0, p2_0, p2_1, p2_2) { return [i7.ɵangular_packages_router_router_i(p0_0), i9.ɵangular_packages_platform_browser_platform_browser_j(p1_0), i9.ɵangular_packages_platform_browser_platform_browser_h(p2_0, p2_1, p2_2)]; }, [i7.ɵangular_packages_router_router_h, [2, i0.NgProbeToken], i9.ɵTRANSITION_ID, i8.DOCUMENT, i0.Injector]), i0.ɵmpd(512, i0.ApplicationInitStatus, i0.ApplicationInitStatus, [[2, i0.APP_INITIALIZER]]), i0.ɵmpd(131584, i0.ApplicationRef, i0.ApplicationRef, [i0.NgZone, i0.ɵConsole, i0.Injector, i0.ErrorHandler, i0.ComponentFactoryResolver, i0.ApplicationInitStatus]), i0.ɵmpd(512, i7.UrlSerializer, i7.DefaultUrlSerializer, []), i0.ɵmpd(512, i7.ChildrenOutletContexts, i7.ChildrenOutletContexts, []), i0.ɵmpd(256, i7.ROUTER_CONFIGURATION, {}, []), i0.ɵmpd(1024, i8.LocationStrategy, i7.ɵangular_packages_router_router_d, [i8.PlatformLocation, [2, i8.APP_BASE_HREF], i7.ROUTER_CONFIGURATION]), i0.ɵmpd(512, i8.Location, i8.Location, [i8.LocationStrategy]), i0.ɵmpd(512, i0.Compiler, i0.Compiler, []), i0.ɵmpd(512, i0.NgModuleFactoryLoader, i20.ModuleMapNgFactoryLoader, [i0.Compiler, i20.MODULE_MAP]), i0.ɵmpd(1024, i7.ROUTES, function () { return [[{ path: "blog", component: i21.HomeComponent }, { path: "blog/home", redirectTo: "blog" }, { path: "blog/article/:id", component: i22.ArticleComponent }]]; }, []), i0.ɵmpd(1024, i7.Router, i7.ɵangular_packages_router_router_f, [i0.ApplicationRef, i7.UrlSerializer, i7.ChildrenOutletContexts, i8.Location, i0.Injector, i0.NgModuleFactoryLoader, i0.Compiler, i7.ROUTES, i7.ROUTER_CONFIGURATION, [2, i7.UrlHandlingStrategy], [2, i7.RouteReuseStrategy]]), i0.ɵmpd(1073742336, i7.RouterModule, i7.RouterModule, [[2, i7.ɵangular_packages_router_router_a], [2, i7.Router]]), i0.ɵmpd(1073742336, i23.AppRoutingModule, i23.AppRoutingModule, []), i0.ɵmpd(1073742336, i8.CommonModule, i8.CommonModule, []), i0.ɵmpd(1073742336, i0.ApplicationModule, i0.ApplicationModule, [i0.ApplicationRef]), i0.ɵmpd(1073742336, i9.BrowserModule, i9.BrowserModule, [[3, i9.BrowserModule]]), i0.ɵmpd(1073742336, i12.BrowserAnimationsModule, i12.BrowserAnimationsModule, []), i0.ɵmpd(1073742336, i24.BidiModule, i24.BidiModule, []), i0.ɵmpd(1073742336, i14.MatCommonModule, i14.MatCommonModule, [[2, i14.MATERIAL_SANITY_CHECKS], [2, i9.HAMMER_LOADER]]), i0.ɵmpd(1073742336, i25.MatIconModule, i25.MatIconModule, []), i0.ɵmpd(1073742336, i26.MatToolbarModule, i26.MatToolbarModule, []), i0.ɵmpd(1073742336, i27.MatChipsModule, i27.MatChipsModule, []), i0.ɵmpd(1073742336, i14.MatLineModule, i14.MatLineModule, []), i0.ɵmpd(1073742336, i28.MatGridListModule, i28.MatGridListModule, []), i0.ɵmpd(1073742336, i29.PlatformModule, i29.PlatformModule, []), i0.ɵmpd(1073742336, i30.ScrollingModule, i30.ScrollingModule, []), i0.ɵmpd(1073742336, i31.MatSidenavModule, i31.MatSidenavModule, []), i0.ɵmpd(1073742336, i32.MatCardModule, i32.MatCardModule, []), i0.ɵmpd(1073742336, i14.MatRippleModule, i14.MatRippleModule, []), i0.ɵmpd(1073742336, i33.MatButtonModule, i33.MatButtonModule, []), i0.ɵmpd(1073742336, i34.MaterialModule, i34.MaterialModule, []), i0.ɵmpd(1073742336, i15.HttpClientXsrfModule, i15.HttpClientXsrfModule, []), i0.ɵmpd(1073742336, i15.HttpClientModule, i15.HttpClientModule, []), i0.ɵmpd(512, i9.DomSanitizer, i9.ɵDomSanitizerImpl, [i8.DOCUMENT]), i0.ɵmpd(1073742336, i35.CoreModule, i35.CoreModule, [i9.DomSanitizer, i25.MatIconRegistry, [3, i35.CoreModule]]), i0.ɵmpd(1073742336, i16.MarkdownModule, i16.MarkdownModule, []), i0.ɵmpd(1073742336, i36.ViewModule, i36.ViewModule, []), i0.ɵmpd(1073742336, i37.AppModule, i37.AppModule, []), i0.ɵmpd(1073742336, i19.HttpModule, i19.HttpModule, []), i0.ɵmpd(1073742336, i12.NoopAnimationsModule, i12.NoopAnimationsModule, []), i0.ɵmpd(1073742336, i10.ServerModule, i10.ServerModule, []), i0.ɵmpd(1073742336, i20.ModuleMapLoaderModule, i20.ModuleMapLoaderModule, []), i0.ɵmpd(1073742336, i1.AppServerModule, i1.AppServerModule, []), i0.ɵmpd(256, i0.ɵAPP_ROOT, true, []), i0.ɵmpd(256, i12.ANIMATION_MODULE_TYPE, "NoopAnimations", []), i0.ɵmpd(256, i27.MAT_CHIPS_DEFAULT_OPTIONS, { separatorKeyCodes: [i38.ENTER] }, []), i0.ɵmpd(256, i15.ɵangular_packages_common_http_http_e, "XSRF-TOKEN", []), i0.ɵmpd(256, i15.ɵangular_packages_common_http_http_f, "X-XSRF-TOKEN", []), i0.ɵmpd(256, i16.MarkedOptions, { gfm: true, tables: true, breaks: false, pedantic: false, sanitize: false, smartLists: true, smartypants: false }, [])]); });
+var i15 = __webpack_require__(/*! @angular/cdk/observers */ "@angular/cdk/observers");
+var i16 = __webpack_require__(/*! @angular/common/http */ "@angular/common/http");
+var i17 = __webpack_require__(/*! ngx-markdown */ "ngx-markdown");
+var i18 = __webpack_require__(/*! ./utils/helper */ "./src/app/utils/helper.ts");
+var i19 = __webpack_require__(/*! ./utils/httpRequest.service */ "./src/app/utils/httpRequest.service.ts");
+var i20 = __webpack_require__(/*! @angular/http */ "@angular/http");
+var i21 = __webpack_require__(/*! @nguniversal/module-map-ngfactory-loader */ "@nguniversal/module-map-ngfactory-loader");
+var i22 = __webpack_require__(/*! ./view/home/home.component */ "./src/app/view/home/home.component.ts");
+var i23 = __webpack_require__(/*! ./view/article/article.component */ "./src/app/view/article/article.component.ts");
+var i24 = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+var i25 = __webpack_require__(/*! @angular/cdk/bidi */ "@angular/cdk/bidi");
+var i26 = __webpack_require__(/*! @angular/material/icon */ "@angular/material/icon");
+var i27 = __webpack_require__(/*! @angular/material/toolbar */ "@angular/material/toolbar");
+var i28 = __webpack_require__(/*! @angular/material/chips */ "@angular/material/chips");
+var i29 = __webpack_require__(/*! @angular/material/grid-list */ "@angular/material/grid-list");
+var i30 = __webpack_require__(/*! @angular/cdk/platform */ "@angular/cdk/platform");
+var i31 = __webpack_require__(/*! @angular/cdk/scrolling */ "@angular/cdk/scrolling");
+var i32 = __webpack_require__(/*! @angular/material/sidenav */ "@angular/material/sidenav");
+var i33 = __webpack_require__(/*! @angular/material/card */ "@angular/material/card");
+var i34 = __webpack_require__(/*! @angular/cdk/a11y */ "@angular/cdk/a11y");
+var i35 = __webpack_require__(/*! @angular/material/badge */ "@angular/material/badge");
+var i36 = __webpack_require__(/*! @angular/material/button */ "@angular/material/button");
+var i37 = __webpack_require__(/*! ./utils/material.module */ "./src/app/utils/material.module.ts");
+var i38 = __webpack_require__(/*! ./core/core.module */ "./src/app/core/core.module.ts");
+var i39 = __webpack_require__(/*! ./view/view.module */ "./src/app/view/view.module.ts");
+var i40 = __webpack_require__(/*! ./app.module */ "./src/app/app.module.ts");
+var i41 = __webpack_require__(/*! @angular/cdk/keycodes */ "@angular/cdk/keycodes");
+var AppServerModuleNgFactory = i0.ɵcmf(i1.AppServerModule, [i2.AppComponent], function (_l) { return i0.ɵmod([i0.ɵmpd(512, i0.ComponentFactoryResolver, i0.ɵCodegenComponentFactoryResolver, [[8, [i3.ɵEmptyOutletComponentNgFactory, i4.HomeComponentNgFactory, i5.ArticleComponentNgFactory, i6.AppComponentNgFactory]], [3, i0.ComponentFactoryResolver], i0.NgModuleRef]), i0.ɵmpd(5120, i7.ActivatedRoute, i7.ɵangular_packages_router_router_g, [i7.Router]), i0.ɵmpd(4608, i7.NoPreloading, i7.NoPreloading, []), i0.ɵmpd(6144, i7.PreloadingStrategy, null, [i7.NoPreloading]), i0.ɵmpd(135680, i7.RouterPreloader, i7.RouterPreloader, [i7.Router, i0.NgModuleFactoryLoader, i0.Compiler, i0.Injector, i7.PreloadingStrategy]), i0.ɵmpd(4608, i7.PreloadAllModules, i7.PreloadAllModules, []), i0.ɵmpd(4608, i8.ViewportScroller, i8.ɵNullViewportScroller, []), i0.ɵmpd(5120, i7.ɵangular_packages_router_router_n, i7.ɵangular_packages_router_router_c, [i7.Router, i8.ViewportScroller, i7.ROUTER_CONFIGURATION]), i0.ɵmpd(5120, i7.ROUTER_INITIALIZER, i7.ɵangular_packages_router_router_j, [i7.ɵangular_packages_router_router_h]), i0.ɵmpd(5120, i0.APP_BOOTSTRAP_LISTENER, function (p0_0) { return [p0_0]; }, [i7.ROUTER_INITIALIZER]), i0.ɵmpd(5120, i0.LOCALE_ID, i0.ɵangular_packages_core_core_k, [[3, i0.LOCALE_ID]]), i0.ɵmpd(4608, i8.NgLocalization, i8.NgLocaleLocalization, [i0.LOCALE_ID, [2, i8.ɵangular_packages_common_common_a]]), i0.ɵmpd(5120, i0.IterableDiffers, i0.ɵangular_packages_core_core_i, []), i0.ɵmpd(5120, i0.KeyValueDiffers, i0.ɵangular_packages_core_core_j, []), i0.ɵmpd(6144, i0.Sanitizer, null, [i9.DomSanitizer]), i0.ɵmpd(4608, i9.HAMMER_GESTURE_CONFIG, i9.HammerGestureConfig, []), i0.ɵmpd(5120, i9.EVENT_MANAGER_PLUGINS, function (p0_0, p0_1, p0_2, p1_0, p2_0, p2_1, p2_2, p2_3, p3_0) { return [new i9.ɵDomEventsPlugin(p0_0, p0_1, p0_2), new i9.ɵKeyEventsPlugin(p1_0), new i9.ɵHammerGesturesPlugin(p2_0, p2_1, p2_2, p2_3), new i10.ɵangular_packages_platform_server_platform_server_d(p3_0)]; }, [i8.DOCUMENT, i0.NgZone, i0.PLATFORM_ID, i8.DOCUMENT, i8.DOCUMENT, i9.HAMMER_GESTURE_CONFIG, i0.ɵConsole, [2, i9.HAMMER_LOADER], i9.DOCUMENT]), i0.ɵmpd(4608, i9.EventManager, i9.EventManager, [i9.EVENT_MANAGER_PLUGINS, i0.NgZone]), i0.ɵmpd(135680, i9.ɵDomSharedStylesHost, i9.ɵDomSharedStylesHost, [i8.DOCUMENT]), i0.ɵmpd(4608, i9.ɵDomRendererFactory2, i9.ɵDomRendererFactory2, [i9.EventManager, i9.ɵDomSharedStylesHost]), i0.ɵmpd(4608, i10.ɵangular_packages_platform_server_platform_server_c, i10.ɵangular_packages_platform_server_platform_server_c, [i9.DOCUMENT, [2, i9.ɵTRANSITION_ID]]), i0.ɵmpd(6144, i9.ɵSharedStylesHost, null, [i10.ɵangular_packages_platform_server_platform_server_c]), i0.ɵmpd(4608, i10.ɵServerRendererFactory2, i10.ɵServerRendererFactory2, [i9.EventManager, i0.NgZone, i9.DOCUMENT, i9.ɵSharedStylesHost]), i0.ɵmpd(4608, i11.AnimationDriver, i11.ɵNoopAnimationDriver, []), i0.ɵmpd(5120, i11.ɵAnimationStyleNormalizer, i12.ɵangular_packages_platform_browser_animations_animations_c, []), i0.ɵmpd(4608, i11.ɵAnimationEngine, i12.ɵangular_packages_platform_browser_animations_animations_a, [i8.DOCUMENT, i11.AnimationDriver, i11.ɵAnimationStyleNormalizer]), i0.ɵmpd(5120, i0.RendererFactory2, i10.ɵangular_packages_platform_server_platform_server_a, [i10.ɵServerRendererFactory2, i11.ɵAnimationEngine, i0.NgZone]), i0.ɵmpd(4352, i0.Testability, null, []), i0.ɵmpd(4608, i13.AnimationBuilder, i12.ɵBrowserAnimationBuilder, [i0.RendererFactory2, i9.DOCUMENT]), i0.ɵmpd(4608, i14.ErrorStateMatcher, i14.ErrorStateMatcher, []), i0.ɵmpd(4608, i15.MutationObserverFactory, i15.MutationObserverFactory, []), i0.ɵmpd(4608, i16.HttpXsrfTokenExtractor, i16.ɵangular_packages_common_http_http_g, [i8.DOCUMENT, i0.PLATFORM_ID, i16.ɵangular_packages_common_http_http_e]), i0.ɵmpd(4608, i16.ɵangular_packages_common_http_http_h, i16.ɵangular_packages_common_http_http_h, [i16.HttpXsrfTokenExtractor, i16.ɵangular_packages_common_http_http_f]), i0.ɵmpd(5120, i16.HTTP_INTERCEPTORS, function (p0_0) { return [p0_0]; }, [i16.ɵangular_packages_common_http_http_h]), i0.ɵmpd(4608, i16.XhrFactory, i10.ɵangular_packages_platform_server_platform_server_e, []), i0.ɵmpd(4608, i16.HttpXhrBackend, i16.HttpXhrBackend, [i16.XhrFactory]), i0.ɵmpd(6144, i16.HttpBackend, null, [i16.HttpXhrBackend]), i0.ɵmpd(5120, i16.HttpHandler, i10.ɵangular_packages_platform_server_platform_server_h, [i16.HttpBackend, i0.Injector]), i0.ɵmpd(4608, i16.HttpClient, i16.HttpClient, [i16.HttpHandler]), i0.ɵmpd(4608, i16.ɵangular_packages_common_http_http_d, i16.ɵangular_packages_common_http_http_d, []), i0.ɵmpd(4608, i17.MarkdownService, i17.MarkdownService, [i0.PLATFORM_ID, [2, i16.HttpClient], i9.DomSanitizer, i17.MarkedOptions]), i0.ɵmpd(4608, i18.ToolFunc, i18.ToolFunc, [i7.Router]), i0.ɵmpd(4608, i19.HttpRequestService, i19.HttpRequestService, [i16.HttpClient]), i0.ɵmpd(4608, i20.BrowserXhr, i10.ɵangular_packages_platform_server_platform_server_e, []), i0.ɵmpd(4608, i20.ResponseOptions, i20.BaseResponseOptions, []), i0.ɵmpd(4608, i20.XSRFStrategy, i10.ɵangular_packages_platform_server_platform_server_f, []), i0.ɵmpd(4608, i20.XHRBackend, i20.XHRBackend, [i20.BrowserXhr, i20.ResponseOptions, i20.XSRFStrategy]), i0.ɵmpd(4608, i20.RequestOptions, i20.BaseRequestOptions, []), i0.ɵmpd(5120, i20.Http, i10.ɵangular_packages_platform_server_platform_server_g, [i20.XHRBackend, i20.RequestOptions]), i0.ɵmpd(1024, i7.ɵangular_packages_router_router_a, i7.ɵangular_packages_router_router_e, [[3, i7.Router]]), i0.ɵmpd(1024, i0.ErrorHandler, i9.ɵangular_packages_platform_browser_platform_browser_a, []), i0.ɵmpd(512, i7.ɵangular_packages_router_router_h, i7.ɵangular_packages_router_router_h, [i0.Injector]), i0.ɵmpd(1024, i0.NgProbeToken, function () { return [i7.ɵangular_packages_router_router_b()]; }, []), i0.ɵmpd(256, i0.APP_ID, "tanpopo", []), i0.ɵmpd(2048, i9.ɵTRANSITION_ID, null, [i0.APP_ID]), i0.ɵmpd(1024, i0.APP_INITIALIZER, function (p0_0, p1_0, p2_0, p2_1, p2_2) { return [i7.ɵangular_packages_router_router_i(p0_0), i9.ɵangular_packages_platform_browser_platform_browser_j(p1_0), i9.ɵangular_packages_platform_browser_platform_browser_h(p2_0, p2_1, p2_2)]; }, [i7.ɵangular_packages_router_router_h, [2, i0.NgProbeToken], i9.ɵTRANSITION_ID, i8.DOCUMENT, i0.Injector]), i0.ɵmpd(512, i0.ApplicationInitStatus, i0.ApplicationInitStatus, [[2, i0.APP_INITIALIZER]]), i0.ɵmpd(131584, i0.ApplicationRef, i0.ApplicationRef, [i0.NgZone, i0.ɵConsole, i0.Injector, i0.ErrorHandler, i0.ComponentFactoryResolver, i0.ApplicationInitStatus]), i0.ɵmpd(512, i7.UrlSerializer, i7.DefaultUrlSerializer, []), i0.ɵmpd(512, i7.ChildrenOutletContexts, i7.ChildrenOutletContexts, []), i0.ɵmpd(256, i7.ROUTER_CONFIGURATION, {}, []), i0.ɵmpd(1024, i8.LocationStrategy, i7.ɵangular_packages_router_router_d, [i8.PlatformLocation, [2, i8.APP_BASE_HREF], i7.ROUTER_CONFIGURATION]), i0.ɵmpd(512, i8.Location, i8.Location, [i8.LocationStrategy]), i0.ɵmpd(512, i0.Compiler, i0.Compiler, []), i0.ɵmpd(512, i0.NgModuleFactoryLoader, i21.ModuleMapNgFactoryLoader, [i0.Compiler, i21.MODULE_MAP]), i0.ɵmpd(1024, i7.ROUTES, function () { return [[{ path: "blog", component: i22.HomeComponent }, { path: "blog/home", redirectTo: "blog" }, { path: "blog/home", redirectTo: "blog" }, { path: "blog/article/:id", component: i23.ArticleComponent }]]; }, []), i0.ɵmpd(1024, i7.Router, i7.ɵangular_packages_router_router_f, [i0.ApplicationRef, i7.UrlSerializer, i7.ChildrenOutletContexts, i8.Location, i0.Injector, i0.NgModuleFactoryLoader, i0.Compiler, i7.ROUTES, i7.ROUTER_CONFIGURATION, [2, i7.UrlHandlingStrategy], [2, i7.RouteReuseStrategy]]), i0.ɵmpd(1073742336, i7.RouterModule, i7.RouterModule, [[2, i7.ɵangular_packages_router_router_a], [2, i7.Router]]), i0.ɵmpd(1073742336, i24.AppRoutingModule, i24.AppRoutingModule, []), i0.ɵmpd(1073742336, i8.CommonModule, i8.CommonModule, []), i0.ɵmpd(1073742336, i0.ApplicationModule, i0.ApplicationModule, [i0.ApplicationRef]), i0.ɵmpd(1073742336, i9.BrowserModule, i9.BrowserModule, [[3, i9.BrowserModule]]), i0.ɵmpd(1073742336, i12.BrowserAnimationsModule, i12.BrowserAnimationsModule, []), i0.ɵmpd(1073742336, i25.BidiModule, i25.BidiModule, []), i0.ɵmpd(1073742336, i14.MatCommonModule, i14.MatCommonModule, [[2, i14.MATERIAL_SANITY_CHECKS], [2, i9.HAMMER_LOADER]]), i0.ɵmpd(1073742336, i26.MatIconModule, i26.MatIconModule, []), i0.ɵmpd(1073742336, i27.MatToolbarModule, i27.MatToolbarModule, []), i0.ɵmpd(1073742336, i28.MatChipsModule, i28.MatChipsModule, []), i0.ɵmpd(1073742336, i14.MatLineModule, i14.MatLineModule, []), i0.ɵmpd(1073742336, i29.MatGridListModule, i29.MatGridListModule, []), i0.ɵmpd(1073742336, i30.PlatformModule, i30.PlatformModule, []), i0.ɵmpd(1073742336, i31.ScrollingModule, i31.ScrollingModule, []), i0.ɵmpd(1073742336, i32.MatSidenavModule, i32.MatSidenavModule, []), i0.ɵmpd(1073742336, i33.MatCardModule, i33.MatCardModule, []), i0.ɵmpd(1073742336, i15.ObserversModule, i15.ObserversModule, []), i0.ɵmpd(1073742336, i34.A11yModule, i34.A11yModule, []), i0.ɵmpd(1073742336, i35.MatBadgeModule, i35.MatBadgeModule, []), i0.ɵmpd(1073742336, i14.MatRippleModule, i14.MatRippleModule, []), i0.ɵmpd(1073742336, i36.MatButtonModule, i36.MatButtonModule, []), i0.ɵmpd(1073742336, i37.MaterialModule, i37.MaterialModule, []), i0.ɵmpd(1073742336, i16.HttpClientXsrfModule, i16.HttpClientXsrfModule, []), i0.ɵmpd(1073742336, i16.HttpClientModule, i16.HttpClientModule, []), i0.ɵmpd(512, i9.DomSanitizer, i9.ɵDomSanitizerImpl, [i8.DOCUMENT]), i0.ɵmpd(1073742336, i38.CoreModule, i38.CoreModule, [i9.DomSanitizer, i26.MatIconRegistry, [3, i38.CoreModule]]), i0.ɵmpd(1073742336, i17.MarkdownModule, i17.MarkdownModule, []), i0.ɵmpd(1073742336, i39.ViewModule, i39.ViewModule, []), i0.ɵmpd(1073742336, i40.AppModule, i40.AppModule, []), i0.ɵmpd(1073742336, i20.HttpModule, i20.HttpModule, []), i0.ɵmpd(1073742336, i12.NoopAnimationsModule, i12.NoopAnimationsModule, []), i0.ɵmpd(1073742336, i10.ServerModule, i10.ServerModule, []), i0.ɵmpd(1073742336, i21.ModuleMapLoaderModule, i21.ModuleMapLoaderModule, []), i0.ɵmpd(1073742336, i1.AppServerModule, i1.AppServerModule, []), i0.ɵmpd(256, i0.ɵAPP_ROOT, true, []), i0.ɵmpd(256, i12.ANIMATION_MODULE_TYPE, "NoopAnimations", []), i0.ɵmpd(256, i28.MAT_CHIPS_DEFAULT_OPTIONS, { separatorKeyCodes: [i41.ENTER] }, []), i0.ɵmpd(256, i16.ɵangular_packages_common_http_http_e, "XSRF-TOKEN", []), i0.ɵmpd(256, i16.ɵangular_packages_common_http_http_f, "X-XSRF-TOKEN", []), i0.ɵmpd(256, i17.MarkedOptions, { gfm: true, tables: true, breaks: false, pedantic: false, sanitize: false, smartLists: true, smartypants: false }, [])]); });
 exports.AppServerModuleNgFactory = AppServerModuleNgFactory;
 
 
@@ -775,7 +783,7 @@ var i5 = __webpack_require__(/*! @angular/common */ "@angular/common");
 var i6 = __webpack_require__(/*! ../../../../node_modules/@angular/material/icon/typings/index.ngfactory */ "./node_modules/@angular/material/icon/typings/index.ngfactory.js");
 var i7 = __webpack_require__(/*! @angular/material/icon */ "@angular/material/icon");
 var i8 = __webpack_require__(/*! ./header.component */ "./src/app/core/header/header.component.ts");
-var i9 = __webpack_require__(/*! @angular/router */ "@angular/router");
+var i9 = __webpack_require__(/*! ../../utils/helper */ "./src/app/utils/helper.ts");
 var styles_HeaderComponent = [i0.styles];
 var RenderType_HeaderComponent = i1.ɵcrt({ encapsulation: 0, styles: styles_HeaderComponent, data: {} });
 exports.RenderType_HeaderComponent = RenderType_HeaderComponent;
@@ -790,7 +798,7 @@ function View_HeaderComponent_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0
         ad = (pd_0 && ad);
     } return ad; }, i6.View_MatIcon_0, i6.RenderType_MatIcon)), i1.ɵdid(12, 9158656, null, 0, i7.MatIcon, [i1.ElementRef, i7.MatIconRegistry, [8, null], [2, i7.MAT_ICON_LOCATION]], { svgIcon: [0, "svgIcon"] }, null)], function (_ck, _v) { _ck(_v, 5, 0); _ck(_v, 9, 0); var currVal_5 = "github"; _ck(_v, 12, 0, currVal_5); }, function (_ck, _v) { var currVal_0 = (i1.ɵnov(_v, 2)._toolbarRows.length > 0); var currVal_1 = (i1.ɵnov(_v, 2)._toolbarRows.length === 0); _ck(_v, 1, 0, currVal_0, currVal_1); var currVal_2 = i1.ɵnov(_v, 5).inline; _ck(_v, 4, 0, currVal_2); var currVal_3 = i1.ɵnov(_v, 9).inline; _ck(_v, 8, 0, currVal_3); var currVal_4 = i1.ɵnov(_v, 12).inline; _ck(_v, 11, 0, currVal_4); }); }
 exports.View_HeaderComponent_0 = View_HeaderComponent_0;
-function View_HeaderComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-header", [], null, null, null, View_HeaderComponent_0, RenderType_HeaderComponent)), i1.ɵdid(1, 114688, null, 0, i8.HeaderComponent, [i9.Router], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+function View_HeaderComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-header", [], null, null, null, View_HeaderComponent_0, RenderType_HeaderComponent)), i1.ɵdid(1, 114688, null, 0, i8.HeaderComponent, [i9.ToolFunc], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
 exports.View_HeaderComponent_Host_0 = View_HeaderComponent_Host_0;
 var HeaderComponentNgFactory = i1.ɵccf("app-header", i8.HeaderComponent, View_HeaderComponent_Host_0, {}, { toggle: "toggle" }, []);
 exports.HeaderComponentNgFactory = HeaderComponentNgFactory;
@@ -831,11 +839,11 @@ exports.styles = styles;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @angular/core */ "@angular/core");
-var router_1 = __webpack_require__(/*! @angular/router */ "@angular/router");
 var environment_1 = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+var helper_1 = __webpack_require__(/*! ../../utils/helper */ "./src/app/utils/helper.ts");
 var HeaderComponent = /** @class */ (function () {
-    function HeaderComponent(router) {
-        this.router = router;
+    function HeaderComponent(tools) {
+        this.tools = tools;
         this.toggle = new core_1.EventEmitter();
         this.routerUri = environment_1.environment.options.routerUri;
     }
@@ -844,7 +852,7 @@ var HeaderComponent = /** @class */ (function () {
         this.toggle.emit();
     };
     HeaderComponent.prototype.goHome = function () {
-        this.router.navigateByUrl(this.routerUri + "/home");
+        this.tools.goto('/home');
     };
     HeaderComponent.prototype.goto = function () {
         window.location.href = 'https://github.com/panzer-vor';
@@ -874,53 +882,32 @@ exports.HeaderComponent = HeaderComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var i0 = __webpack_require__(/*! ./sidebar.component.scss.shim.ngstyle */ "./src/app/core/sidebar/sidebar.component.scss.shim.ngstyle.js");
 var i1 = __webpack_require__(/*! @angular/core */ "@angular/core");
-var i2 = __webpack_require__(/*! @angular/material/chips */ "@angular/material/chips");
-var i3 = __webpack_require__(/*! @angular/cdk/platform */ "@angular/cdk/platform");
-var i4 = __webpack_require__(/*! @angular/material/core */ "@angular/material/core");
-var i5 = __webpack_require__(/*! ../../../../node_modules/@angular/material/chips/typings/index.ngfactory */ "./node_modules/@angular/material/chips/typings/index.ngfactory.js");
-var i6 = __webpack_require__(/*! @angular/material/form-field */ "@angular/material/form-field");
-var i7 = __webpack_require__(/*! @angular/cdk/bidi */ "@angular/cdk/bidi");
-var i8 = __webpack_require__(/*! @angular/forms */ "@angular/forms");
-var i9 = __webpack_require__(/*! @angular/common */ "@angular/common");
-var i10 = __webpack_require__(/*! ./sidebar.component */ "./src/app/core/sidebar/sidebar.component.ts");
-var i11 = __webpack_require__(/*! @angular/router */ "@angular/router");
-var i12 = __webpack_require__(/*! ../../utils/httpRequest.service */ "./src/app/utils/httpRequest.service.ts");
+var i2 = __webpack_require__(/*! ../../../../node_modules/@angular/material/button/typings/index.ngfactory */ "./node_modules/@angular/material/button/typings/index.ngfactory.js");
+var i3 = __webpack_require__(/*! @angular/material/badge */ "@angular/material/badge");
+var i4 = __webpack_require__(/*! @angular/common */ "@angular/common");
+var i5 = __webpack_require__(/*! @angular/cdk/a11y */ "@angular/cdk/a11y");
+var i6 = __webpack_require__(/*! @angular/material/button */ "@angular/material/button");
+var i7 = __webpack_require__(/*! @angular/cdk/platform */ "@angular/cdk/platform");
+var i8 = __webpack_require__(/*! @angular/platform-browser/animations */ "@angular/platform-browser/animations");
+var i9 = __webpack_require__(/*! ./sidebar.component */ "./src/app/core/sidebar/sidebar.component.ts");
+var i10 = __webpack_require__(/*! ../../utils/httpRequest.service */ "./src/app/utils/httpRequest.service.ts");
+var i11 = __webpack_require__(/*! ../../utils/helper */ "./src/app/utils/helper.ts");
 var styles_SidebarComponent = [i0.styles];
 var RenderType_SidebarComponent = i1.ɵcrt({ encapsulation: 0, styles: styles_SidebarComponent, data: {} });
 exports.RenderType_SidebarComponent = RenderType_SidebarComponent;
-function View_SidebarComponent_1(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 5, "mat-chip", [["class", "blog-chip mat-chip"], ["role", "option"]], [[1, "tabindex", 0], [2, "mat-chip-selected", null], [2, "mat-chip-with-avatar", null], [2, "mat-chip-with-trailing-icon", null], [2, "mat-chip-disabled", null], [1, "disabled", 0], [1, "aria-disabled", 0], [1, "aria-selected", 0]], [[null, "click"], [null, "keydown"], [null, "focus"], [null, "blur"]], function (_v, en, $event) { var ad = true; var _co = _v.component; if (("click" === en)) {
-        var pd_0 = (i1.ɵnov(_v, 1)._handleClick($event) !== false);
+function View_SidebarComponent_2(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 3, "button", [["class", "mat-badge"], ["mat-raised-button", ""], ["matBadgeColor", "accent"]], [[2, "mat-badge-overlap", null], [2, "mat-badge-above", null], [2, "mat-badge-below", null], [2, "mat-badge-before", null], [2, "mat-badge-after", null], [2, "mat-badge-small", null], [2, "mat-badge-medium", null], [2, "mat-badge-large", null], [2, "mat-badge-hidden", null], [2, "mat-badge-disabled", null], [8, "disabled", 0], [2, "_mat-animation-noopable", null]], [[null, "click"]], function (_v, en, $event) { var ad = true; var _co = _v.component; if (("click" === en)) {
+        var pd_0 = (_co.goto(_v.parent.context.$implicit.code) !== false);
         ad = (pd_0 && ad);
-    } if (("keydown" === en)) {
-        var pd_1 = (i1.ɵnov(_v, 1)._handleKeydown($event) !== false);
-        ad = (pd_1 && ad);
-    } if (("focus" === en)) {
-        var pd_2 = (i1.ɵnov(_v, 1).focus() !== false);
-        ad = (pd_2 && ad);
-    } if (("blur" === en)) {
-        var pd_3 = (i1.ɵnov(_v, 1)._blur() !== false);
-        ad = (pd_3 && ad);
-    } if (("click" === en)) {
-        var pd_4 = (_co.goto(_v.context.$implicit.code) !== false);
-        ad = (pd_4 && ad);
-    } return ad; }, null, null)), i1.ɵdid(1, 147456, [[1, 4]], 3, i2.MatChip, [i1.ElementRef, i1.NgZone, i3.Platform, [2, i4.MAT_RIPPLE_GLOBAL_OPTIONS]], null, null), i1.ɵqud(335544320, 2, { avatar: 0 }), i1.ɵqud(335544320, 3, { trailingIcon: 0 }), i1.ɵqud(335544320, 4, { removeIcon: 0 }), (_l()(), i1.ɵted(5, null, ["", ""]))], null, function (_ck, _v) { var currVal_0 = (i1.ɵnov(_v, 1).disabled ? null : (0 - 1)); var currVal_1 = i1.ɵnov(_v, 1).selected; var currVal_2 = i1.ɵnov(_v, 1).avatar; var currVal_3 = (i1.ɵnov(_v, 1).trailingIcon || i1.ɵnov(_v, 1).removeIcon); var currVal_4 = i1.ɵnov(_v, 1).disabled; var currVal_5 = (i1.ɵnov(_v, 1).disabled || null); var currVal_6 = i1.ɵnov(_v, 1).disabled.toString(); var currVal_7 = i1.ɵnov(_v, 1).ariaSelected; _ck(_v, 0, 0, currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7); var currVal_8 = _v.context.$implicit.name; _ck(_v, 5, 0, currVal_8); }); }
-function View_SidebarComponent_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 15, "div", [["class", "blog-sidebar"]], null, null, null, null, null)), (_l()(), i1.ɵeld(1, 0, null, null, 3, "div", [["class", "blog-master"]], null, null, null, null, null)), (_l()(), i1.ɵeld(2, 0, null, null, 0, "img", [["alt", "logo"]], [[8, "src", 4]], [[null, "click"]], function (_v, en, $event) { var ad = true; var _co = _v.component; if (("click" === en)) {
-        var pd_0 = (_co.goto(0) !== false);
+    } return ad; }, i2.View_MatButton_0, i2.RenderType_MatButton)), i1.ɵdid(1, 147456, null, 0, i3.MatBadge, [[2, i4.DOCUMENT], i1.NgZone, i1.ElementRef, i5.AriaDescriber, i1.Renderer2], { color: [0, "color"], content: [1, "content"] }, null), i1.ɵdid(2, 180224, null, 0, i6.MatButton, [i1.ElementRef, i7.Platform, i5.FocusMonitor, [2, i8.ANIMATION_MODULE_TYPE]], null, null), (_l()(), i1.ɵted(3, 0, ["", " "]))], function (_ck, _v) { var currVal_12 = "accent"; var currVal_13 = _v.parent.context.$implicit.count; _ck(_v, 1, 0, currVal_12, currVal_13); }, function (_ck, _v) { var currVal_0 = i1.ɵnov(_v, 1).overlap; var currVal_1 = i1.ɵnov(_v, 1).isAbove(); var currVal_2 = !i1.ɵnov(_v, 1).isAbove(); var currVal_3 = !i1.ɵnov(_v, 1).isAfter(); var currVal_4 = i1.ɵnov(_v, 1).isAfter(); var currVal_5 = (i1.ɵnov(_v, 1).size === "small"); var currVal_6 = (i1.ɵnov(_v, 1).size === "medium"); var currVal_7 = (i1.ɵnov(_v, 1).size === "large"); var currVal_8 = (i1.ɵnov(_v, 1).hidden || !i1.ɵnov(_v, 1)._hasContent); var currVal_9 = i1.ɵnov(_v, 1).disabled; var currVal_10 = (i1.ɵnov(_v, 2).disabled || null); var currVal_11 = (i1.ɵnov(_v, 2)._animationMode === "NoopAnimations"); _ck(_v, 0, 1, [currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7, currVal_8, currVal_9, currVal_10, currVal_11]); var currVal_14 = _v.parent.context.$implicit.name; _ck(_v, 3, 0, currVal_14); }); }
+function View_SidebarComponent_1(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 2, null, null, null, null, null, null, null)), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SidebarComponent_2)), i1.ɵdid(2, 16384, null, 0, i4.NgIf, [i1.ViewContainerRef, i1.TemplateRef], { ngIf: [0, "ngIf"] }, null), (_l()(), i1.ɵand(0, null, null, 0))], function (_ck, _v) { var currVal_0 = _v.context.$implicit.count; _ck(_v, 2, 0, currVal_0); }, null); }
+function View_SidebarComponent_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 11, "div", [["class", "blog-sidebar"]], null, null, null, null, null)), (_l()(), i1.ɵeld(1, 0, null, null, 3, "div", [["class", "blog-master"]], null, null, null, null, null)), (_l()(), i1.ɵeld(2, 0, null, null, 0, "img", [["alt", "logo"]], [[8, "src", 4]], [[null, "click"]], function (_v, en, $event) { var ad = true; var _co = _v.component; if (("click" === en)) {
+        var pd_0 = (_co.goto() !== false);
         ad = (pd_0 && ad);
-    } return ad; }, null, null)), (_l()(), i1.ɵeld(3, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["\u5909\u5316\u3092\u6050\u308C\u308B\u306A"])), (_l()(), i1.ɵeld(5, 0, null, null, 1, "div", [["class", "tit"]], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["\u529B\u58EB"])), (_l()(), i1.ɵeld(7, 0, null, null, 1, "div", [["class", "sub-tit"]], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["IT, ACG"])), (_l()(), i1.ɵeld(9, 0, null, null, 6, "div", [["class", "blog-tags"]], null, null, null, null, null)), (_l()(), i1.ɵeld(10, 0, null, null, 5, "mat-chip-list", [["class", "mat-chip-list"]], [[1, "tabindex", 0], [1, "aria-describedby", 0], [1, "aria-required", 0], [1, "aria-disabled", 0], [1, "aria-invalid", 0], [1, "aria-multiselectable", 0], [1, "role", 0], [2, "mat-chip-list-disabled", null], [2, "mat-chip-list-invalid", null], [2, "mat-chip-list-required", null], [1, "aria-orientation", 0], [8, "id", 0]], [[null, "focus"], [null, "blur"], [null, "keydown"]], function (_v, en, $event) { var ad = true; if (("focus" === en)) {
-        var pd_0 = (i1.ɵnov(_v, 12).focus() !== false);
-        ad = (pd_0 && ad);
-    } if (("blur" === en)) {
-        var pd_1 = (i1.ɵnov(_v, 12)._blur() !== false);
-        ad = (pd_1 && ad);
-    } if (("keydown" === en)) {
-        var pd_2 = (i1.ɵnov(_v, 12)._keydown($event) !== false);
-        ad = (pd_2 && ad);
-    } return ad; }, i5.View_MatChipList_0, i5.RenderType_MatChipList)), i1.ɵprd(6144, null, i6.MatFormFieldControl, null, [i2.MatChipList]), i1.ɵdid(12, 1556480, null, 1, i2.MatChipList, [i1.ElementRef, i1.ChangeDetectorRef, [2, i7.Directionality], [2, i8.NgForm], [2, i8.FormGroupDirective], i4.ErrorStateMatcher, [8, null]], null, null), i1.ɵqud(603979776, 1, { chips: 1 }), (_l()(), i1.ɵand(16777216, null, 0, 1, null, View_SidebarComponent_1)), i1.ɵdid(15, 278528, null, 0, i9.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, "ngForOf"] }, null)], function (_ck, _v) { var _co = _v.component; _ck(_v, 12, 0); var currVal_13 = _co.tags; _ck(_v, 15, 0, currVal_13); }, function (_ck, _v) { var _co = _v.component; var currVal_0 = (_co.assetsUri ? (_co.assetsUri + "images/logo.jpg") : "../../../assets/images/logo.jpg"); _ck(_v, 2, 0, currVal_0); var currVal_1 = (i1.ɵnov(_v, 12).disabled ? null : i1.ɵnov(_v, 12)._tabIndex); var currVal_2 = (i1.ɵnov(_v, 12)._ariaDescribedby || null); var currVal_3 = i1.ɵnov(_v, 12).required.toString(); var currVal_4 = i1.ɵnov(_v, 12).disabled.toString(); var currVal_5 = i1.ɵnov(_v, 12).errorState; var currVal_6 = i1.ɵnov(_v, 12).multiple; var currVal_7 = i1.ɵnov(_v, 12).role; var currVal_8 = i1.ɵnov(_v, 12).disabled; var currVal_9 = i1.ɵnov(_v, 12).errorState; var currVal_10 = i1.ɵnov(_v, 12).required; var currVal_11 = i1.ɵnov(_v, 12).ariaOrientation; var currVal_12 = i1.ɵnov(_v, 12)._uid; _ck(_v, 10, 1, [currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12]); }); }
+    } return ad; }, null, null)), (_l()(), i1.ɵeld(3, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["\u5909\u5316\u3092\u6050\u308C\u308B\u306A"])), (_l()(), i1.ɵeld(5, 0, null, null, 1, "div", [["class", "tit"]], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["\u529B\u58EB"])), (_l()(), i1.ɵeld(7, 0, null, null, 1, "div", [["class", "sub-tit"]], null, null, null, null, null)), (_l()(), i1.ɵted(-1, null, ["IT, ACG"])), (_l()(), i1.ɵeld(9, 0, null, null, 2, "div", [["class", "blog-tags"]], null, null, null, null, null)), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_SidebarComponent_1)), i1.ɵdid(11, 278528, null, 0, i4.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, "ngForOf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_1 = _co.tags; _ck(_v, 11, 0, currVal_1); }, function (_ck, _v) { var _co = _v.component; var currVal_0 = (_co.assetsUri ? (_co.assetsUri + "images/logo.jpg") : "../../../assets/images/logo.jpg"); _ck(_v, 2, 0, currVal_0); }); }
 exports.View_SidebarComponent_0 = View_SidebarComponent_0;
-function View_SidebarComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-sidebar", [], null, null, null, View_SidebarComponent_0, RenderType_SidebarComponent)), i1.ɵdid(1, 114688, null, 0, i10.SidebarComponent, [i11.Router, i12.HttpRequestService], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+function View_SidebarComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-sidebar", [], null, null, null, View_SidebarComponent_0, RenderType_SidebarComponent)), i1.ɵdid(1, 114688, null, 0, i9.SidebarComponent, [i10.HttpRequestService, i11.ToolFunc], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
 exports.View_SidebarComponent_Host_0 = View_SidebarComponent_Host_0;
-var SidebarComponentNgFactory = i1.ɵccf("app-sidebar", i10.SidebarComponent, View_SidebarComponent_Host_0, {}, {}, []);
+var SidebarComponentNgFactory = i1.ɵccf("app-sidebar", i9.SidebarComponent, View_SidebarComponent_Host_0, {}, {}, []);
 exports.SidebarComponentNgFactory = SidebarComponentNgFactory;
 
 
@@ -942,7 +929,7 @@ exports.SidebarComponentNgFactory = SidebarComponentNgFactory;
  * tslint:disable
  */ 
 Object.defineProperty(exports, "__esModule", { value: true });
-var styles = [".blog-sidebar[_ngcontent-%COMP%] {\n  width: 200px;\n  padding: 20px;\n  text-align: center; }\n  .blog-sidebar[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    width: 100px;\n    border-radius: 50%;\n    cursor: pointer; }\n  .blog-sidebar[_ngcontent-%COMP%]   .tit[_ngcontent-%COMP%] {\n    margin-top: 10px;\n    font-size: 40px; }\n  .blog-sidebar[_ngcontent-%COMP%]   .sub-tit[_ngcontent-%COMP%] {\n    margin-top: 10px;\n    font-size: 16px; }\n  .blog-sidebar[_ngcontent-%COMP%]   .blog-tags[_ngcontent-%COMP%] {\n    margin-top: 20px; }\n  .blog-sidebar[_ngcontent-%COMP%]   .blog-tags[_ngcontent-%COMP%]   .blog-chip[_ngcontent-%COMP%] {\n      margin: 0;\n      cursor: pointer;\n      color: #fff;\n      background: rgba(0, 0, 0, 0.3); }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29yZS9zaWRlYmFyL0M6XFxXb3JrXFxteVByb2R1Y3RcXGJsb2dcXGJsb2cvc3JjXFxhcHBcXGNvcmVcXHNpZGViYXJcXHNpZGViYXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFZO0VBQ1osY0FBYTtFQUNiLG1CQUFrQixFQXVCbkI7RUExQkQ7SUFLSSxhQUFZO0lBQ1osbUJBQWtCO0lBQ2xCLGdCQUFlLEVBQ2hCO0VBUkg7SUFVSSxpQkFBZ0I7SUFDaEIsZ0JBQWUsRUFDaEI7RUFaSDtJQWNJLGlCQUFnQjtJQUNoQixnQkFBZSxFQUNoQjtFQWhCSDtJQWtCSSxpQkFBZ0IsRUFPakI7RUF6Qkg7TUFvQk0sVUFBUztNQUNULGdCQUFlO01BQ2YsWUFBVztNQUNYLCtCQUFxQixFQUN0QiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvc2lkZWJhci9zaWRlYmFyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJsb2ctc2lkZWJhciB7XHJcbiAgd2lkdGg6IDIwMHB4O1xyXG4gIHBhZGRpbmc6IDIwcHg7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGltZyB7XHJcbiAgICB3aWR0aDogMTAwcHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgfVxyXG4gIC50aXQge1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIGZvbnQtc2l6ZTogNDBweDtcclxuICB9XHJcbiAgLnN1Yi10aXQge1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICB9XHJcbiAgLmJsb2ctdGFncyB7XHJcbiAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gICAgLmJsb2ctY2hpcCB7XHJcbiAgICAgIG1hcmdpbjogMDtcclxuICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICBjb2xvcjogI2ZmZjtcclxuICAgICAgYmFja2dyb3VuZDogcmdiYSgjMDAwLCAuMylcclxuICAgIH1cclxuICB9XHJcbn0iXX0= */"];
+var styles = [".blog-sidebar[_ngcontent-%COMP%] {\n  width: 200px;\n  padding: 20px;\n  text-align: center; }\n  .blog-sidebar[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    width: 100px;\n    border-radius: 50%;\n    cursor: pointer; }\n  .blog-sidebar[_ngcontent-%COMP%]   .tit[_ngcontent-%COMP%] {\n    margin-top: 10px;\n    font-size: 40px; }\n  .blog-sidebar[_ngcontent-%COMP%]   .sub-tit[_ngcontent-%COMP%] {\n    margin-top: 10px;\n    font-size: 16px; }\n  .blog-sidebar[_ngcontent-%COMP%]   .blog-tags[_ngcontent-%COMP%] {\n    margin-top: 20px; }\n  .blog-sidebar[_ngcontent-%COMP%]   .blog-tags[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n      margin: 5px 10px; }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29yZS9zaWRlYmFyL0M6XFxXb3JrXFxteVByb2R1Y3RcXGJsb2dcXGJsb2cvc3JjXFxhcHBcXGNvcmVcXHNpZGViYXJcXHNpZGViYXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFZO0VBQ1osY0FBYTtFQUNiLG1CQUFrQixFQW9CbkI7RUF2QkQ7SUFLSSxhQUFZO0lBQ1osbUJBQWtCO0lBQ2xCLGdCQUFlLEVBQ2hCO0VBUkg7SUFVSSxpQkFBZ0I7SUFDaEIsZ0JBQWUsRUFDaEI7RUFaSDtJQWNJLGlCQUFnQjtJQUNoQixnQkFBZSxFQUNoQjtFQWhCSDtJQWtCSSxpQkFBZ0IsRUFJakI7RUF0Qkg7TUFvQk0saUJBQWdCLEVBQ2pCIiwiZmlsZSI6InNyYy9hcHAvY29yZS9zaWRlYmFyL3NpZGViYXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYmxvZy1zaWRlYmFyIHtcclxuICB3aWR0aDogMjAwcHg7XHJcbiAgcGFkZGluZzogMjBweDtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgaW1nIHtcclxuICAgIHdpZHRoOiAxMDBweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICB9XHJcbiAgLnRpdCB7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgZm9udC1zaXplOiA0MHB4O1xyXG4gIH1cclxuICAuc3ViLXRpdCB7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gIH1cclxuICAuYmxvZy10YWdzIHtcclxuICAgIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgICBidXR0b24ge1xyXG4gICAgICBtYXJnaW46IDVweCAxMHB4OyBcclxuICAgIH1cclxuICB9XHJcbn0iXX0= */"];
 exports.styles = styles;
 
 
@@ -959,13 +946,13 @@ exports.styles = styles;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @angular/core */ "@angular/core");
-var router_1 = __webpack_require__(/*! @angular/router */ "@angular/router");
 var environment_1 = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
 var httpRequest_service_1 = __webpack_require__(/*! ../../utils/httpRequest.service */ "./src/app/utils/httpRequest.service.ts");
+var helper_1 = __webpack_require__(/*! ../../utils/helper */ "./src/app/utils/helper.ts");
 var SidebarComponent = /** @class */ (function () {
-    function SidebarComponent(router, httpRequestService) {
-        this.router = router;
+    function SidebarComponent(httpRequestService, tools) {
         this.httpRequestService = httpRequestService;
+        this.tools = tools;
         this.routerUri = environment_1.environment.options.routerUri;
         this.assetsUri = environment_1.environment.options.assetsUri;
         this.tags = [];
@@ -982,10 +969,10 @@ var SidebarComponent = /** @class */ (function () {
     };
     SidebarComponent.prototype.goto = function (code) {
         if (code) {
-            console.log(code);
+            this.tools.goto("?code=" + code);
         }
         else {
-            this.router.navigateByUrl(this.routerUri + "/home");
+            this.tools.goto('/home');
         }
     };
     return SidebarComponent;
@@ -1005,13 +992,15 @@ exports.SidebarComponent = SidebarComponent;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+var router_1 = __webpack_require__(/*! @angular/router */ "@angular/router");
+var environment_1 = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
 var ToolFunc = /** @class */ (function () {
-    function ToolFunc() {
+    function ToolFunc(router) {
+        this.router = router;
+        this.routerUri = environment_1.environment.options.routerUri;
     }
-    ToolFunc.prototype.goto = function () {
-        return function (url) {
-            window.location.href = url;
-        };
+    ToolFunc.prototype.goto = function (url) {
+        this.router.navigateByUrl("" + this.routerUri + url);
     };
     return ToolFunc;
 }());
@@ -1258,6 +1247,7 @@ var i15 = __webpack_require__(/*! @angular/platform-browser/animations */ "@angu
 var i16 = __webpack_require__(/*! ./home.component */ "./src/app/view/home/home.component.ts");
 var i17 = __webpack_require__(/*! ../../utils/httpRequest.service */ "./src/app/utils/httpRequest.service.ts");
 var i18 = __webpack_require__(/*! @angular/router */ "@angular/router");
+var i19 = __webpack_require__(/*! ../../utils/helper */ "./src/app/utils/helper.ts");
 var styles_HomeComponent = [i0.styles];
 var RenderType_HomeComponent = i1.ɵcrt({ encapsulation: 0, styles: styles_HomeComponent, data: {} });
 exports.RenderType_HomeComponent = RenderType_HomeComponent;
@@ -1289,7 +1279,7 @@ function View_HomeComponent_1(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, 
     } return ad; }, i7.View_MatChipList_0, i7.RenderType_MatChipList)), i1.ɵprd(6144, null, i8.MatFormFieldControl, null, [i2.MatChipList]), i1.ɵdid(9, 1556480, null, 1, i2.MatChipList, [i1.ElementRef, i1.ChangeDetectorRef, [2, i9.Directionality], [2, i10.NgForm], [2, i10.FormGroupDirective], i4.ErrorStateMatcher, [8, null]], null, null), i1.ɵqud(603979776, 1, { chips: 1 }), (_l()(), i1.ɵand(16777216, null, 0, 1, null, View_HomeComponent_2)), i1.ɵdid(12, 278528, null, 0, i11.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, "ngForOf"] }, null), (_l()(), i1.ɵeld(13, 0, null, 0, 3, "mat-card-content", [["class", "mat-card-content"]], null, null, null, null, null)), i1.ɵdid(14, 16384, null, 0, i6.MatCardContent, [], null, null), (_l()(), i1.ɵeld(15, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), i1.ɵted(16, null, [" ", " "])), (_l()(), i1.ɵeld(17, 0, null, 0, 4, "mat-card-actions", [["class", "mat-card-actions"]], [[2, "mat-card-actions-align-end", null]], null, null, null, null)), i1.ɵdid(18, 16384, null, 0, i6.MatCardActions, [], null, null), (_l()(), i1.ɵeld(19, 0, null, null, 2, "button", [["color", "primary"], ["mat-button", ""]], [[8, "disabled", 0], [2, "_mat-animation-noopable", null]], null, null, i12.View_MatButton_0, i12.RenderType_MatButton)), i1.ɵdid(20, 180224, null, 0, i13.MatButton, [i1.ElementRef, i3.Platform, i14.FocusMonitor, [2, i15.ANIMATION_MODULE_TYPE]], { color: [0, "color"] }, null), (_l()(), i1.ɵted(-1, 0, ["\u67E5\u770B"]))], function (_ck, _v) { _ck(_v, 9, 0); var currVal_13 = _v.context.$implicit.tags; _ck(_v, 12, 0, currVal_13); var currVal_18 = "primary"; _ck(_v, 20, 0, currVal_18); }, function (_ck, _v) { var currVal_0 = _v.context.$implicit.title; _ck(_v, 6, 0, currVal_0); var currVal_1 = (i1.ɵnov(_v, 9).disabled ? null : i1.ɵnov(_v, 9)._tabIndex); var currVal_2 = (i1.ɵnov(_v, 9)._ariaDescribedby || null); var currVal_3 = i1.ɵnov(_v, 9).required.toString(); var currVal_4 = i1.ɵnov(_v, 9).disabled.toString(); var currVal_5 = i1.ɵnov(_v, 9).errorState; var currVal_6 = i1.ɵnov(_v, 9).multiple; var currVal_7 = i1.ɵnov(_v, 9).role; var currVal_8 = i1.ɵnov(_v, 9).disabled; var currVal_9 = i1.ɵnov(_v, 9).errorState; var currVal_10 = i1.ɵnov(_v, 9).required; var currVal_11 = i1.ɵnov(_v, 9).ariaOrientation; var currVal_12 = i1.ɵnov(_v, 9)._uid; _ck(_v, 7, 1, [currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12]); var currVal_14 = _v.context.$implicit.desc; _ck(_v, 16, 0, currVal_14); var currVal_15 = (i1.ɵnov(_v, 18).align === "end"); _ck(_v, 17, 0, currVal_15); var currVal_16 = (i1.ɵnov(_v, 20).disabled || null); var currVal_17 = (i1.ɵnov(_v, 20)._animationMode === "NoopAnimations"); _ck(_v, 19, 0, currVal_16, currVal_17); }); }
 function View_HomeComponent_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 3, "div", [], null, null, null, null, null)), (_l()(), i1.ɵeld(1, 0, null, null, 2, "div", [["class", "blog-card-wrapper"]], null, null, null, null, null)), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_HomeComponent_1)), i1.ɵdid(3, 278528, null, 0, i11.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, "ngForOf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.articleList; _ck(_v, 3, 0, currVal_0); }, null); }
 exports.View_HomeComponent_0 = View_HomeComponent_0;
-function View_HomeComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-home", [], null, null, null, View_HomeComponent_0, RenderType_HomeComponent)), i1.ɵdid(1, 114688, null, 0, i16.HomeComponent, [i17.HttpRequestService, i18.Router], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+function View_HomeComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-home", [], null, null, null, View_HomeComponent_0, RenderType_HomeComponent)), i1.ɵdid(1, 114688, null, 0, i16.HomeComponent, [i17.HttpRequestService, i18.Router, i19.ToolFunc], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
 exports.View_HomeComponent_Host_0 = View_HomeComponent_Host_0;
 var HomeComponentNgFactory = i1.ɵccf("app-home", i16.HomeComponent, View_HomeComponent_Host_0, {}, {}, []);
 exports.HomeComponentNgFactory = HomeComponentNgFactory;
@@ -1333,10 +1323,13 @@ var core_1 = __webpack_require__(/*! @angular/core */ "@angular/core");
 var httpRequest_service_1 = __webpack_require__(/*! ../../utils/httpRequest.service */ "./src/app/utils/httpRequest.service.ts");
 var router_1 = __webpack_require__(/*! @angular/router */ "@angular/router");
 var environment_1 = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+var operators_1 = __webpack_require__(/*! rxjs/operators */ "rxjs/operators");
+var helper_1 = __webpack_require__(/*! ../../utils/helper */ "./src/app/utils/helper.ts");
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(httpRequestService, router) {
+    function HomeComponent(httpRequestService, router, tools) {
         this.httpRequestService = httpRequestService;
         this.router = router;
+        this.tools = tools;
         this.articleList = [];
         this.totalSize = 0;
         this.pageSize = 0;
@@ -1345,19 +1338,59 @@ var HomeComponent = /** @class */ (function () {
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.getArticleList();
+        this.watchUrlChange();
     };
-    HomeComponent.prototype.getArticleList = function () {
+    HomeComponent.prototype.watchUrlChange = function () {
         var _this = this;
-        this.httpRequestService.httpGet('/articles/10/1')
-            .subscribe(function (val) {
-            _this.articleList = val.records.data;
-            _this.totalSize = val.records.total;
-            _this.startPage = val.records.startPage;
-            _this.pageSize = val.records.pageSize;
+        this.router.events.pipe(operators_1.filter(function (event) { return event instanceof router_1.NavigationEnd; }))
+            .subscribe(function (event) {
+            var hashData = _this.getHashData(event.url);
+            if (hashData.code) {
+                var code = Number(hashData.code);
+                _this.getArticleList(code);
+            }
+            else {
+                _this.getArticleList();
+            }
         });
     };
+    HomeComponent.prototype.getHashData = function (url) {
+        var hashUrl = url.split('?')[1];
+        if (!hashUrl) {
+            return {
+                code: ''
+            };
+        }
+        var hashData = {
+            code: ''
+        };
+        hashUrl.split('&')
+            .forEach(function (v) { return hashData[v.split('=')[0]] = v.split('=')[1]; });
+        return hashData;
+    };
+    HomeComponent.prototype.getArticleList = function (code) {
+        var _this = this;
+        if (code) {
+            this.httpRequestService.httpGet("/articles/10/1/" + code)
+                .subscribe(function (val) {
+                _this.articleList = val.records.data;
+                _this.totalSize = val.records.total;
+                _this.startPage = val.records.startPage;
+                _this.pageSize = val.records.pageSize;
+            });
+        }
+        else {
+            this.httpRequestService.httpGet('/articles/10/1')
+                .subscribe(function (val) {
+                _this.articleList = val.records.data;
+                _this.totalSize = val.records.total;
+                _this.startPage = val.records.startPage;
+                _this.pageSize = val.records.pageSize;
+            });
+        }
+    };
     HomeComponent.prototype.goto = function (id) {
-        this.router.navigateByUrl(this.routerUri + "/article/" + id);
+        this.tools.goto("/article/" + id);
     };
     return HomeComponent;
 }());
@@ -1399,20 +1432,10 @@ exports.ViewModule = ViewModule;
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.environment = {
-    production: false,
-    httpConfig: {
-        baseUri: 'https://www.tanpopo.cc/api',
-    },
-    options: {
-        env: 'development',
-        routerUri: 'blog',
-        assetsUri: 'https://www.tanpopo.cc/public/assets/',
-    }
-};
 // export const environment = {
+//   production: false,
 //   httpConfig: {
-//     baseUri: 'http://localhost:7001/api',
+//     baseUri: 'https://www.tanpopo.cc/api',
 //   },
 //   options: {
 //     env: 'development',
@@ -1420,6 +1443,16 @@ exports.environment = {
 //     assetsUri: 'https://www.tanpopo.cc/public/assets/',
 //   }
 // }
+exports.environment = {
+    httpConfig: {
+        baseUri: 'http://localhost:7001/api',
+    },
+    options: {
+        env: 'development',
+        routerUri: 'blog',
+        assetsUri: 'https://www.tanpopo.cc/public/assets/',
+    }
+};
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
@@ -1518,6 +1551,17 @@ module.exports = require("@angular/cdk/keycodes");
 
 /***/ }),
 
+/***/ "@angular/cdk/observers":
+/*!*****************************************!*\
+  !*** external "@angular/cdk/observers" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@angular/cdk/observers");
+
+/***/ }),
+
 /***/ "@angular/cdk/platform":
 /*!****************************************!*\
   !*** external "@angular/cdk/platform" ***!
@@ -1603,6 +1647,17 @@ module.exports = require("@angular/http");
 /***/ (function(module, exports) {
 
 module.exports = require("@angular/material");
+
+/***/ }),
+
+/***/ "@angular/material/badge":
+/*!******************************************!*\
+  !*** external "@angular/material/badge" ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@angular/material/badge");
 
 /***/ }),
 
@@ -1768,6 +1823,17 @@ module.exports = require("@nguniversal/module-map-ngfactory-loader");
 /***/ (function(module, exports) {
 
 module.exports = require("ngx-markdown");
+
+/***/ }),
+
+/***/ "rxjs/operators":
+/*!*********************************!*\
+  !*** external "rxjs/operators" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("rxjs/operators");
 
 /***/ })
 
