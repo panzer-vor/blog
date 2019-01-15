@@ -1,23 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpRequestService } from '../../utils/httpRequest.service'
-interface IHttpRecords {
-  success: boolean
-  records: IArticle
-}
-interface IArticle {
-  accessAuthority: number
-  article: string
-  cover: string
-  createTime: string
-  desc: string
-  tags: ITagInfo[]
-  title: string
-}
-interface ITagInfo {
-  code: number
-  name: string
-}
+import { IHttpRecords, IArticle, ITagInfo } from './article.interface.ts'
+
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',

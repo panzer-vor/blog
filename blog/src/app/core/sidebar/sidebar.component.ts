@@ -2,16 +2,8 @@ import { Component, OnInit } from '@angular/core'
 import { environment } from '../../../environments/environment'
 import { HttpRequestService } from '../../utils/httpRequest.service'
 import { ToolFunc } from '../../utils/helper'
+import { ISidebarTagInfo, IHttpRecords } from './sidebar.interface'
 
-interface IHttpRecords {
-  success: boolean
-  records: ITagInfo[]
-}
-interface ITagInfo {
-  code: number
-  name: string
-  count: number
-}
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',

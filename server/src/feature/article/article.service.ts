@@ -96,7 +96,7 @@ export class ArticleService {
         }
       }
     });
-    const articleData = {
+    let articleData = {
       ...article[0],
       tags: [],
     };
@@ -106,6 +106,10 @@ export class ArticleService {
         name: tag.name,
       });
     }
+    articleData = articleData.map(v => ({
+      ...v,
+      createTime: v.createTime.split('T')[0],
+    }));
     return {
       success: true,
       records: articleData,
