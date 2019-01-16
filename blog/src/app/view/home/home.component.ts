@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     private tools: ToolFunc,
   ) { }
   ngOnInit() {
-    const code = this.getHashData(window.location.href).code
+    const code = this.getHashData(location ? location.href : {}).code
     this.watchUrlChange()
     this.getArticleList(Number(code))
   }

@@ -1336,7 +1336,7 @@ var HomeComponent = /** @class */ (function () {
         this.startPage = 0;
     }
     HomeComponent.prototype.ngOnInit = function () {
-        var code = this.getHashData(window.location.href).code;
+        var code = this.getHashData(location ? location.href : {}).code;
         this.watchUrlChange();
         this.getArticleList(Number(code));
     };
