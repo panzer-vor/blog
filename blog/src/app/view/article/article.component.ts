@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpRequestService } from '../../utils/httpRequest.service'
-import { IHttpRecords, IArticle, ITagInfo } from './article.interface.ts'
+import { IHttpRecords } from './article.interface'
 
 @Component({
   selector: 'app-article',

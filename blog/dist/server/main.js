@@ -1322,9 +1322,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(/*! @angular/core */ "@angular/core");
 var httpRequest_service_1 = __webpack_require__(/*! ../../utils/httpRequest.service */ "./src/app/utils/httpRequest.service.ts");
 var router_1 = __webpack_require__(/*! @angular/router */ "@angular/router");
-var environment_1 = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
 var operators_1 = __webpack_require__(/*! rxjs/operators */ "rxjs/operators");
 var helper_1 = __webpack_require__(/*! ../../utils/helper */ "./src/app/utils/helper.ts");
+var home_interface_1 = __webpack_require__(/*! ./home.interface */ "./src/app/view/home/home.interface.ts");
 var HomeComponent = /** @class */ (function () {
     function HomeComponent(httpRequestService, router, tools) {
         this.httpRequestService = httpRequestService;
@@ -1334,24 +1334,19 @@ var HomeComponent = /** @class */ (function () {
         this.totalSize = 0;
         this.pageSize = 0;
         this.startPage = 0;
-        this.routerUri = environment_1.environment.options.routerUri;
     }
     HomeComponent.prototype.ngOnInit = function () {
-        this.getArticleList();
+        var code = this.getHashData(window.location.href).code;
         this.watchUrlChange();
+        this.getArticleList(Number(code));
     };
     HomeComponent.prototype.watchUrlChange = function () {
         var _this = this;
         this.router.events.pipe(operators_1.filter(function (event) { return event instanceof router_1.NavigationEnd; }))
             .subscribe(function (event) {
             var hashData = _this.getHashData(event.url);
-            if (hashData.code) {
-                var code = Number(hashData.code);
-                _this.getArticleList(code);
-            }
-            else {
-                _this.getArticleList();
-            }
+            var code = Number(hashData.code);
+            _this.getArticleList(code);
         });
     };
     HomeComponent.prototype.getHashData = function (url) {
@@ -1370,24 +1365,14 @@ var HomeComponent = /** @class */ (function () {
     };
     HomeComponent.prototype.getArticleList = function (code) {
         var _this = this;
-        if (code) {
-            this.httpRequestService.httpGet("/articles/10/1/" + code)
-                .subscribe(function (val) {
-                _this.articleList = val.records.data;
-                _this.totalSize = val.records.total;
-                _this.startPage = val.records.startPage;
-                _this.pageSize = val.records.pageSize;
-            });
-        }
-        else {
-            this.httpRequestService.httpGet('/articles/10/1')
-                .subscribe(function (val) {
-                _this.articleList = val.records.data;
-                _this.totalSize = val.records.total;
-                _this.startPage = val.records.startPage;
-                _this.pageSize = val.records.pageSize;
-            });
-        }
+        var requestUri = code ? "/articles/10/1/" + code : '/articles/10/1';
+        this.httpRequestService.httpGet(requestUri)
+            .subscribe(function (val) {
+            _this.articleList = val.records.data;
+            _this.totalSize = val.records.total;
+            _this.startPage = val.records.startPage;
+            _this.pageSize = val.records.pageSize;
+        });
     };
     HomeComponent.prototype.goto = function (id) {
         this.tools.goto("/article/" + id);
@@ -1395,6 +1380,20 @@ var HomeComponent = /** @class */ (function () {
     return HomeComponent;
 }());
 exports.HomeComponent = HomeComponent;
+
+
+/***/ }),
+
+/***/ "./src/app/view/home/home.interface.ts":
+/*!*********************************************!*\
+  !*** ./src/app/view/home/home.interface.ts ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
 
 
 /***/ }),

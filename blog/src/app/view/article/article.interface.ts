@@ -1,4 +1,4 @@
-import { ITagInfo } from '../home/home.interface.ts'
+import { IArticleRecordWithTag } from '../home/home.interface'
 
 export interface IHttpRecords {
   success: boolean

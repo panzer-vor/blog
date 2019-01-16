@@ -12,7 +12,7 @@ import { ISidebarTagInfo, IHttpRecords } from './sidebar.interface'
 export class SidebarComponent implements OnInit {
   public routerUri = environment.options.routerUri
   public assetsUri = environment.options.assetsUri
-  public tags: ITagInfo[] = []
+  public tags: ISidebarTagInfo[] = []
   constructor(
     private httpRequestService: HttpRequestService,
     private tools: ToolFunc,

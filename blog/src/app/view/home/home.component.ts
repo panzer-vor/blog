@@ -3,7 +3,7 @@ import { HttpRequestService } from '../../utils/httpRequest.service'
 import { Router, NavigationEnd, RouterEvent } from '@angular/router'
 import { filter } from 'rxjs/operators'
 import { ToolFunc } from '../../utils/helper'
-import { ITagInfo, IArticleRecordWithTag, IHttpRecords, IHomeHash } from './home.interface.ts'
+import { ITagInfo, IArticleRecordWithTag, IHttpRecords, IHomeHash } from './home.interface'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -20,8 +20,9 @@ export class HomeComponent implements OnInit {
     private tools: ToolFunc,
   ) { }
   ngOnInit() {
-    this.getArticleList()
+    const code = this.getHashData(window.location.href).code
     this.watchUrlChange()
+    this.getArticleList(Number(code))
   }
   private watchUrlChange() {
     this.router.events.pipe(
@@ -29,12 +30,8 @@ export class HomeComponent implements OnInit {
     )
     .subscribe(event => {
       const hashData = this.getHashData(event.url)
-      if (hashData.code) {
-        const code = Number(hashData.code)
-        this.getArticleList(code)
-      } else {
-        this.getArticleList()
-      }
+      const code = Number(hashData.code)
+      this.getArticleList(code)
     })
   }
   private getHashData(url): IHomeHash {
@@ -52,7 +49,7 @@ export class HomeComponent implements OnInit {
     return hashData
   }
   private getArticleList(code?: number) {
-    const requestUri = code ? `/articles/10/1/${code}` : '/articles/10/1/'
+    const requestUri = code ? `/articles/10/1/${code}` : '/articles/10/1'
     this.httpRequestService.httpGet(requestUri)
       .subscribe(
         (val: IHttpRecords) => {

@@ -16,7 +16,7 @@ export interface IArticleRecordWithTag {
   accessCount: number
   title: string
   desc: string
-  acessAuthority: number
+  accessAuthority: number
   cover: string
   tags: ITagInfo[] | never[]
 }
