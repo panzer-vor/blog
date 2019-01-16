@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { HttpRequestService } from '../../utils/httpRequest.service'
-import { Router, NavigationEnd, RouterEvent } from '@angular/router'
+import { Router, NavigationEnd, RouterEvent, ActivatedRoute } from '@angular/router'
 import { filter } from 'rxjs/operators'
 import { ToolFunc } from '../../utils/helper'
-import { ITagInfo, IArticleRecordWithTag, IHttpRecords, IHomeHash } from './home.interface'
+import { IArticleRecordWithTag, IHttpRecords, IHomeHash } from './home.interface'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,18 +18,13 @@ export class HomeComponent implements OnInit {
     private httpRequestService: HttpRequestService,
     private router: Router,
     private tools: ToolFunc,
+    private routerParams: ActivatedRoute,
   ) { }
   ngOnInit() {
-    const code = this.isNodeElement ? '' : this.getHashData(location.href).code
-    this.watchUrlChange()
-    this.getArticleList(Number(code))
-  }
-  private isNodeElement() {
-    if (typeof window !== 'undefined') {
-      return true
-    } else {
-      return true
-    }
+    this.routerParams.queryParams.subscribe(params => {
+      this.watchUrlChange()
+      this.getArticleList(Number(params.code))
+    })
   }
   private watchUrlChange() {
     this.router.events.pipe(

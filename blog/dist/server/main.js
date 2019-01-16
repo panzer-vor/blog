@@ -1279,7 +1279,7 @@ function View_HomeComponent_1(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, 
     } return ad; }, i7.View_MatChipList_0, i7.RenderType_MatChipList)), i1.ɵprd(6144, null, i8.MatFormFieldControl, null, [i2.MatChipList]), i1.ɵdid(9, 1556480, null, 1, i2.MatChipList, [i1.ElementRef, i1.ChangeDetectorRef, [2, i9.Directionality], [2, i10.NgForm], [2, i10.FormGroupDirective], i4.ErrorStateMatcher, [8, null]], null, null), i1.ɵqud(603979776, 1, { chips: 1 }), (_l()(), i1.ɵand(16777216, null, 0, 1, null, View_HomeComponent_2)), i1.ɵdid(12, 278528, null, 0, i11.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, "ngForOf"] }, null), (_l()(), i1.ɵeld(13, 0, null, 0, 3, "mat-card-content", [["class", "mat-card-content"]], null, null, null, null, null)), i1.ɵdid(14, 16384, null, 0, i6.MatCardContent, [], null, null), (_l()(), i1.ɵeld(15, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), i1.ɵted(16, null, [" ", " "])), (_l()(), i1.ɵeld(17, 0, null, 0, 4, "mat-card-actions", [["class", "mat-card-actions"]], [[2, "mat-card-actions-align-end", null]], null, null, null, null)), i1.ɵdid(18, 16384, null, 0, i6.MatCardActions, [], null, null), (_l()(), i1.ɵeld(19, 0, null, null, 2, "button", [["color", "primary"], ["mat-button", ""]], [[8, "disabled", 0], [2, "_mat-animation-noopable", null]], null, null, i12.View_MatButton_0, i12.RenderType_MatButton)), i1.ɵdid(20, 180224, null, 0, i13.MatButton, [i1.ElementRef, i3.Platform, i14.FocusMonitor, [2, i15.ANIMATION_MODULE_TYPE]], { color: [0, "color"] }, null), (_l()(), i1.ɵted(-1, 0, ["\u67E5\u770B"]))], function (_ck, _v) { _ck(_v, 9, 0); var currVal_13 = _v.context.$implicit.tags; _ck(_v, 12, 0, currVal_13); var currVal_18 = "primary"; _ck(_v, 20, 0, currVal_18); }, function (_ck, _v) { var currVal_0 = _v.context.$implicit.title; _ck(_v, 6, 0, currVal_0); var currVal_1 = (i1.ɵnov(_v, 9).disabled ? null : i1.ɵnov(_v, 9)._tabIndex); var currVal_2 = (i1.ɵnov(_v, 9)._ariaDescribedby || null); var currVal_3 = i1.ɵnov(_v, 9).required.toString(); var currVal_4 = i1.ɵnov(_v, 9).disabled.toString(); var currVal_5 = i1.ɵnov(_v, 9).errorState; var currVal_6 = i1.ɵnov(_v, 9).multiple; var currVal_7 = i1.ɵnov(_v, 9).role; var currVal_8 = i1.ɵnov(_v, 9).disabled; var currVal_9 = i1.ɵnov(_v, 9).errorState; var currVal_10 = i1.ɵnov(_v, 9).required; var currVal_11 = i1.ɵnov(_v, 9).ariaOrientation; var currVal_12 = i1.ɵnov(_v, 9)._uid; _ck(_v, 7, 1, [currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6, currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12]); var currVal_14 = _v.context.$implicit.desc; _ck(_v, 16, 0, currVal_14); var currVal_15 = (i1.ɵnov(_v, 18).align === "end"); _ck(_v, 17, 0, currVal_15); var currVal_16 = (i1.ɵnov(_v, 20).disabled || null); var currVal_17 = (i1.ɵnov(_v, 20)._animationMode === "NoopAnimations"); _ck(_v, 19, 0, currVal_16, currVal_17); }); }
 function View_HomeComponent_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 3, "div", [], null, null, null, null, null)), (_l()(), i1.ɵeld(1, 0, null, null, 2, "div", [["class", "blog-card-wrapper"]], null, null, null, null, null)), (_l()(), i1.ɵand(16777216, null, null, 1, null, View_HomeComponent_1)), i1.ɵdid(3, 278528, null, 0, i11.NgForOf, [i1.ViewContainerRef, i1.TemplateRef, i1.IterableDiffers], { ngForOf: [0, "ngForOf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.articleList; _ck(_v, 3, 0, currVal_0); }, null); }
 exports.View_HomeComponent_0 = View_HomeComponent_0;
-function View_HomeComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-home", [], null, null, null, View_HomeComponent_0, RenderType_HomeComponent)), i1.ɵdid(1, 114688, null, 0, i16.HomeComponent, [i17.HttpRequestService, i18.Router, i19.ToolFunc], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+function View_HomeComponent_Host_0(_l) { return i1.ɵvid(0, [(_l()(), i1.ɵeld(0, 0, null, null, 1, "app-home", [], null, null, null, View_HomeComponent_0, RenderType_HomeComponent)), i1.ɵdid(1, 114688, null, 0, i16.HomeComponent, [i17.HttpRequestService, i18.Router, i19.ToolFunc, i18.ActivatedRoute], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
 exports.View_HomeComponent_Host_0 = View_HomeComponent_Host_0;
 var HomeComponentNgFactory = i1.ɵccf("app-home", i16.HomeComponent, View_HomeComponent_Host_0, {}, {}, []);
 exports.HomeComponentNgFactory = HomeComponentNgFactory;
@@ -1324,29 +1324,23 @@ var httpRequest_service_1 = __webpack_require__(/*! ../../utils/httpRequest.serv
 var router_1 = __webpack_require__(/*! @angular/router */ "@angular/router");
 var operators_1 = __webpack_require__(/*! rxjs/operators */ "rxjs/operators");
 var helper_1 = __webpack_require__(/*! ../../utils/helper */ "./src/app/utils/helper.ts");
-var home_interface_1 = __webpack_require__(/*! ./home.interface */ "./src/app/view/home/home.interface.ts");
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(httpRequestService, router, tools) {
+    function HomeComponent(httpRequestService, router, tools, routerParams) {
         this.httpRequestService = httpRequestService;
         this.router = router;
         this.tools = tools;
+        this.routerParams = routerParams;
         this.articleList = [];
         this.totalSize = 0;
         this.pageSize = 0;
         this.startPage = 0;
     }
     HomeComponent.prototype.ngOnInit = function () {
-        var code = this.isNodeElement ? '' : this.getHashData(location.href).code;
-        this.watchUrlChange();
-        this.getArticleList(Number(code));
-    };
-    HomeComponent.prototype.isNodeElement = function () {
-        if (typeof window !== 'undefined') {
-            return true;
-        }
-        else {
-            return true;
-        }
+        var _this = this;
+        this.routerParams.queryParams.subscribe(function (params) {
+            _this.watchUrlChange();
+            _this.getArticleList(Number(params.code));
+        });
     };
     HomeComponent.prototype.watchUrlChange = function () {
         var _this = this;
@@ -1388,20 +1382,6 @@ var HomeComponent = /** @class */ (function () {
     return HomeComponent;
 }());
 exports.HomeComponent = HomeComponent;
-
-
-/***/ }),
-
-/***/ "./src/app/view/home/home.interface.ts":
-/*!*********************************************!*\
-  !*** ./src/app/view/home/home.interface.ts ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
 
 
 /***/ }),
