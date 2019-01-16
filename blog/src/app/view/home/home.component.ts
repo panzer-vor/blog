@@ -20,9 +20,16 @@ export class HomeComponent implements OnInit {
     private tools: ToolFunc,
   ) { }
   ngOnInit() {
-    const code = this.getHashData(location ? location.href : {}).code
+    const code = this.getHashData(this.isNodeElement() ? {} : location.href).code
     this.watchUrlChange()
     this.getArticleList(Number(code))
+  }
+  private isNodeElement() {
+    if (typeof window !== 'undefined') {
+      return true
+    } else {
+      return true
+    }
   }
   private watchUrlChange() {
     this.router.events.pipe(

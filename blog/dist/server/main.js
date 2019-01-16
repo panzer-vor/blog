@@ -1336,9 +1336,17 @@ var HomeComponent = /** @class */ (function () {
         this.startPage = 0;
     }
     HomeComponent.prototype.ngOnInit = function () {
-        var code = this.getHashData(location ? location.href : {}).code;
+        var code = this.getHashData(this.isNodeElement() ? {} : location.href).code;
         this.watchUrlChange();
         this.getArticleList(Number(code));
+    };
+    HomeComponent.prototype.isNodeElement = function () {
+        if (typeof window !== 'undefined') {
+            return true;
+        }
+        else {
+            return true;
+        }
     };
     HomeComponent.prototype.watchUrlChange = function () {
         var _this = this;
