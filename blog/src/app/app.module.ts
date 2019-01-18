@@ -20,7 +20,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     BrowserModule.withServerTransition({
       appId: 'tanpopo'
     }),
-    ServiceWorkerModule.register('public/ngsw-worker.js', { enabled: true }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }),
     BrowserAnimationsModule,
     MaterialModule,
     CoreModule,
