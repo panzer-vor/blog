@@ -418,6 +418,9 @@ MIT
 
 @angular/material/icon
 
+@angular/service-worker
+MIT
+
 zone.js
 MIT
 The MIT License

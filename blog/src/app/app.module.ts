@@ -9,6 +9,7 @@ import { ToolFunc } from './utils/helper'
 import { HttpRequestService } from './utils/httpRequest.service'
 import { ViewModule } from './view/view.module'
 import { MarkdownModule } from 'ngx-markdown'
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MarkdownModule } from 'ngx-markdown'
     BrowserModule.withServerTransition({
       appId: 'tanpopo'
     }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }),
     BrowserAnimationsModule,
     MaterialModule,
     CoreModule,
