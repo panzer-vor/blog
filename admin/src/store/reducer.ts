@@ -1,8 +1,9 @@
 import { initialState, types } from './store';
 import { saveState } from '@tools/cacheState'
 import { IState } from '@interface/state'
+import { AnyAction} from 'redux'
 
-export default function reducer(state: IState, action: any) {
+export default function reducer(state: IState, action: AnyAction) {
   switch (action.type) {
     case types.SAVE_USER:
       const newState = {
