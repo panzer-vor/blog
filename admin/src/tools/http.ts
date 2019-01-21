@@ -70,8 +70,10 @@ class Http {
         })
         .catch((err: Error) => {
           message.error(`${err}`)
-          // const { reactHistory } = Http
-          // reactHistory.push(`${options.routerUri}404`)
+          if (err.message.indexOf('401') > -1) {
+            const { reactHistory } = Http
+            reactHistory.push(`${options.routerUri}login`)
+          }
           reject(err)
         })
         .finally(() => {
@@ -88,9 +90,9 @@ class Http {
       case 1001:
       case 1002:
         if (reactHistory) {
-          reactHistory.push(`${options.routerUri}/login`)
+          reactHistory.push(`${options.routerUri}login`)
         } else {
-          window.location.href = `${options.routerUri}/login`
+          window.location.href = `${options.routerUri}login`
         }
         break
       case 1003:
