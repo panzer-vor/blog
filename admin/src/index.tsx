@@ -6,9 +6,7 @@ import makeStore from './store/store'
 import App from './App';
 
 const store = makeStore();
-store.subscribe(() =>
-  console.log(store.getState())
-)
+
 ReactDOM.render(
   <StoreContext.Provider value={store}>
     <BrowserRouter>
