@@ -6,6 +6,7 @@ import { IState } from '@interface/state'
 export const initialState: IState = {
   globalLoading: false,
   user: {
+    id: 0,
     role: 10,
     username: '',
   },

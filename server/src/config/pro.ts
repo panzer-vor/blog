@@ -10,7 +10,7 @@ const proConfig = {
   jwtConfig: {
     secretOrKey: 'secretKey',
     signOptions: {
-      expiresIn: 360000,
+      expiresIn: 7200000,
     },
   },
   options: {

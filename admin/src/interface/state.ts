@@ -4,6 +4,7 @@ interface IInitialState {
   user: {
     username: string
     role: number
+    id: number
   }
   globalLoading: boolean
 }
